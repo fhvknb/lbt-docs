@@ -69,6 +69,12 @@ __粗体强调__
 \需转义符号
 ```
 
+```
+:::tip 
+
+自定义块 关键字： tip   danger  note   info  warning  caution   hint  success    summary  question error  
+```
+
 
 
 
