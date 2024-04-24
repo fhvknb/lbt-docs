@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[583],{6866:(t,e,s)=>{s.r(e),s.d(e,{default:()=>l});var i=s(4586),n=s(781),c=s(4848);function l(){const{siteConfig:t}=(0,i.A)();return(0,c.jsx)(n.A,{title:`${t.title}`,description:"",children:(0,c.jsx)("main",{})})}}}]);

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>My Site Blog</title>
+        <link>https://docs.zazds.top/blog</link>
+        <description>My Site Blog</description>
+        <lastBuildDate>Wed, 24 Apr 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[First Post]]></title>
+            <link>https://docs.zazds.top/blog/first</link>
+            <guid>https://docs.zazds.top/blog/first</guid>
+            <pubDate>Wed, 24 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[First Post]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="first-post">First Post<a href="https://docs.zazds.top/blog/first#first-post" class="hash-link" aria-label="Direct link to First Post" title="Direct link to First Post">​</a></h3>
+<p>--- </p>]]></content:encoded>
+            <category>first</category>
+        </item>
+    </channel>
+</rss>

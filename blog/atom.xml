@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.zazds.top/blog</id>
+    <title>My Site Blog</title>
+    <updated>2024-04-24T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.zazds.top/blog"/>
+    <subtitle>My Site Blog</subtitle>
+    <icon>https://docs.zazds.top/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[First Post]]></title>
+        <id>https://docs.zazds.top/blog/first</id>
+        <link href="https://docs.zazds.top/blog/first"/>
+        <updated>2024-04-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[First Post]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="first-post">First Post<a href="https://docs.zazds.top/blog/first#first-post" class="hash-link" aria-label="Direct link to First Post" title="Direct link to First Post">​</a></h3>
+<p>--- </p>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="first" term="first"/>
+    </entry>
+</feed>
