@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "LBT Docs",
+  tagline: "The palest ink is better than the best memory.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -57,6 +57,11 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    algolia: {
+      appId: "H0ROWH8W85",
+      apiKey: "17f9ee2ce29ec0620afcc161ff3d00a8",
+      indexName: "zazds"
+    },
     navbar: {
       title: "LBT-DOCS",
       logo: {
@@ -104,7 +109,7 @@ const config: Config = {
         //   ],
         // },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} LBT-DOCS, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
