@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[9267],{8289:l=>{l.exports=JSON.parse('[{"label":"tool","permalink":"/blog/tags/tool","count":2},{"label":"\u6587\u5b57","permalink":"/blog/tags/\u6587\u5b57","count":3},{"label":"memory","permalink":"/blog/tags/memory","count":1},{"label":"MacOS","permalink":"/blog/tags/mac-os","count":1}]')}}]);
