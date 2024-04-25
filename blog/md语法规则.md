@@ -1,26 +1,16 @@
 ---
-title: Markdown语法笔记
-categories: Study
-tags: markdown
-abbrlink: b60f5572
+slug: MD语法规则
+title: MD语法规则
+authors: shaun
+tags: [tool]
 date: 2018-10-25 17:07:08
 ---
 
-
-term 
-: 13
-123
-123
-
-😊😂🤣❤❤
-
-# 一级标题
-## 二级标题
-
-- 无序列表
-1. 有序列表
-
 *** 
+
+😊😂🤣❤❤❤
+
+<!-- truncate -->
 --- 
 
 - [x] Write the press release
@@ -36,14 +26,13 @@ term
 
 *22*
 
+~~删除内容~~
+
+```txt
 
 [链接文字](链接地址)
 
-
 ![图片名称](图片地址)
-
-```md
- markdown content
 
 ```
 
@@ -57,10 +46,10 @@ term
 |:-:|:-:|:-:|
 | cell | cell2 | cell3 |
 
-~~删除内容~~
-
-:::tip 
-  tip content
+:::tip
+  自定义块关键字： tip   danger  note   info  warning  caution   hint  success    summary  question error  
 :::
 
-自定义块关键字： tip   danger  note   info  warning  caution   hint  success    summary  question error  
+:::caution
+  自定义块关键字： tip   danger  note   info  warning  caution  success  
+:::

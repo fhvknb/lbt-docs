@@ -1,6 +1,6 @@
-# SystemD
+# systemD
 
-SystemD 是 Linux 的系统管理器，它的主要接口是 systemctl（即用户执行的命令）。
+systemD 是 Linux 的系统管理器，它的主要接口是 systemctl（即用户执行的命令）。
 
 通过 systemctl 接口，可以启动/停止“单元”（unit），最常用的单元是“服务单元”（service），即系统守护程序。其他单元还有套接字单元（network socket）、定时器单元（timer）等等。
 

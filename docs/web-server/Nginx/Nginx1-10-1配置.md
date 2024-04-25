@@ -1,21 +1,15 @@
 ---
-title: Nginx1.10.1配置
-categories: Study
+title: nginx1.10.1配置详解
 tags:
   - http
   - nginx
-abbrlink: 990947c
-date: 2018-10-26 10:14:53
 ---
 
-nginx1.10.1版本配置信息详解<!--more-->
+nginx1.10.1版本配置信息详解
 
+<!--truncate-->
 
-```
-#普通配置
-#==性能配置
-
-
+```nginx
 #运行用户
 user nobody;
 #pid文件
@@ -88,7 +82,8 @@ http {
     #==设置数据压缩等级，1-9之间，9最慢压缩比最大
     gzip_comp_level 2;
     #设置需要压缩的数据格式
-    gzip_types text/plain text/css text/xml text/javascript  application/json application/x-javascript application/xml application/xml+rss; 
+    gzip_types text/plain text/css text/xml text/javascript  application/json application/x-javascript \ 
+    application/xml application/xml+rss; 
 
     #==开发缓存的同时也指定了缓存文件的最大数量，20s如果文件没有请求则删除缓存
     open_file_cache max=100000 inactive=20s;
@@ -104,7 +99,7 @@ http {
     #==冲区代理缓冲用户端请求的最大字节数
     client_header_buffer_size 32k;
 
-    #
+    #代理重定向开关
     proxy_redirect off;
     #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
     proxy_set_header Host $host;
@@ -195,9 +190,7 @@ http {
             deny all;
         }
     }
-    #网站较多的情况下ngxin又不会请求瓶颈可以考虑挂多个站点，并把虚拟主机配置单独放在一个文件内，引入进来
+    #网站较多的情况下ngxin又不会出现瓶颈，则可以考虑挂多个站点，并把虚拟主机配置单独放在一个文件内，引入进来
     #include website.conf;
 }
-
-
 ```

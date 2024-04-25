@@ -1,9 +1,9 @@
-# xargs 命令
+# xargs
 
 xargs 用于将标准输入（stdin），转成其后命令的字符串参数。它通常跟管道命令（`|`）结合使用。
 
 ```bash
-$ {{command1}} | xargs {{command2}}
+{{command1}} | xargs {{command2}}
 ```
 
 上面是 xargs 的用法。正常情况下，第一个命令`command1`会输出结果到控制台（即标准输出`stdout`），但是管道命令（`|`）会拦截`command1`的标准输出，将其转为后面命令的标准输入（`stdin`），即`xargs`命令会接收到标准输入，它再将其转为`command2`的字符串参数来运行。
@@ -26,7 +26,7 @@ $ cat list.txt | xargs rm
 上面示例中，`cat`命令将`list.txt`的内容输出到标准输出，但是被管道命令拦截，转为`xargs`的标准输入，后者再将标准输入转成`rm`命令的字符串参数，即实际执行的是下面的命令。
 
 ```bash
-$ rm a.txt b.txt c.txt
+rm a.txt b.txt c.txt
 ```
 
 通常来说，Linux 命令分成两种，一种接受标准输入（一般是键盘）作为参数，另一种接受命令行的字符串作为参数。这两种参数的性质有很大的不同：标准输入（stdin）是文本流（stream），理论上只要不终止，就是无限的；命令行参数则是一个有固定长度的文本数组。xargs 的 作用就是接受标准输入，将其转成命令行参数。
@@ -34,7 +34,7 @@ $ rm a.txt b.txt c.txt
 xargs 有点像 echo 命令的逆操作。echo 命令是将命令行参数转为标准输出。
 
 ```bash
-$ echo abc
+echo abc
 ```
 
 上面命令中，`abc`是命令行参数，`echo`命令将其转为标准输入。
@@ -77,7 +77,7 @@ $ xargs find -name
 默认情况下，`xargs`将换行符和空格作为分隔符，把标准输入分解成一个个命令行参数。
 
 ```bash
-$ echo "one two three" | xargs mkdir
+echo "one two three" | xargs mkdir
 ```
 
 上面代码中，`mkdir`会新建三个子目录，因为`xargs`将`one two three`分解成三个命令行参数，执行`mkdir one two three`。
@@ -118,7 +118,7 @@ rm one two three
 `find`命令有一个特别的参数`-print0`，指定输出的文件列表以`null`分隔。然后，`xargs`命令的`-0`参数表示用`null`当作分隔符。
 
 ```bash
-$ find /path -type f -print0 | xargs -0 rm
+find /path -type f -print0 | xargs -0 rm
 ```
 
 上面命令删除`/path`路径下的所有文件。由于分隔符是`null`，所以处理包含空格的文件名，也不会报错。
@@ -126,7 +126,7 @@ $ find /path -type f -print0 | xargs -0 rm
 还有一个原因，使得`xargs`特别适合`find`命令。有些命令（比如`rm`）一旦参数过多会报错“参数列表过长”，而无法执行，改用`xargs`就没有这个问题，因为它对每个参数执行一次命令。
 
 ```bash
-$ find . -name "*.txt" | xargs grep "abc"
+find . -name "*.txt" | xargs grep "abc"
 ```
 
 上面命令找出所有 TXT 文件以后，对每个文件搜索一次是否包含字符串`abc`。
@@ -183,7 +183,7 @@ find: paths must precede expression: `*.md'
 `-n`参数指定每次将多少项，作为命令行参数。
 
 ```bash
-$ xargs -n 1 find -name
+xargs -n 1 find -name
 ```
 
 上面命令指定将每一项（`-n 1`）标准输入作为命令行参数，分别执行一次命令（`find -name`）。
@@ -231,7 +231,7 @@ one two three
 `--max-procs`参数指定同时用多少个进程并行执行命令。`--max-procs 2`表示同时最多使用两个进程，`--max-procs 0`表示不限制进程数。
 
 ```bash
-$ docker ps -q | xargs -n 1 --max-procs 0 docker kill
+docker ps -q | xargs -n 1 --max-procs 0 docker kill
 ```
 
 上面命令表示，同时关闭尽可能多的 Docker 容器，这样运行速度会快很多。
