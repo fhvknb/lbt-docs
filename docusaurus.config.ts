@@ -66,7 +66,7 @@ const config: Config = {
       title: "LBT-DOCS",
       logo: {
         alt: "LBT Docs Logo",
-        src: "img/logo.svg",
+        src: "img/logo.png",
       },
       items: [
         {
