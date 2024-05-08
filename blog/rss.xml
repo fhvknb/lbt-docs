@@ -4,10 +4,84 @@
         <title>LBT Docs Blog</title>
         <link>https://docs.zazds.top/blog</link>
         <description>LBT Docs Blog</description>
-        <lastBuildDate>Thu, 25 Apr 2024 22:18:46 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 May 2024 15:54:04 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[服务端编程语言特性浅析]]></title>
+            <link>https://docs.zazds.top/blog/服务端编程语言特性浅析</link>
+            <guid>https://docs.zazds.top/blog/服务端编程语言特性浅析</guid>
+            <pubDate>Wed, 01 May 2024 15:54:04 GMT</pubDate>
+            <description><![CDATA[流行的编程语言众多，它们的发明出现也有着各自的渊源和使命，它们也有各自擅长的开发领域。我们在实际项目中使用的时候就需要我们根据真实的需求（性能要求，规模大小，并发要求）来进行合理的选择了。]]></description>
+            <content:encoded><![CDATA[<p>流行的编程语言众多，它们的发明出现也有着各自的渊源和使命，它们也有各自擅长的开发领域。我们在实际项目中使用的时候就需要我们根据真实的需求（性能要求，规模大小，并发要求）来进行合理的选择了。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="python">Python<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#python" class="hash-link" aria-label="Direct link to Python" title="Direct link to Python">​</a></h2>
+<p>编程语言流行排行榜位列甲位。</p>
+<p><strong>优点</strong></p>
+<ol>
+<li>流行度高，写法简单，上手容易</li>
+<li>有大量数据分析三方库，适合数据分析</li>
+<li>有多线程、事件循环机制可以满足日常后台服务性能要求</li>
+<li>语言生态环境好</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>多线程有瓶颈，不能百分百利用硬件资源</li>
+<li>弱类型语言</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cc">C/C++<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#cc" class="hash-link" aria-label="Direct link to C/C++" title="Direct link to C/C++">​</a></h2>
+<p><strong>优点</strong></p>
+<ol>
+<li>可以充分使用硬件资源，程序性能好</li>
+<li>对CPU密集型任务友好</li>
+<li>内存管理灵活，自主管理</li>
+<li>语言生态环境好</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>入门有一定门槛，对编程能力有一点要求</li>
+<li>内存管理灵活，自主管理</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="golang">Golang<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#golang" class="hash-link" aria-label="Direct link to Golang" title="Direct link to Golang">​</a></h2>
+<p><strong>优点</strong></p>
+<ol>
+<li>较好的利用硬件资源，程序性能好</li>
+<li>对CPU密集型任务友好</li>
+<li>内存自动回收</li>
+<li>高并发应用友好</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>其中的继承关系有点不太一样，需要重新理解</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nodejs">NodeJS<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#nodejs" class="hash-link" aria-label="Direct link to NodeJS" title="Direct link to NodeJS">​</a></h2>
+<p><strong>优点</strong></p>
+<ol>
+<li>基于事件循环机制，I/O密集型任务友好</li>
+<li>对前端工程师友好</li>
+<li>使用范围广泛</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>硬件资源利用率低</li>
+<li>不适合CPU密集型的高并发任务</li>
+</ol>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p><strong>I/O密集型任务</strong></p><ul>
+<li>Web服务器应用</li>
+<li>实时聊天应用</li>
+<li>协同编辑应用</li>
+</ul></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p><strong>CPU密集型任务</strong></p><ul>
+<li>数学计算和建模</li>
+<li>图像和视频处理</li>
+<li>加密和解密</li>
+<li>压缩和解压缩</li>
+<li>数据分析和科学计算</li>
+<li>3D 渲染和游戏引擎</li>
+<li>机器学习和深度学习</li>
+</ul></div></div>]]></content:encoded>
+            <category>language</category>
+        </item>
         <item>
             <title><![CDATA[部署snell-server]]></title>
             <link>https://docs.zazds.top/blog/snell-deploy</link>
