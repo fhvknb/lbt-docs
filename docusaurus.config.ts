@@ -57,13 +57,12 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
-    algolia: {
-      appId: "H0ROWH8W85",
-      apiKey: "17f9ee2ce29ec0620afcc161ff3d00a8",
-      indexName: "zazds",
-      contextualSearch: true,
-      
-    },
+    // algolia: {
+    //   appId: "H0ROWH8W85",
+    //   apiKey: "17f9ee2ce29ec0620afcc161ff3d00a8",
+    //   indexName: "zazds",
+    //   contextualSearch: true,
+    // },
     navbar: {
       title: "LBT-DOCS",
       logo: {
