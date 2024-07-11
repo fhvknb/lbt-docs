@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[4394],{1347:s=>{s.exports=JSON.parse('{"permalink":"/lbt-docs/blog/tags/vps","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

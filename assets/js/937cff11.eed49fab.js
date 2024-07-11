@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[5707],{5865:s=>{s.exports=JSON.parse('{"label":"memory","permalink":"/lbt-docs/blog/tags/memory","allTagsPath":"/lbt-docs/blog/tags","count":1,"unlisted":false}')}}]);

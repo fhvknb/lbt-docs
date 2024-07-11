@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[5557],{3390:l=>{l.exports=JSON.parse('{"label":"linux","permalink":"/lbt-docs/blog/tags/linux","allTagsPath":"/lbt-docs/blog/tags","count":1,"unlisted":false}')}}]);
