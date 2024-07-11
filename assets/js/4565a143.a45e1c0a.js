@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[4792],{3490:s=>{s.exports=JSON.parse('{"label":"\u6c11\u95f4\u4e60\u4fd7","permalink":"/lbt-docs/blog/tags/\u6c11\u95f4\u4e60\u4fd7","allTagsPath":"/lbt-docs/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[6875],{992:l=>{l.exports=JSON.parse('{"label":"language","permalink":"/lbt-docs/blog/tags/language","allTagsPath":"/lbt-docs/blog/tags","count":1,"unlisted":false}')}}]);

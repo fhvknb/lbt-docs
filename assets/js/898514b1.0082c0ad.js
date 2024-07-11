@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[9067],{9187:s=>{s.exports=JSON.parse('{"tags":[{"label":"http","permalink":"/docs/tags/http","count":1},{"label":"nginx","permalink":"/docs/tags/nginx","count":1}]}')}}]);

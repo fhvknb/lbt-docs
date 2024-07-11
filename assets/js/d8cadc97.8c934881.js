@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[8300],{3643:s=>{s.exports=JSON.parse('{"permalink":"/lbt-docs/blog/tags/\u6587\u5b57","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
