@@ -22,6 +22,6 @@ tag: [js, frontend]
   - Program/Module
 
 :::note
-JavaScript语言的有效输入字符为所有Unicode编码字符
+JavaScript语言的有效输入字符`所有Unicode编码`字符
 
 :::
