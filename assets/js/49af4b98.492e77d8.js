@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[2834],{2681:a=>{a.exports=JSON.parse('{"label":"language","permalink":"/blog/tags/language","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

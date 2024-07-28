@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[1936],{605:s=>{s.exports=JSON.parse('{"label":"memory","permalink":"/blog/tags/memory","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
