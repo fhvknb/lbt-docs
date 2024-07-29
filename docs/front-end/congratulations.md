@@ -11,6 +11,7 @@ Docusaurus has **much more to offer**!
 ## What's next?
 
 - Read the [official documentation](https://docusaurus.io/)
+- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
 
 
 ## Interviews
