@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: javascript编程语言
+title: javascript语言基础
 tag: [js, frontend]
 ---
 # JavaScript编程语言
