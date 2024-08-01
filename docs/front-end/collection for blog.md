@@ -1,18 +1,9 @@
 ---
+title: Collection for blog
 sidebar_position: 3
 ---
 
-# Congratulations!
-
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
-
-Docusaurus has **much more to offer**!
-
-## What's next?
-
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-
+# Useful Blog
 
 ## Interviews
 
