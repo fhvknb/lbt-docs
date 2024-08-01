@@ -242,6 +242,7 @@ function findTwoNum(arr, target) {
             start++
         }
     }
+    return []
 }
 
 // const arr = [1, 2, 4, 7, 11, 15];
