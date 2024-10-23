@@ -15,7 +15,7 @@
             <pubDate>Wed, 01 May 2024 15:54:04 GMT</pubDate>
             <description><![CDATA[流行的编程语言众多，它们的发明出现也有着各自的渊源和使命，它们也有各自擅长的开发领域。我们在实际项目中使用的时候就需要我们根据真实的需求（性能要求，规模大小，并发要求）来进行合理的选择了。]]></description>
             <content:encoded><![CDATA[<p>流行的编程语言众多，它们的发明出现也有着各自的渊源和使命，它们也有各自擅长的开发领域。我们在实际项目中使用的时候就需要我们根据真实的需求（性能要求，规模大小，并发要求）来进行合理的选择了。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="python">Python<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#python" class="hash-link" aria-label="Direct link to Python" title="Direct link to Python">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="python">Python<a class="hash-link" aria-label="Direct link to Python" title="Direct link to Python" href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#python">​</a></h2>
 <p>编程语言流行排行榜位列甲位。</p>
 <p><strong>优点</strong></p>
 <ol>
@@ -29,7 +29,7 @@
 <li>多线程有瓶颈，不能百分百利用硬件资源</li>
 <li>弱类型语言</li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cc">C/C++<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#cc" class="hash-link" aria-label="Direct link to C/C++" title="Direct link to C/C++">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cc">C/C++<a class="hash-link" aria-label="Direct link to C/C++" title="Direct link to C/C++" href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#cc">​</a></h2>
 <p><strong>优点</strong></p>
 <ol>
 <li>可以充分使用硬件资源，程序性能好</li>
@@ -42,7 +42,7 @@
 <li>入门有一定门槛，对编程能力有一点要求</li>
 <li>内存管理灵活，自主管理</li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="golang">Golang<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#golang" class="hash-link" aria-label="Direct link to Golang" title="Direct link to Golang">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="golang">Golang<a class="hash-link" aria-label="Direct link to Golang" title="Direct link to Golang" href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#golang">​</a></h2>
 <p><strong>优点</strong></p>
 <ol>
 <li>较好的利用硬件资源，程序性能好</li>
@@ -54,7 +54,7 @@
 <ol>
 <li>其中的继承关系有点不太一样，需要重新理解</li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nodejs">NodeJS<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#nodejs" class="hash-link" aria-label="Direct link to NodeJS" title="Direct link to NodeJS">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nodejs">NodeJS<a class="hash-link" aria-label="Direct link to NodeJS" title="Direct link to NodeJS" href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#nodejs">​</a></h2>
 <p><strong>优点</strong></p>
 <ol>
 <li>基于事件循环机制，I/O密集型任务友好</li>
@@ -89,7 +89,7 @@
             <pubDate>Thu, 25 Apr 2024 22:18:46 GMT</pubDate>
             <description><![CDATA[*]]></description>
             <content:encoded><![CDATA[<hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="snell简介">Snell简介<a href="https://docs.zazds.top/blog/snell-deploy#snell%E7%AE%80%E4%BB%8B" class="hash-link" aria-label="Direct link to Snell简介" title="Direct link to Snell简介">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="snell简介">Snell简介<a class="hash-link" aria-label="Direct link to Snell简介" title="Direct link to Snell简介" href="https://docs.zazds.top/blog/snell-deploy#snell%E7%AE%80%E4%BB%8B">​</a></h2>
 <p>Snell 是 Surge 团队开发，仅适用于 Surge 用户的精简加密代理协议，以下是一些亮点：</p>
 <ul>
 <li>极致的性能；</li>
@@ -98,7 +98,7 @@
 <li>一个帮助入门的向导；</li>
 <li>如果遇到远程错误，代理服务器将向客户端报告。客户端可以针对不同的场景选择对策；</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="版本介绍">版本介绍<a href="https://docs.zazds.top/blog/snell-deploy#%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D" class="hash-link" aria-label="Direct link to 版本介绍" title="Direct link to 版本介绍">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="版本介绍">版本介绍<a class="hash-link" aria-label="Direct link to 版本介绍" title="Direct link to 版本介绍" href="https://docs.zazds.top/blog/snell-deploy#%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D">​</a></h2>
 <p><em><strong>Snell v2</strong></em></p>
 <p>提供了完整的 TCP 全状态机支持的 multiplex 支持，以提高性能和减少延迟。</p>
 <p><em><strong>Snell v3</strong></em></p>
@@ -107,11 +107,11 @@
 <p><em><strong>Snell v4</strong></em></p>
 <p>新增客户端参数<code>reuse=true</code>，可选开启 v2 版本的连接复用机制。连接复用机制可以避免后续请求的连接建立开销，但是在出现网络异常或其他问题时，可能会需要更长的时间才能检查到错误并重建连接，优劣参半，建议对于延迟较高的服务器开启。该功能不需要在服务端额外使用参数开启。</p>
 <p>取消支持 TLS 流量混淆 (<code>obfs=tls</code>) 功能；服务器端程序已不能够与客户端自动协商密码和版本，客户端需手动配置<code>version=4</code>；</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="macos">MacOS<a href="https://docs.zazds.top/blog/snell-deploy#macos" class="hash-link" aria-label="Direct link to MacOS" title="Direct link to MacOS">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="macos">MacOS<a class="hash-link" aria-label="Direct link to MacOS" title="Direct link to MacOS" href="https://docs.zazds.top/blog/snell-deploy#macos">​</a></h2>
 <p>如果你正在使用 Surge Mac 并想以此部署 Snell Server 是非常简单的，只要在 Surge 的配置文件中加入以下字段：</p>
 <div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">[Snell Server]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">interface = 0.0.0.0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">port = 6160</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">psk = RANDOM_KEY_HERE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">obfs = off</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">interface：监听地址</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">port：端口</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">psk：密钥</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">obfs：off 为关闭混淆，或使用http流量混淆</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="linux">Linux<a href="https://docs.zazds.top/blog/snell-deploy#linux" class="hash-link" aria-label="Direct link to Linux" title="Direct link to Linux">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="linux">Linux<a class="hash-link" aria-label="Direct link to Linux" title="Direct link to Linux" href="https://docs.zazds.top/blog/snell-deploy#linux">​</a></h2>
 <p>在 <a href="https://manual.nssurge.com/others/snell.html" target="_blank" rel="noopener noreferrer">Surge 官网</a>根据你的服务器获取独立服务端二进制文件.</p>
 <p>如果想要以往的历史版本，可以前往<a href="https://github.com/fhvknb/Snell-oldbak" target="_blank" rel="noopener noreferrer">历史备份</a>进行获取。</p>
 <p>下面以<code>linux-amd64</code>系统为示例</p>
@@ -319,7 +319,7 @@
 <p>我们从离开校门，进入社会以后就很少再拿起笔写字了，久而久之我们在慢慢的在忘记我们每天再说，每天在输入的汉字。时间一长，又突然拿起笔点菜，额！想写的字不会写了。</p>
 <p>五笔输入法可以很好的帮助我们记忆汉字是如何书写的。五笔，顾名思义，就是由横竖撇捺折五个部首来拼组汉字，所以简称五笔输入法。五笔输入法是通过把一整个汉字拆分成若干个小偏旁部首，在把这些小偏旁部首安一定顺序敲打出来后，这个汉字就被输入法显示出来了。由于五笔小偏旁部首具有一些特殊性，任何一个汉字，最多只需要敲四次就能打出这个字来。是不是很感觉很神奇。</p>
 <p>如果你是一个时常忘记汉字如何书写的人，你是一个敢于挑战的人，你也想看看这门古老艺术的神奇之处。可以按照我之前的学习路径抄个小作业，祝君亦学亦乐。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="学习路径">学习路径<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84" class="hash-link" aria-label="Direct link to 学习路径" title="Direct link to 学习路径">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="学习路径">学习路径<a class="hash-link" aria-label="Direct link to 学习路径" title="Direct link to 学习路径" href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84">​</a></h2>
 <ol>
 <li><em><strong>背五笔字根，滚瓜烂熟</strong></em></li>
 <li><em><strong>熟悉键盘上的五笔字根，刻意练习，肌肉记忆</strong></em></li>
@@ -330,7 +330,7 @@
 <li><em><strong>学习四级简码</strong></em></li>
 <li><em><strong>熟能生巧，写字超快</strong></em></li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔字根口诀">五笔字根口诀<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E5%AD%97%E6%A0%B9%E5%8F%A3%E8%AF%80" class="hash-link" aria-label="Direct link to 五笔字根口诀" title="Direct link to 五笔字根口诀">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔字根口诀">五笔字根口诀<a class="hash-link" aria-label="Direct link to 五笔字根口诀" title="Direct link to 五笔字根口诀" href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E5%AD%97%E6%A0%B9%E5%8F%A3%E8%AF%80">​</a></h2>
 <p>王旁青头<ruby>戋<rt>jiān</rt></ruby>五一</p>
 <p>土士二干十寸雨</p>
 <p>大犬三羊古石厂，羊有直斜套去大</p>
@@ -360,9 +360,9 @@
 <p>女刀九<ruby>臼<rt>jiù</rt></ruby>山朝西</p>
 <p>又巴马，丢矢矣</p>
 <p>慈母无心弓和匕，幼无力</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔字根键位">五笔字根键位<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E5%AD%97%E6%A0%B9%E9%94%AE%E4%BD%8D" class="hash-link" aria-label="Direct link to 五笔字根键位" title="Direct link to 五笔字根键位">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔字根键位">五笔字根键位<a class="hash-link" aria-label="Direct link to 五笔字根键位" title="Direct link to 五笔字根键位" href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E5%AD%97%E6%A0%B9%E9%94%AE%E4%BD%8D">​</a></h2>
 <img src="https://docs.zazds.top/img/wubizigen.png" alt="五笔字根图">
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔简单拆字规则">五笔简单拆字规则<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E7%AE%80%E5%8D%95%E6%8B%86%E5%AD%97%E8%A7%84%E5%88%99" class="hash-link" aria-label="Direct link to 五笔简单拆字规则" title="Direct link to 五笔简单拆字规则">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔简单拆字规则">五笔简单拆字规则<a class="hash-link" aria-label="Direct link to 五笔简单拆字规则" title="Direct link to 五笔简单拆字规则" href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E7%AE%80%E5%8D%95%E6%8B%86%E5%AD%97%E8%A7%84%E5%88%99">​</a></h2>
 <p><strong>一级简码</strong>：击一个键即可</p>
 <p><strong>二级简码</strong>：击其前两个字根加空格键</p>
 <p><strong>三级简码</strong>：击一个字的前三个字根加空格</p>
@@ -388,22 +388,22 @@
             <description><![CDATA[*]]></description>
             <content:encoded><![CDATA[<hr>
 <p>天下第一奇书《金瓶梅》序词，读后感受非凡，遂记录之，与君共品。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="洒">洒<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E6%B4%92" class="hash-link" aria-label="Direct link to 洒" title="Direct link to 洒">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="洒">洒<a class="hash-link" aria-label="Direct link to 洒" title="Direct link to 洒" href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E6%B4%92">​</a></h2>
 <p>酒损精神破丧家，语言无状闹喧哗。</p>
 <p>疏亲慢友多由你，背义忘恩亦是他。</p>
 <p>切须戒，饮流霞。若能依此实无差。</p>
 <p>失却万事皆因此，今后逢宾只待茶。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="色">色<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E8%89%B2" class="hash-link" aria-label="Direct link to 色" title="Direct link to 色">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="色">色<a class="hash-link" aria-label="Direct link to 色" title="Direct link to 色" href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E8%89%B2">​</a></h2>
 <p>休爱绿鬓美朱颜，少贪红粉翠花钿。</p>
 <p>损身害命多娇态，倾国倾城色更鲜。</p>
 <p>莫恋此，养丹田。人能寡欲寿长年。</p>
 <p>从今罢却闲风月，纸帐梅花独自眠。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="财">财<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E8%B4%A2" class="hash-link" aria-label="Direct link to 财" title="Direct link to 财">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="财">财<a class="hash-link" aria-label="Direct link to 财" title="Direct link to 财" href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E8%B4%A2">​</a></h2>
 <p>钱帛金珠笼内收，若非公道少贪求。</p>
 <p>亲朋道义因财失，父子怀情为利休。</p>
 <p>急缩手，且抽头。免使身心昼夜愁。</p>
 <p>儿孙自有儿孙福，莫与儿孙作远忧。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="气">气<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E6%B0%94" class="hash-link" aria-label="Direct link to 气" title="Direct link to 气">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="气">气<a class="hash-link" aria-label="Direct link to 气" title="Direct link to 气" href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E6%B0%94">​</a></h2>
 <p>莫使强梁逞技能，挥拳捰袖弄精神。</p>
 <p>一时怒发无明穴，到后忧煎祸及身。</p>
 <p>莫太过，免灾迍，劝君凡事放宽情。</p>
@@ -423,7 +423,7 @@
 <p>时光匆匆,遥想当年的各位成功学专家名声是如雷贯耳,他们的演讲是多么的激情澎湃,多少人趋之若鹜的追求那人人都能成功的发家秘籍,可回过头来一望,当年那些上过所谓成功学课程的人们,成者几数也,民者几数也.</p>
 <p>前不久看完一本书，看完过后真的如梦初醒，恍然大悟，我更加相信那些我们所谓的成功人士他们之所以能成功，最主要的原因在于他们自身的条件，他们当时所处的社会时代环境，个人气运，个人能力。种什么因，得什么果，一切因果循环，道法自然，如来。再也不会相信有些人说的“别人的成功可以复制”类似的的屁话了。书名《天幕红尘》，有兴趣的朋友可以看一看。</p>
 <p>在如今你卷他，他卷你，你卷我，我卷你，人卷人的世俗风气之下，咱们偶尔也会疲惫，懒散，无趣吧，这时候还是需要一些那看似无味的鸡汤呢。如果你也和我一样感觉疲惫，无精打采，自甘堕落，想要躺平的时候，一起来看看——安东尼•罗宾大师的经典语录吧</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="人生垃圾想法">人生垃圾想法<a href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E4%BA%BA%E7%94%9F%E5%9E%83%E5%9C%BE%E6%83%B3%E6%B3%95" class="hash-link" aria-label="Direct link to 人生垃圾想法" title="Direct link to 人生垃圾想法">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="人生垃圾想法">人生垃圾想法<a class="hash-link" aria-label="Direct link to 人生垃圾想法" title="Direct link to 人生垃圾想法" href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E4%BA%BA%E7%94%9F%E5%9E%83%E5%9C%BE%E6%83%B3%E6%B3%95">​</a></h2>
 <ul>
 <li>
 <p>没必要做</p>
@@ -444,7 +444,7 @@
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>懒散、懈怠是心灵的毒药，也是失败的罪魁祸首。竞争的“惯性定律”，开好头与积极心态的“引力定律”。</p><p>上帝是公平的，至少在成功的机会方面。只不过。积极主动者抓住了它们，消极怠惰者则与它们擦肩而过。</p></div></div>
 </li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="快乐工作的方法">快乐工作的方法<a href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E5%BF%AB%E4%B9%90%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%96%B9%E6%B3%95" class="hash-link" aria-label="Direct link to 快乐工作的方法" title="Direct link to 快乐工作的方法">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="快乐工作的方法">快乐工作的方法<a class="hash-link" aria-label="Direct link to 快乐工作的方法" title="Direct link to 快乐工作的方法" href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E5%BF%AB%E4%B9%90%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%96%B9%E6%B3%95">​</a></h2>
 <ol>
 <li>把工作当成一种享受</li>
 <li>把工作当成一种体验</li>
@@ -457,7 +457,7 @@
 <li>劳逸结合，张驰有度。最佳的工作状态是“忙里偷闲，闲中吃紧”</li>
 <li>把你对工作的感受写出来或说出来</li>
 </ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="每日一滴汤">每日一滴汤<a href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E6%AF%8F%E6%97%A5%E4%B8%80%E6%BB%B4%E6%B1%A4" class="hash-link" aria-label="Direct link to 每日一滴汤" title="Direct link to 每日一滴汤">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="每日一滴汤">每日一滴汤<a class="hash-link" aria-label="Direct link to 每日一滴汤" title="Direct link to 每日一滴汤" href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E6%AF%8F%E6%97%A5%E4%B8%80%E6%BB%B4%E6%B1%A4">​</a></h2>
 <p><strong>当你能飞的时候就不要放弃飞，当你能梦的时候就不要放弃梦</strong></p>
 <p><strong>看世界要看到真实的世界，千万不要向自己撒谎。你对自己都撒谎，那么你不可能改变。为什么很多人要夸大事实，因为他们害怕失败。</strong></p>
 <p><strong>没有天生的信心，只有不断培养的信心，在真实的生命里，每桩伟业都由信心开始，并由信心跨出第一步</strong></p>
@@ -500,16 +500,16 @@
 <p>2018年10月28日10时08分，重庆市万州区一大巴车在万州长江二桥桥面与小轿车发生碰撞后，坠入江中。</p>
 </blockquote>
 <p>还清晰的记得当日我得知此恶号当时那震惊、悲叹、哀伤的神态。那日和往常一样趁着周末睡了个懒觉，然后懒懒散散的洗漱完，一转身，一抬手，一睁眼———我看到了手机微信上有位家人给我发来的三段事故视频。“天呐，不可能吧，为什么会这样呢”,突然脑海中浮现出了这些念头，转眼间心情变的无比的失落和伤感。时至今日，救援队伍们经过5天5夜辛苦的搜救打捞。终于在今天，该起事故的原因终于出现在了我们眼前，法律判断该起事故的造成者（公交司机和女乘客）都触犯了刑法，都已构成犯罪。从事发之日到今天为上，那些网上流传的流言蜚语终于可以消散，此时此刻是不是也是我们自我反省的时刻呢？</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟一--关于网络暴力">感悟一  关于“网络暴力”<a href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%B8%80--%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B" class="hash-link" aria-label="Direct link to 感悟一  关于“网络暴力”" title="Direct link to 感悟一  关于“网络暴力”">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟一--关于网络暴力">感悟一  关于“网络暴力”<a class="hash-link" aria-label="Direct link to 感悟一  关于“网络暴力”" title="Direct link to 感悟一  关于“网络暴力”" href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%B8%80--%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B">​</a></h3>
 <p>我想如果知道这件事故的朋友们来讲一定听到过这样————“都是因为一位女司机，她不遵守交通规则逆向行驶，导致所致严重事故”，一个在事发后被广泛传播的事故起因。不知道看文章的朋友你之前是不是也相信这个理由然后激起你心中的伟大的正义力量愤怒的谴责这位九死一生的女司机呢？我记得当时我听到这个原因的时候反应很平常，因为我心里想着事故原因一定只能在“黑匣子”里才能被发现。不能怪网络世界信息传播的太快，不能怪我们内心深处都有一颗明亮的善良之心，不能怪我们对那些做出令人可恶行为的愤怒谴责。网络上各种辱骂、各种诅咒、各种言语上的人身攻击，直到真相大白，这些恶毒的流言蜚语才慢慢淡出人们的视线。在此，让我们冷静下来，让我们换位思考一下，假如自己是那位九死一生的女司机，你会有怎样的感受呢。我能想象的到的是她一定需要一个肩膀，一个可以依靠哭泣的肩膀，哭泣自己为什么这么倒霉；哭泣自己九死一生与死神擦肩而过；哭泣与自己相撞而坠入江中的公交车上的生命。这个时候的好可能是最需要家人、朋友安慰的时候吧。然而事实是这个时候众多的陌生网友们一个个手拿着正义之剑去审判一位被冤枉的受害者，其势何其像是严刑逼供般，此时此刻我们会有什么感觉呢？或许会突然感觉到背心一凉；感觉这个世界很冷；感觉自己险象环生后却又遭遇了更大的劫难。如是是我呢，因为看到过很多类似案例，我或许会这样劝自己——“不要在意网络上的流言蜚语，感恩自己的幸运，为遇难者祈福，如是而矣”。你呢？</p>
 <p>“安医生自杀事件”大家有所耳闻吗？一位男孩在游泳池侵犯了安医生，安医生丈夫出言教育了这男孩，结果这男孩的父母不论是非，有意的剪切出自己孩子被打的视频录像发上网络，恶意的到安医生工作单位打骂安医生，有意的让安医生失业。随着男孩被打的视频在网络上传播的同时，各种正义的谴责之声也都不胫而走，各种脏乱的言语传入了安医生的耳中，对于一位从事医疗工作，时常奉献自己救助别人真正的善良好人却被一个真正恶人栽赃陷害，颠倒事件的黑白，在光明的善良正义之剑下使的自己不得不以死来表明自己的清白，自己的无辜善良。</p>
 <p>今天看到到这样一则新闻，说是有一些网友在名星谢娜、黄日华的微博下面留言指责他们没有为金庸先生的离开而发条微博表达下自己不舍和感恩。我看到这则新闻不自觉的就想笑，笑他们夜郎自大，笑他们可笑至极。还记得有看春晚里的小品《郝建与老太太》吗？有一人看到老太太摔倒在地光拍张照片发微博他就真有爱心了吗？人们的情绪表达方式必需要以微博文字的形式？——可笑至极。人难道可以狂妄自大到唯我独大的地步吗？自己的判断一定是正确的？自己有足够的能力去指责别人的对与错？——狂妄至极。</p>
 <p>网络暴力是一种危害严重、影响恶劣的暴力形式，它是一类在网络上发表具有伤害性、侮辱性和煽动性的言语、图片、视频的行为现象，人们习惯称之为“网络暴力”。</p>
 <p>曾参杀人、人言可畏就不都是在说恶毒的流言蜚语的可怕之处吗？古时候有苛政猛于虎也，而如今人言又何尝比猛虎弱多少呢？我们通过网络很容易获取社会上发生的各种突发事情，而往往发生的事情中总会有正义道德的一方，这个时候众多网友们纷纷展示出了自己善良正义可贵的一面，而且人数众多。这让我心里很高兴，因为正义善良的人们还是越来越多了，我也希望我们能一直坚守这份正义和善良。可是我在这里想提醒你下你们，我们没有看穿过去和看透未来的能力，如果不是当事人，没有谁知道事情发生的来龙去脉，以及事情的真相。所以，请我们用善良正义的心静静的等待下去吧，等待事情的经过，等待事故的真想，汲取教训，完善自己，用自己善良正义之心在今后的生活中阻止、预防类似之事的发生。我们有能力辨别正义与邪恶，有能力辨别感恩与忘恩，这是人最根本的能力，可是我们真得有必要要让所有人都按照你所认为的感恩方式来表达感恩？你所认为的指责方式来表达与邪恶斗争？有很多东西都是需要实际行动来表达的，而不是通过一个“微博”来表达出来。让我们变得更理智、更理性一点吧，远离“网络暴力”,消灭“网络暴力”，与君共勉。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟二-关于人情冷漠">感悟二 关于“人情冷漠”<a href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%BA%8C-%E5%85%B3%E4%BA%8E%E4%BA%BA%E6%83%85%E5%86%B7%E6%BC%A0" class="hash-link" aria-label="Direct link to 感悟二 关于“人情冷漠”" title="Direct link to 感悟二 关于“人情冷漠”">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟二-关于人情冷漠">感悟二 关于“人情冷漠”<a class="hash-link" aria-label="Direct link to 感悟二 关于“人情冷漠”" title="Direct link to 感悟二 关于“人情冷漠”" href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%BA%8C-%E5%85%B3%E4%BA%8E%E4%BA%BA%E6%83%85%E5%86%B7%E6%BC%A0">​</a></h3>
 <p>从女乘客和公交车司机互相争吵到动手互斗时间持续不算短，足足有5分钟之多，车上的其它乘客为什么没有人出来阻止一下？记得在我大学刚毕业那年，我在一家在线网校做销售实习，有一次跟一位同事到一所学校门口销售课程的途中遇到了两位在大街上争吵的人，当时我还很清晰的记得我脑中突然出现了想走上去劝说一下，问了傍边的人才知道他俩是一家人，因为什么事情在争吵，慢慢的他们争吵声也小了我就打消了劝说的念头。我记得那位同事还夸了我一名“助人为乐”。我在想如果我在那辆公交车上，我会阻止得了这次事故的发生吗？如果是我，我或许对他们只是用口头争吵时无动于衷，因为我认为孰对孰错很明显，女乘客会因为自己理亏而不了了。如果女乘客无理之极，把自己的情绪胡乱发泄动手打司机影响司机专心驾驶，在已经影响到整车乘客生命的时刻我应该有百分之八十的几率会挺身号召车内乘客一起制止无理的女乘客吧。车内的十余人为什么没有起向阻止呢？是因为认为自己力量太小阻止不了？是因为没意识到事情的严重性？是因为事不关己高高挂起的自私之心吗？是因为人情变得冷漠了吗？</p>
 <p>想起小学上的课本《思想品德与教育》中的一篇故事，讲的是一位警察与一位歹徒搏斗，警察负伤了还是紧紧的 抓住歹徒不让歹徒离去。这则故事从小就告诉我们要勇敢的与不法分子斗争啊。或许是由于现在人们变得更加聪明了，太知道如保“明哲保身”了，在危机时刻没有人能挺身而出，让自己成了别人冲动情绪下的附属品。我们一起警醒吧，让我们多一点正义的行为，多一点关爱的行为，多一点见义勇为的行为。这些行为可能会帮人渡过劫难，这些行为可能会帮助别人重获新生；这些行为可能会造福你的子孙后辈。让我们用正义善良的行动让自己身边的事物变更友善和睦，善良美好吧，共勉。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟三-关于道德和读书">感悟三 关于“道德和读书”<a href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%B8%89-%E5%85%B3%E4%BA%8E%E9%81%93%E5%BE%B7%E5%92%8C%E8%AF%BB%E4%B9%A6" class="hash-link" aria-label="Direct link to 感悟三 关于“道德和读书”" title="Direct link to 感悟三 关于“道德和读书”">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟三-关于道德和读书">感悟三 关于“道德和读书”<a class="hash-link" aria-label="Direct link to 感悟三 关于“道德和读书”" title="Direct link to 感悟三 关于“道德和读书”" href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%EF%BF%BD%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%B8%89-%E5%85%B3%E4%BA%8E%E9%81%93%E5%BE%B7%E5%92%8C%E8%AF%BB%E4%B9%A6">​</a></h3>
 <p>对于这个女乘客大家有什么看法呢？我想有很多人会说“这世上真是什么人都有啊！”，是啊，事实确实如此，我们社会中确实有一小部分和这位女乘客一样，毫无是非之分之意识，毫无基本道德之素质，有的只是冲动霸道、无理取闹之行为。她为什么会做出如此冲动霸道的行为来呢？是因为她善恶不分？我相信只要不是专门做些伤天害理之事的人都知道是什么是善什么是恶。那又是什么原因呢？我想大概是因为“金钱”吧，一不小心又说到了这个敏感的词语，我为什么这么说呢，因为我认为一个人所拥有的财富和他所拥有的知识境界不相当的时候，金钱会使人产生一种精神上一种“虚无的上位者的姿态”———它会压制人们内心对善恶的判断，压制社会道德的底线，刺激人们做出一些以强欺弱的行为。</p>
 <p>因为自己的过失去迁怒无辜的司机，这已经很少有人能做出这样的事情呢吧，而且她居然还先动手打正在开车的司机，这个行为充分的看出了这女乘客的之霸道，那么她的霸道从何而来？从她那自我感觉出来的上位者状态而来，或许她看不起公交车司机，或许他认为她就可以随便的打位于她之下的任何人，最后她为自己的愚昧行为付出了代价，可悲的是她还伤害了一群无辜的生命，就是这种虚假的上位者姿态直接导致了事故的发生。</p>
 <p>“虚无的上位者姿态”会刺激人做出一些与社会道德相违背的事情，所以它应该越来越少，更应该消失。想要消除“虚无的上位者姿态”那就要获得与相应数量金钱相匹配的知识境界，然而正是由于这些“虚无的上位者”的狂妄自大，他们自称自己没读什么书却成就了现在的他们，所有社会上就流传了一名“读书无用论”。 真的是这样吗？读书真的“无用”？难道我们人的一生去追求那“虚无的上位者状态”就有意义了？</p>
@@ -535,31 +535,31 @@
             <pubDate>Fri, 26 Oct 2018 21:39:55 GMT</pubDate>
             <description><![CDATA[*]]></description>
             <content:encoded><![CDATA[<hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1适应孤独努力成长">1.适应孤独，努力成长<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#1%E9%80%82%E5%BA%94%E5%AD%A4%E7%8B%AC%E5%8A%AA%E5%8A%9B%E6%88%90%E9%95%BF" class="hash-link" aria-label="Direct link to 1.适应孤独，努力成长" title="Direct link to 1.适应孤独，努力成长">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1适应孤独努力成长">1.适应孤独，努力成长<a class="hash-link" aria-label="Direct link to 1.适应孤独，努力成长" title="Direct link to 1.适应孤独，努力成长" href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#1%E9%80%82%E5%BA%94%E5%AD%A4%E7%8B%AC%E5%8A%AA%E5%8A%9B%E6%88%90%E9%95%BF">​</a></h3>
 <p>《夏目友人帐》中说，我必须承认，生命中的大部分时光是属于孤独的，努力成长是在孤独中可以做的最好的事情。</p>
 <p>人生这趟旅途中，注定有很多时刻只能一个人经历，很多路只能一个人走，孤独是人生常态，你总要学着消化掉那些难捱的情绪，让自己变得独立坚强。</p>
 <p>当你尝试着把孤独的情绪转化为独处的时光，在这期间不断积蓄向上的力量，让自己变得充实，变得优于过去的自己，你会发现，没有什么事情比这更酷了。</p>
 <p>做最好的自己，才会遇见最好的别人，才会遇见更好的生活。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2拒绝拖延保持自律">2.拒绝拖延，保持自律<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#2%E6%8B%92%E7%BB%9D%E6%8B%96%E5%BB%B6%E4%BF%9D%E6%8C%81%E8%87%AA%E5%BE%8B" class="hash-link" aria-label="Direct link to 2.拒绝拖延，保持自律" title="Direct link to 2.拒绝拖延，保持自律">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2拒绝拖延保持自律">2.拒绝拖延，保持自律<a class="hash-link" aria-label="Direct link to 2.拒绝拖延，保持自律" title="Direct link to 2.拒绝拖延，保持自律" href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#2%E6%8B%92%E7%BB%9D%E6%8B%96%E5%BB%B6%E4%BF%9D%E6%8C%81%E8%87%AA%E5%BE%8B">​</a></h3>
 <p>比起玩手机、打游戏、刷微博这些在不知不觉间消耗你时间的事情，坚持一些能够让你变得更自律的习惯，会让生活变得更美好。</p>
 <p>改掉三分钟热度只停留在空想阶段的习惯，比如跑步、比如冥想、比如学习一种乐器，找到自己的兴趣，将它变成自己的特长。</p>
 <p>不要等事情拖到不得不做的时候再去做，学着规划自己的时间，慢慢地开始整理自己的生活，掌控自己的日常，让一切变得有条不紊。</p>
 <p>就像康德所言：“自律即自由。”有勇气挑出自己的舒适区，挑战自己的懒惰并且尽可能战胜它的人，才是真正的人生赢家。</p>
 <p>你有多自律，就会有多优秀。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3不再晚睡按时吃饭">3.不再晚睡，按时吃饭<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#3%E4%B8%8D%E5%86%8D%E6%99%9A%E7%9D%A1%E6%8C%89%E6%97%B6%E5%90%83%E9%A5%AD" class="hash-link" aria-label="Direct link to 3.不再晚睡，按时吃饭" title="Direct link to 3.不再晚睡，按时吃饭">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3不再晚睡按时吃饭">3.不再晚睡，按时吃饭<a class="hash-link" aria-label="Direct link to 3.不再晚睡，按时吃饭" title="Direct link to 3.不再晚睡，按时吃饭" href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#3%E4%B8%8D%E5%86%8D%E6%99%9A%E7%9D%A1%E6%8C%89%E6%97%B6%E5%90%83%E9%A5%AD">​</a></h3>
 <p>夜晚适合休息，适合放空，适合听听舒缓的歌曲泡个温柔的澡，适合敷张面膜看会儿书，适合很多安逸的事情，唯独不适合想念，不适合沉沦。</p>
 <p>改掉吃油腻的宵夜的习惯，压下想去联系那个不该联系的人的躁动，把时间留给自己，别再晚睡，也别再打扰谁。</p>
 <p>比起消耗精力去想一些让自己纠结的人和事，不如好好睡一觉。</p>
 <p>第二天天一亮，那些在深夜作祟的情绪，往往就消散了大半。</p>
 <p>照顾好你黑色的头发、挑剔的胃和爱笑的眼睛，认真对待你的一日三餐，一生不过三万多天，好好爱自己，比什么都重要。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4坚持运动锻炼身体">4.坚持运动，锻炼身体<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#4%E5%9D%9A%E6%8C%81%E8%BF%90%E5%8A%A8%E9%94%BB%E7%82%BC%E8%BA%AB%E4%BD%93" class="hash-link" aria-label="Direct link to 4.坚持运动，锻炼身体" title="Direct link to 4.坚持运动，锻炼身体">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4坚持运动锻炼身体">4.坚持运动，锻炼身体<a class="hash-link" aria-label="Direct link to 4.坚持运动，锻炼身体" title="Direct link to 4.坚持运动，锻炼身体" href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#4%E5%9D%9A%E6%8C%81%E8%BF%90%E5%8A%A8%E9%94%BB%E7%82%BC%E8%BA%AB%E4%BD%93">​</a></h3>
 <p>我们在人世间行走，所有一切存在的前提，是活着。</p>
 <p>保护好肉体的神殿，使它尽量免受病痛折磨，是对自己最起码的珍惜。</p>
 <p>运动是体力活动，却也是放松身心最好的方式，不管是瑜伽、跑步，抑或是每周去几次健身房，都是不错的选择。</p>
 <p>让思绪放空，专注于当下的一呼一吸，一举一动，给心灵放松的空间，也给身体增强抵抗力的时间，一举两得，何乐不为呢。</p>
 <p>处在任何一个年龄段，都要做最好的自己，不要太胖，不要太油腻，保持鲜活的少女心和少女力，从一个有活力的身材和心态开始。</p>
 <p>健康是人这一生最大的财富，而我们也必须为之终生努力，从当下开始，坚持运动，做更好的自己。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5总结过去珍惜当下">5.总结过去，珍惜当下<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#5%E6%80%BB%E7%BB%93%E8%BF%87%E5%8E%BB%E7%8F%8D%E6%83%9C%E5%BD%93%E4%B8%8B" class="hash-link" aria-label="Direct link to 5.总结过去，珍惜当下" title="Direct link to 5.总结过去，珍惜当下">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5总结过去珍惜当下">5.总结过去，珍惜当下<a class="hash-link" aria-label="Direct link to 5.总结过去，珍惜当下" title="Direct link to 5.总结过去，珍惜当下" href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#5%E6%80%BB%E7%BB%93%E8%BF%87%E5%8E%BB%E7%8F%8D%E6%83%9C%E5%BD%93%E4%B8%8B">​</a></h3>
 <p>人这一生，注定是无法回头、无法重来的，过往种种，好的坏的，都成了过去式。</p>
 <p>时光会慢慢地变淡它们带来的影响，而你也不该再频频回头，旧人旧事，就让它们留在旧日的风景里吧，你要做的，是总结过去的得失，然后大步朝前走。</p>
 <p>过日子，过的是以后，不是以前。不念过去，不畏将来，珍惜当下，才是最好的状态。</p>

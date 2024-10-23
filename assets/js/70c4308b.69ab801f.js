@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[3704],{1807:s=>{s.exports=JSON.parse('{"label":"vps","permalink":"/blog/tags/vps","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
