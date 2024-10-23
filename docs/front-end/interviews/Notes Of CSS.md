@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: points of css
+title: Notes Of CSS
 tag: [frontend]
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Collection for blog
+title: Study Blogs
 sidebar_position: 3
 ---
 

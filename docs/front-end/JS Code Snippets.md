@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Javascript Tips
+title: JS Code Snippets
 tag: [js, frontend]
 ---
 
