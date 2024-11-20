@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklbt_docs=self.webpackChunklbt_docs||[]).push([[7030],{550:s=>{s.exports=JSON.parse('{"permalink":"/blog/tags/mac-os","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
