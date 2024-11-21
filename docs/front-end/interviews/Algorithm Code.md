@@ -3,8 +3,9 @@ sidebar_position: 4
 title: Algorithm Code
 tag: [frontend]
 ---
+# 常见算法题
 
-# 数组反转k位
+### 数组反转k位
 
 ```javascript
 // 时间复杂度　O(1)
@@ -30,7 +31,7 @@ function rotateArray(arr, k) {
 `array数组`为有序数据结构，内存空间连续，在执行操作`unshift`, `shift`, `splice`很慢，时间复杂度为O(n);
 :::
 
-# 括号匹配
+### 括号匹配
 ```javascript
 function isMatch(left, right){
     if(left === '(' && right === ')') return true;
@@ -70,7 +71,7 @@ function matchBracket(str) {
 `栈` 是一种先进后出的逻辑结构，是一种抽象模型，可以用不同语言和不同方式实现一个栈。
 :::
 
-# 用双栈实现一个队列
+### 用双栈实现一个队列
 
 ```javascript
 class MyQueue {
@@ -122,7 +123,7 @@ console.log(myqueue.length);
 :::
 
 
-# 用一个JS方法反转一个单向链表
+### 用一个JS方法反转一个单向链表
 
 ```javascript
 
@@ -187,7 +188,7 @@ function printLinkList(head) {
 使用链表实现队列比使用数组实现效率更高，在实现时需要同时记录链表的head和tail，单独存储节点length，节点从tail进，从head出。
 :::
 
-# 用链表实现队列
+### 用链表实现队列
 ```js
 
 class Node {
@@ -244,7 +245,7 @@ class Queue {
 
 ```
 
-# 二分查找
+### 二分查找
 ```javascript
 function binarySearch1(arr, target) {
     const len = arr.length;
@@ -281,7 +282,7 @@ function binarySearch1(arr, target) {
 凡二分，时间复杂度必包含O(logn)
 :::
 
-# 查找两数之和
+### 查找两数之和
 ```javascript
 function findTwoNum(arr, target) {
     const len = arr.length;
@@ -308,7 +309,7 @@ function findTwoNum(arr, target) {
 // output: [4, 11]
 ```
 
-# 二叉树遍历
+### 二叉树遍历
 
 ```javascript
 
@@ -352,7 +353,7 @@ function preOrderTraverse(root) {
 :::
 
 
-# 二叉搜索树
+### 二叉搜索树
 
 特点：　
 - `left < root < right`
@@ -360,23 +361,23 @@ function preOrderTraverse(root) {
 价值:
 - 可使用二分查找法快速查找某个值　
 
-# 平衡二叉树
+### 平衡二叉树
 特点：
 - 左右子树高度差不超过1
 
-# 红黑树
+### 红黑树
 特点：
 - 一种自平衡二叉树
 - 节点颜色为红或黑，通过颜色转换来维持树的平衡
 - 维持平衡效率较高
   
-# B树
+### B树
 
 物理上为多叉树，逻辑上为二叉树
 
 一般用于高效I/O，关系型数据库常用B树来组织数据
 
-# 堆
+### 堆
 
 堆是一种完全二叉树，分为最大堆和最小堆
 - 最大堆：父节点大于子节点
@@ -390,7 +391,7 @@ VS BST
 - 维持平衡比BST快
 
 
-# 斐波那契数列
+### 斐波那契数列
 
 ```javascript
 
@@ -410,7 +411,7 @@ function fibonacci(n) {
 `动态规划`是一种用使用递归思想，把大问题拆解为小问题，再利用循环来实现的一种算法思维。
 :::
 
-#　把数组中的0移动到数组末尾
+###　把数组中的0移动到数组末尾
 
 ```javascript
 
@@ -440,7 +441,7 @@ moveZero(arr)
 console.log(arr);
 ```
 
-# 字符串中连续最多的字符
+### 字符串中连续最多的字符
 
 ```javascript
 
@@ -530,7 +531,7 @@ console.log(maxChar2(ss));
 算法题慎用正则表达式，正则表达式性能差　　
 :::
 
-#　快速排序
+###　快速排序
 
 ```javascript
 
@@ -563,7 +564,7 @@ const arr1 = [1,4,5,7,13,5,9];
 quickSort(arr1)
 ```
 
-# 回文数
+### 回文数
 
 ```javascript
 function findPalindrome(num) {
@@ -637,14 +638,14 @@ function findPalindrome3(num) {
 }
 ```
 
-# 高效字符串前缀匹配
+### 高效字符串前缀匹配
 
 优化思路：
 
 在明确范围情况下可以考虑把数组数据拆分成对象数据
 
 
-# 实现千位分隔符
+### 实现千位分隔符
 ```javascript
 
 function formatNum(num) {
@@ -694,7 +695,7 @@ formatNum2(12313212311)
 ```
 
 
-# 切换字符串中字母的大小写
+### 切换字符串中字母的大小写
 
 ```javascript
 function switchCase(str) {
