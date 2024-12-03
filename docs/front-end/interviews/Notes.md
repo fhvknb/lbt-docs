@@ -571,3 +571,10 @@ BFC形成或者触发条件？
 注意平时工作中的积累，写一篇文章记录一下
 
 :::
+
+
+### {}和Object.create()创建对象的区别
+- {}创建对象，使用new关键字调用构造函数，原型指向Object.prototype
+- Object.create()创建对象，不使用new关键字调用构造函数，原型指向Object.create()的参数
+
+

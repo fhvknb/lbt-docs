@@ -47,9 +47,14 @@ Read the [official documentation](https://docusaurus.io/)
 
 # Words 
 
-富在术数，不在劳身，利在局势，不在深耕。
+富在术数，不在劳身， 利在局势，不在深耕。
 
-势，力，顺势而为，借力而上
+势，力
+顺势而为，借力而上
 
 
 新质生产力  ==  机器人赋能
+
+# nodejs packages 
+
+`class-validator`, `class-transformer`, `refleact-metadata`,`connect-history-api-fallback`  `node-proxy-middleware`  `react-router-config` 
