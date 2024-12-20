@@ -27,9 +27,6 @@ tag: [frontend]
 setState本质上是同步执行，state也是同步更新，表现上面是异步的
 
 
-
-
-
 ## 是否了解过 React 的整体渲染流程？ 里面主要有哪些阶段？
 爹考答案：
 
@@ -156,6 +153,7 @@ baseState: null,
 baseQueue: null, 
 queue: null, 
 next: null
+}
 ```
 不同类型的hook 的memoizedstate 中保存了不同的值，例如：
 - useState：对于 const [state. updateState] =useState(initialState)，memoizedState 保存的是 state 的值
@@ -206,9 +204,9 @@ uselayoutEffeat 的工作流程可以分为：
 useRef 的主要作用就是用來创建 ref保存对 DoM 元素的引用。在React 发展过程中，出现过三种 ref 相关的引用模式：
 - String 类型（己不推荐使用）
 - 函数炎型
-- { current: T}
+- `{ current: T}`
   
-目前最为推荐的是在类组件中使用 createRef， 函数组件中使用 useRef 来创建 Ref。
+目前最为推荐的是在类组件中使用createRef， 函数组件中使用 useRef 来创建 Ref。
 
 当开发者调用 useRef 来创建 ref 时，在mount 阶段，会创建一个hook对象，该hook 对家的 memoizedstate 存储的是`{current: initialValue}`对象，之后向外部返回了这个对象。在update 阶段就是从 hook对象的 memoizedState 享到 `{ current:
 initialValue }` 对象。
