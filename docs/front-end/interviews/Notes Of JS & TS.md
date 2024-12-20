@@ -120,6 +120,34 @@ function Child() {
 }
 ```
 
+#### 多个Promise执行顺序
+```js
+Promise.resolve().then(()=> {
+  console.log("0");
+  return Promise.resolve("4");
+}).then((res) => {
+  console.log(res);
+});
+
+Promise.resolve().then(() => {
+  console.log("1");
+}).then(()=>{
+  console.log("2");
+}).then(()=>{
+  console.log("3");
+}).then(()=>{
+  console.log("5");
+
+}).then(()=>{
+  console.log("6");
+})
+
+// 0 1 2 3 4 5 6
+```
+- then 交替执行
+- then中如果返回新Promise，会等待2个微任务执行完，再执行下一个then
+　
+
 ### 浏览器渲染原理
 
 - 解析HTML，构建DOM树
@@ -155,6 +183,8 @@ function Child() {
 ele.addEventListener("click", function (e) {}, false); // 第三个参数为true，表示事件在捕获阶段触发，默认为false，表示事件在冒泡阶段触发
 
 ```
+
+
 
 
  
