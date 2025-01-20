@@ -4,11 +4,7 @@ title: Manual Code
 tag: [frontend]
 ---
 # 手写代码
-
 ```js
-
-
-
 export function flattenArray(arr: any[]): any[] {
     return arr.reduce((acc, val) => {
         if (Array.isArray(val)) acc = acc.concat(flattenArray(val));
