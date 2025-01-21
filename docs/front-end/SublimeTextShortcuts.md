@@ -1,13 +1,10 @@
 ---
-title:　Sublime Text（macOS）常用快捷键
-sidebar_position: 3
+title: SublimeText Tips
+sidebar_position: 4
 ---
-
-# Sublime Text（macOS）常用快捷键和Tips
 
 以下是 **Sublime Text（macOS）** 的常用快捷键和使用技巧（Tips），可以帮助你更高效地进行代码编辑和操作。
 
----
 
 ## **1. 基础快捷键**
 
