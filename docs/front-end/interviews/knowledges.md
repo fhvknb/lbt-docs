@@ -6,7 +6,8 @@ tag: [frontend]
 
 # 基础知识
 
-## JSOP 实现原理：静态资源请求不受同源策略影响
+## 跨域解决方案
+1. JSOP 实现原理：静态资源请求不受同源策略影响
 
 ```javascript
 const script = document.createElement("script");
@@ -17,7 +18,7 @@ const cb = (res) => {
 };
 ```
 
-## CORS：跨域资源共享(CORS) 是一种机制，它使用额外的 HTTP 头来告诉浏览器 让运行在一个 origin (domain) 上的 Web 应用被准许访问来自不同源服务器上的指定的资源。
+2. CORS：跨域资源共享(CORS) 是一种机制，它使用额外的 HTTP 头来告诉浏览器 让运行在一个 origin (domain) 上的 Web 应用被准许访问来自不同源服务器上的指定的资源。
 
 ```javascript
 app.all("*", function (req, res, next) {
