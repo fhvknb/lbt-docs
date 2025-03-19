@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.zazds.top/blog</id>
+    <title>LBT Docs Blog</title>
+    <updated>2024-05-01T15:54:04.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.zazds.top/blog"/>
+    <subtitle>LBT Docs Blog</subtitle>
+    <icon>https://docs.zazds.top/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[服务端编程语言特性浅析]]></title>
+        <id>https://docs.zazds.top/blog/服务端编程语言特性浅析</id>
+        <link href="https://docs.zazds.top/blog/服务端编程语言特性浅析"/>
+        <updated>2024-05-01T15:54:04.000Z</updated>
+        <summary type="html"><![CDATA[流行的编程语言众多，它们的发明出现也有着各自的渊源和使命，它们也有各自擅长的开发领域。我们在实际项目中使用的时候就需要我们根据真实的需求（性能要求，规模大小，并发要求）来进行合理的选择了。]]></summary>
+        <content type="html"><![CDATA[<p>流行的编程语言众多，它们的发明出现也有着各自的渊源和使命，它们也有各自擅长的开发领域。我们在实际项目中使用的时候就需要我们根据真实的需求（性能要求，规模大小，并发要求）来进行合理的选择了。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="python">Python<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#python" class="hash-link" aria-label="Python的直接链接" title="Python的直接链接">​</a></h2>
+<p>编程语言流行排行榜位列甲位。</p>
+<p><strong>优点</strong></p>
+<ol>
+<li>流行度高，写法简单，上手容易</li>
+<li>有大量数据分析三方库，适合数据分析</li>
+<li>有多线程、事件循环机制可以满足日常后台服务性能要求</li>
+<li>语言生态环境好</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>多线程有瓶颈，不能百分百利用硬件资源</li>
+<li>弱类型语言</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cc">C/C++<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#cc" class="hash-link" aria-label="C/C++的直接链接" title="C/C++的直接链接">​</a></h2>
+<p><strong>优点</strong></p>
+<ol>
+<li>可以充分使用硬件资源，程序性能好</li>
+<li>对CPU密集型任务友好</li>
+<li>内存管理灵活，自主管理</li>
+<li>语言生态环境好</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>入门有一定门槛，对编程能力有一点要求</li>
+<li>内存管理灵活，自主管理</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="golang">Golang<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#golang" class="hash-link" aria-label="Golang的直接链接" title="Golang的直接链接">​</a></h2>
+<p><strong>优点</strong></p>
+<ol>
+<li>较好的利用硬件资源，程序性能好</li>
+<li>对CPU密集型任务友好</li>
+<li>内存自动回收</li>
+<li>高并发应用友好</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>其中的继承关系有点不太一样，需要重新理解</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nodejs">NodeJS<a href="https://docs.zazds.top/blog/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B5%85%E6%9E%90#nodejs" class="hash-link" aria-label="NodeJS的直接链接" title="NodeJS的直接链接">​</a></h2>
+<p><strong>优点</strong></p>
+<ol>
+<li>基于事件循环机制，I/O密集型任务友好</li>
+<li>对前端工程师友好</li>
+<li>使用范围广泛</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>硬件资源利用率低</li>
+<li>不适合CPU密集型的高并发任务</li>
+</ol>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p><strong>I/O密集型任务</strong></p><ul>
+<li>Web服务器应用</li>
+<li>实时聊天应用</li>
+<li>协同编辑应用</li>
+</ul></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p><strong>CPU密集型任务</strong></p><ul>
+<li>数学计算和建模</li>
+<li>图像和视频处理</li>
+<li>加密和解密</li>
+<li>压缩和解压缩</li>
+<li>数据分析和科学计算</li>
+<li>3D 渲染和游戏引擎</li>
+<li>机器学习和深度学习</li>
+</ul></div></div>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="language" term="language"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[部署snell-server]]></title>
+        <id>https://docs.zazds.top/blog/snell-deploy</id>
+        <link href="https://docs.zazds.top/blog/snell-deploy"/>
+        <updated>2024-04-25T22:18:46.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="snell简介">Snell简介<a href="https://docs.zazds.top/blog/snell-deploy#snell%E7%AE%80%E4%BB%8B" class="hash-link" aria-label="Snell简介的直接链接" title="Snell简介的直接链接">​</a></h2>
+<p>Snell 是 Surge 团队开发，仅适用于 Surge 用户的精简加密代理协议，以下是一些亮点：</p>
+<ul>
+<li>极致的性能；</li>
+<li>支持 UDP over TCP 转发；</li>
+<li>具有零依赖关系的单一二进制文件 (除了 glibc)；</li>
+<li>一个帮助入门的向导；</li>
+<li>如果遇到远程错误，代理服务器将向客户端报告。客户端可以针对不同的场景选择对策；</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="版本介绍">版本介绍<a href="https://docs.zazds.top/blog/snell-deploy#%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D" class="hash-link" aria-label="版本介绍的直接链接" title="版本介绍的直接链接">​</a></h2>
+<p><em><strong>Snell v2</strong></em></p>
+<p>提供了完整的 TCP 全状态机支持的 multiplex 支持，以提高性能和减少延迟。</p>
+<p><em><strong>Snell v3</strong></em></p>
+<p>在实际使用中，由于大多数网站和程序均已使用 HTTP/2 协议，自带了 multiplex 支持，所以并不会产生很多的底层 TCP 连接，代理层再支持 multiplex 的优化意义不大。</p>
+<p>考虑到 multiplex 的支持会导致额外的问题，如单 TCP 连接被限速，更加复杂繁琐的连接错误检查和纠错等。所以在 Snell v3 中已经取消了 multiplex 支持；</p>
+<p><em><strong>Snell v4</strong></em></p>
+<p>新增客户端参数<code>reuse=true</code>，可选开启 v2 版本的连接复用机制。连接复用机制可以避免后续请求的连接建立开销，但是在出现网络异常或其他问题时，可能会需要更长的时间才能检查到错误并重建连接，优劣参半，建议对于延迟较高的服务器开启。该功能不需要在服务端额外使用参数开启。</p>
+<p>取消支持 TLS 流量混淆 (<code>obfs=tls</code>) 功能；服务器端程序已不能够与客户端自动协商密码和版本，客户端需手动配置<code>version=4</code>；</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="macos">MacOS<a href="https://docs.zazds.top/blog/snell-deploy#macos" class="hash-link" aria-label="MacOS的直接链接" title="MacOS的直接链接">​</a></h2>
+<p>如果你正在使用 Surge Mac 并想以此部署 Snell Server 是非常简单的，只要在 Surge 的配置文件中加入以下字段：</p>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">[Snell Server]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">interface = 0.0.0.0</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">port = 6160</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">psk = RANDOM_KEY_HERE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">obfs = off</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>信息</div><div class="admonitionContent_BuS1"><div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">interface：监听地址</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">port：端口</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">psk：密钥</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">obfs：off 为关闭混淆，或使用http流量混淆</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="linux">Linux<a href="https://docs.zazds.top/blog/snell-deploy#linux" class="hash-link" aria-label="Linux的直接链接" title="Linux的直接链接">​</a></h2>
+<p>在 <a href="https://manual.nssurge.com/others/snell.html" target="_blank" rel="noopener noreferrer">Surge 官网</a>根据你的服务器获取独立服务端二进制文件.</p>
+<p>如果想要以往的历史版本，可以前往<a href="https://github.com/fhvknb/Snell-oldbak" target="_blank" rel="noopener noreferrer">历史备份</a>进行获取。</p>
+<p>下面以<code>linux-amd64</code>系统为示例</p>
+<ol>
+<li>环境安装，下载安装 <code>snell</code></li>
+</ol>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># 如果系统没有预装可能需要先下载安装 wget 及 unzip</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># APT</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo apt update &amp;&amp; sudo apt install wget unzip</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># DNF</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo dnf install unzip</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 下载 Snell Server</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">wget https://dl.nssurge.com/snell/snell-server-v4.0.1-linux-amd64.zip</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 解压 Snell Server 到指定目录</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo unzip snell-server-v4.0.1-linux-amd64.zip -d /usr/local/bin</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ol start="2">
+<li>生成 <code>snell</code> 配置文件</li>
+</ol>
+<div class="language-basheee codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-basheee codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># 可以使用 Snell 的 wizard 生成一个配置文件</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo snell-server --wizard -c /etc/snell-server.conf</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ol start="3">
+<li>修改 <code>snell</code> 配置文件</li>
+</ol>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo vi /etc/snell-server.conf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">#　根据需要修改以下内容　</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[snell-server]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">listen = 0.0.0.0:11807</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">psk = AijHCeos15IvqDZTb1cJMX5GcgZzIVE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ipv6 = false</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">obfs = off</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ol start="4">
+<li>配置systemd服务文件</li>
+</ol>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo vim /lib/systemd/system/snell.service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 添加以下内容</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[Unit]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Description=Snell Proxy Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">After=network.target</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[Service]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Type=simple</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">User=nobody</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Group=nobody</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LimitNOFILE=32768</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ExecStart=/usr/local/bin/snell-server -c /etc/snell-server.conf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[Install]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WantedBy=multi-user.target</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ol start="5">
+<li>使用systemctl启动服务</li>
+</ol>
+<div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># 重载服务</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl daemon-reload</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 开机运行 Snell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl enable snell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 开启 Snell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl start snell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 关闭 Snell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl stop snell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">## 查看 Snell 状态</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl status snell</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>注意</div><div class="admonitionContent_BuS1"><p>对于 Snell v3 可以尝试增加内核缓冲区大小可以显著提高 UDP 性能</p><div class="language-sh codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-sh codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo sysctl -w net.core.rmem_max=26214400</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo sysctl -w net.core.rmem_default=26214400</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></div>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="vps" term="vps"/>
+        <category label="linux" term="linux"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[写袱子顺口溜]]></title>
+        <id>https://docs.zazds.top/blog/传统风俗之写袱子</id>
+        <link href="https://docs.zazds.top/blog/传统风俗之写袱子"/>
+        <updated>2024-04-25T22:12:02.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<p>写袱子 也难叹 做篇俗歌你们看</p>
+<p>别看做 小事情 忙时请人搞不赢</p>
+<p>还须要 自己懂 省时方便又轻松</p>
+<p>众乡亲 须记着 随写随用全是合</p>
+<p>烧与父 故显考 显妣孝男人人晓</p>
+<p>烧与祖 故祖考 下称孝孙要记倒</p>
+<p>故曾祖 孝曾孙 烧与祖考的父亲</p>
+<p>故高祖 孝玄孙 烧与曾祖的父亲</p>
+<p>故天祖 孝来孙 又是高祖的父亲</p>
+<p>故烈祖 孝晜孙 天祖父亲要记清</p>
+<p>故太祖 孝礽孙 烈祖父亲写得清</p>
+<p>故远祖 孝曇孙 太祖父亲记得清</p>
+<p>故鼻祖 孝耳孙 这是起祖一脉根</p>
+<p>上九代 乃九族 尔等须当要记熟</p>
+<p>故伯考 或伯妣 侄男下写依古理</p>
+<p>故叔考 故叔妣 孝侄下写也规矩</p>
+<p>故伯祖 故叔祖 下称侄孙也依古</p>
+<p>如远房 高曾祖 加一堂字就清楚</p>
+<p>故堂兄 祀堂弟 外房哥哥莫大意</p>
+<p>堂伯祖 堂叔祖 写堂侄孙也依古</p>
+<p>故胞兄 祀胞弟 自家哥哥要紧记</p>
+<p>老丈人 岳考妣 下称孝婿方合理</p>
+<p>伯岳考 叔岳考 下称侄婿方才好</p>
+<p>故姑考 故姑妣 要称内侄方有理</p>
+<p>簿父命 幻化男 这是老子来化钱</p>
+<p>故岳祖 孝孙婿 自依这个写得去</p>
+<p>烧家公 故外祖 下写外孙要依古</p>
+<p>舅祖考 外甥孙 烧与舅公写得清</p>
+<p>伯内祖 叔内祖 孝内侄孙要依古</p>
+<p>故舅考 孝外甥 烧与舅父写得清</p>
+<p>故表兄 祀表弟 血表兄弟写得去</p>
+<p>妻外祖 外孙婿 妻子外祖要记得</p>
+<p>同缘兄 同缘弟 后夫烧与前夫去</p>
+<p>故襟兄 祀襟弟 这是姨夫又通直</p>
+<p>岳寄父 孝寄婿 妻子保爷讲得去</p>
+<p>故姨父 孝姨侄 烧与姨爹又通直</p>
+<p>寄外祖 寄外孙 这是母亲寄拜的</p>
+<p>寄外甥 寄母舅 这是化袱干母舅</p>
+<p>故盟兄 孝盟弟 拈香兄弟写得去</p>
+<p>孝盟侄 故盟叔 与父拈香须记熟</p>
+<p>故邻尊 孝邻侄 毗邻居舍无亲识</p>
+<p>故邻祖 孝邻孙 烧与邻人不得亲</p>
+<p>故嫡妣 孝庶男 烧与大娘莫作难</p>
+<p>故庶妣 孝嫡男 烧与小妈又何难</p>
+<p>故姻兄 祀姻弟 烧与亲家莫忘记</p>
+<p>故姻翁 孝姻侄 烧与亲家老父亲</p>
+<p>故姻伯 孝姻侄 姐妹公婆须记得</p>
+<p>外甥婿 内舅考 妻子母舅须记倒</p>
+<p>故契兄 祀契弟 好朋好友写得去</p>
+<p>故世兄 祀世弟 同窗认识也写去</p>
+<p>夫正配 写遇妾 烧与夫君须记得</p>
+<p>故贤妹 祀愚姐 以大烧小可以写</p>
+<p>故良人 祀拙荆 烧与夫君写得清</p>
+<p>故拙夫 存夫君 烧与妻夫须记清</p>
+<p>故夫主 未亡人 妻子改嫁化钱程</p>
+<p>故胞嫂 祀胞妹 小姑烧与嫂嫂们</p>
+<p>故胞妹 称胞嫂 烧与妹妹也合巧</p>
+<p>故弟媳 称哥哥 烧与弟媳也不多</p>
+<p>故妯娌 祀妯娌 母婶之间亦如此</p>
+<p>故胞兄 祀胞妹 姐妹孤单无理问</p>
+<p>故姐丈 祀内弟 姐子要称同胞弟</p>
+<p>故妹丈 祀内兄 妹子要称同胞兄</p>
+<p>故戚叔 孝门宾 未曾过门老丈人</p>
+<p>继岳考 孝继婿 前夫死后招来的</p>
+<p>故恩师 孝门生 学生烧与老先生</p>
+<p>故师父 孝门徒 一切艺师小徒从</p>
+<p>孝徒弟 示寂师 和尚烧与长老师</p>
+<p>羽化师 孝门徒 道人徒弟写得熟</p>
+<p>清寂师 孝徒弟 尼姑烧与师父去</p>
+<p>故师伯 及师叔 下称侄徒要记熟</p>
+<p>故师兄 祀师弟 师兄师弟写得去</p>
+<p>故夫君 祀贱婢 小妻烧与丈夫去</p>
+<p>舅子门 写内兄 下称妹倩写得通</p>
+<p>故配兄 祀配弟 这是后娘带来的</p>
+<p>故继父 孝继男 这是前娘儿化钱</p>
+<p>孝如男 故前父 后男烧与前门父</p>
+<p>故姑祖 内侄孙 烧与姑公姑祖们</p>
+<p>故姨祖 姨侄孙 烧与姨公要写清</p>
+<p>若无亲 写不下 孝信亲邻大救驾</p>
+<p>男称考 女称妣 须要用心来记起</p>
+<p>男大人 女孺人 府君太君写分明</p>
+<p>男正魂 女正性 从头至尾是一定</p>
+<p>高明人 不见笑 今乃初学日月要</p>
+<p>是非我 爱如此 做来教训家童子</p>
+<p>众乡亲 须记熟 日后可以当师傅</p>
+<p>居家人 写包袱 从头难以记清楚</p>
+<p>教大家 须仔细 不可忽略来大意</p>
+<p>过新年 如何写 新春化帛来检点</p>
+<p>逢正月 十五日 元宵化帛理也真</p>
+<p>二月一 二月节 中元化帛也称得</p>
+<p>若三月 清明节 拜扫化帛也称得</p>
+<p>四月八 佛辰诞 生麦秋以分得清</p>
+<p>逢端午 写蒲节 天宗化财也写得</p>
+<p>六月六 写包袱 天中化财也如数</p>
+<p>七月半 写中元 盂兰化财理当然</p>
+<p>逢八月 中秋节 中秋化帛须记实</p>
+<p>九月九 写袱子 重阳化帛也合理</p>
+<p>若十月 十五正 下元化帛水宫生</p>
+<p>冬月间 是冬至 冬至化帛也合适</p>
+<p>腊月的 三十夜 年尽除夕无辩别</p>
+<p>如有会 依会写 平日化帛无事写</p>
+<p>在朝日 写小儿 汤饼之期写合理</p>
+<p>三十天 满月了 弥月化帛写才好</p>
+<p>满周岁 曰试周 盘年之期应当收</p>
+<p>男子死 化包袱 正寝化帛写才好</p>
+<p>女子死 写袱子 内寝化帛也通直</p>
+<p>老人死 亦寿终 丧期化帛理应通</p>
+<p>若封棺 写包袱 掩殓化帛不可忽</p>
+<p>伴亡灵 依写袱 灵前化帛也合理</p>
+<p>烧更纸 写成帛 堂祭化帛亦合格</p>
+<p>如办亡 写绕棺 绕棺化帛是一般</p>
+<p>若送丧 化包袱 首七二七照七数</p>
+<p>如三七 写四七 毕七化帛须学习</p>
+<p>三个月 守孝服 缌麻化帛及包袱</p>
+<p>满百期 写百日 一年小祥化帛时</p>
+<p>届二周 写大祥 三年除服化财场</p>
+<p>满三年 除服写 礼毕化帛方合理</p>
+<p>若做斋 写追荐 正荐化帛乃请荐</p>
+<p>若亲戚 与外人 送写包袱就坛称</p>
+<p>如星辰 写禳星 延生化帛写酬恩</p>
+<p>做神佛 做了愿 是日化帛心意愿</p>
+<p>化包袱 与母亲 母难化帛阴诞称</p>
+<p>母亲生 烧外公 用儿名字写赙中</p>
+<p>男悬孤 妇没悦 分开写来式不合</p>
+<p>若死期 写袱子 亡辰化帛丧时辰</p>
+<p>如招山 写的是 招龙化帛写规条</p>
+<p>要包坟 写的是 复土化帛亦合适</p>
+<p>如立碑 修坟写 佳城化帛仔细理</p>
+<p>男子的 娶二房 续弦化帛理应当</p>
+<p>若迁坟 写的是 迁徙化帛当如此</p>
+<p>女子家 重改嫁 再醮化帛是古话</p>
+<p>言虽浅 理是真 诸君一二记在心</p>
+<p>乃居家 是常情 自己记起不求人</p>
+<p>请大家 谨记心 随写随用是宝珍</p>
+<p>教一辈 传一辈 代代儿孙莫忘记</p>
+<p>这一篇 俗贤文 子子孙孙作把凭</p>
+<p>读书人 莫大意 有人请你写下去</p>
+<p>经常学 经常写 提笔就写不会错</p>
+<p>更有等 读讲得 倘若要写心头默</p>
+<p>古人言 说得好 世间读书当真宝</p>
+<p>地盘主 老前人 下写孝信可以行</p>
+<p>野孤坟 无人看 邻里化财理应担</p>
+<p>征发首 初一日 元日化帛写合词</p>
+<p>二月里 是初一 中和之期最适宜</p>
+<p>三月三 上已辰 到了中秋写清明</p>
+<p>儿子死 写表明 妻妾死了写伤神</p>
+<p>妾乃死 化冥资 生宠之期方可施</p>
+<p>妾化妻 写失倚 妻化与妾写莹立</p>
+<p>三年外 钱死期 癸神化帛是以须</p>
+<p>若父母 阴间生 化袱与祖写阴辰</p>
+<p>百岁人 若死了 期颐化帛要记倒</p>
+<p>接媳妇 须要写 完娶结婚花烛夜</p>
+<p>若嫁女 须要写 于归化帛亦如此</p>
+<p>自己生 写化财 生我母难报恩排</p>
+<p>自己生 烧父亲 要写劬劳记在心</p>
+<p>生男子 寝床写 生女化财写寝地</p>
+<p>故乳母 孝抚男 烧与奶妈表心田</p>
+<p>结发妻 孝夫主 夫烧与妻正合理</p>
+<p>故良夫 孝愚妻 妻烧与夫显忠心</p>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="民间习俗" term="民间习俗"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[4202年再说五笔打字]]></title>
+        <id>https://docs.zazds.top/blog/4202年再说五笔打字</id>
+        <link href="https://docs.zazds.top/blog/4202年再说五笔打字"/>
+        <updated>2024-04-25T19:33:05.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<p>现在都 4202 年了，还有人会用五笔吗，为什么还有人用五笔，是搜狗拼音打字速度不够快，还是表情不够丰富？</p>
+<p>五笔打字可能大家或多或少都了解过，原来的拼音输入法还没有现在这么好用，那个时候会五笔输入法的人打字比拼音输入法快很多很多的。不过现在拼音打字速度快又简单，五笔又难以上手，所以除了有些老古人会五笔外，现在很少有小年轻会去学五笔输入法了，所以平时工作中几乎很难见会五笔的人了。</p>
+<p>我们从离开校门，进入社会以后就很少再拿起笔写字了，久而久之我们在慢慢的在忘记我们每天再说，每天在输入的汉字。时间一长，又突然拿起笔点菜，额！想写的字不会写了。</p>
+<p>五笔输入法可以很好的帮助我们记忆汉字是如何书写的。五笔，顾名思义，就是由横竖撇捺折五个部首来拼组汉字，所以简称五笔输入法。五笔输入法是通过把一整个汉字拆分成若干个小偏旁部首，在把这些小偏旁部首安一定顺序敲打出来后，这个汉字就被输入法显示出来了。由于五笔小偏旁部首具有一些特殊性，任何一个汉字，最多只需要敲四次就能打出这个字来。是不是很感觉很神奇。</p>
+<p>如果你是一个时常忘记汉字如何书写的人，你是一个敢于挑战的人，你也想看看这门古老艺术的神奇之处。可以按照我之前的学习路径抄个小作业，祝君亦学亦乐。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="学习路径">学习路径<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84" class="hash-link" aria-label="学习路径的直接链接" title="学习路径的直接链接">​</a></h2>
+<ol>
+<li><em><strong>背五笔字根，滚瓜烂熟</strong></em></li>
+<li><em><strong>熟悉键盘上的五笔字根，刻意练习，肌肉记忆</strong></em></li>
+<li><em><strong>学习如何拆字，掌握拆字规律</strong></em></li>
+<li><em><strong>学习一级简码</strong></em></li>
+<li><em><strong>学习二级简码</strong></em></li>
+<li><em><strong>学习三级简码</strong></em></li>
+<li><em><strong>学习四级简码</strong></em></li>
+<li><em><strong>熟能生巧，写字超快</strong></em></li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔字根口诀">五笔字根口诀<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E5%AD%97%E6%A0%B9%E5%8F%A3%E8%AF%80" class="hash-link" aria-label="五笔字根口诀的直接链接" title="五笔字根口诀的直接链接">​</a></h2>
+<p>王旁青头<ruby>戋<rt>jiān</rt></ruby>五一</p>
+<p>土士二干十寸雨</p>
+<p>大犬三羊古石厂，羊有直斜套去大</p>
+<p>木丁西</p>
+<p>工戈草头右框七</p>
+<hr>
+<p>目具上止<ruby>卜<rt>bǔ</rt></ruby>虎皮</p>
+<p>日早两竖与虫依</p>
+<p>口与川，字根稀</p>
+<p>田甲方框四车力</p>
+<p>山由贝，下框几</p>
+<hr>
+<p>禾竹一撇双人立，反文条头共三一</p>
+<p>白手看头三二斤</p>
+<p>月<ruby>彡<rt>shān</rt></ruby>乃用家衣底</p>
+<p>人和八，三四里</p>
+<p>金勺缺点无尾鱼，犬旁留叉儿一点夕，氏无七</p>
+<hr>
+<p>言文方广在四一，高头一捺谁人去</p>
+<p>立辛两点六门<ruby>疒<rt>bìng</rt></ruby></p>
+<p>水旁兴头小倒立</p>
+<p>火业头，四点米</p>
+<p>之字军盖建道底，摘<ruby>礻<rt>shì</rt></ruby><ruby>衤<rt>yī</rt></ruby></p>
+<p>已半巳满不出己，左框折尸心和羽</p>
+<hr>
+<p>子耳了也框向上</p>
+<p>女刀九<ruby>臼<rt>jiù</rt></ruby>山朝西</p>
+<p>又巴马，丢矢矣</p>
+<p>慈母无心弓和匕，幼无力</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔字根键位">五笔字根键位<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E5%AD%97%E6%A0%B9%E9%94%AE%E4%BD%8D" class="hash-link" aria-label="五笔字根键位的直接链接" title="五笔字根键位的直接链接">​</a></h2>
+<img src="https://docs.zazds.top/img/wubizigen.png" alt="五笔字根图">
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔简单拆字规则">五笔简单拆字规则<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E7%AE%80%E5%8D%95%E6%8B%86%E5%AD%97%E8%A7%84%E5%88%99" class="hash-link" aria-label="五笔简单拆字规则的直接链接" title="五笔简单拆字规则的直接链接">​</a></h2>
+<p><strong>一级简码</strong>：击一个键即可</p>
+<p><strong>二级简码</strong>：击其前两个字根加空格键</p>
+<p><strong>三级简码</strong>：击一个字的前三个字根加空格</p>
+<p><strong>键名汉字</strong>：所在键连击四次</p>
+<p><strong>成字字根</strong>：键名代码+首笔代码十次笔代码+末笔代码</p>
+<p><strong>单字输入</strong>：可以取够四个字根，就全部用字根键入，只有在不足四个字根的情况下，才有必要追加识别码</p>
+<p><strong>双字词组</strong>：分别取两个字的单字全码中的前面个字根代码，共四码组成</p>
+<p><strong>三字词</strong>：前两个字各取其第一码，最后一个字取其二码，共为四码四字词：每字各取其第一码，共为四码</p>
+<p><strong>多字词</strong>：按“一、二、三、末”的规则，取第一、二、三及最末一个字的第一码，共为四码</p>
+<p>五种单笔划的编码为：</p>
+<p>一：11 11 24 24 (GGLL)</p>
+<p>|：21 21 24 24（HHLL）</p>
+<p>丿：31 31 24 24 (TTLL)</p>
+<p>丶：41 41 24 24 (YYLL)</p>
+<p>乙：51 51 24 24 (NNLL)</p>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="tool" term="tool"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洒色财气]]></title>
+        <id>https://docs.zazds.top/blog/洒色财气</id>
+        <link href="https://docs.zazds.top/blog/洒色财气"/>
+        <updated>2024-04-25T18:53:36.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<p>天下第一奇书《金瓶梅》序词，读后感受非凡，遂记录之，与君共品。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="洒">洒<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E6%B4%92" class="hash-link" aria-label="洒的直接链接" title="洒的直接链接">​</a></h2>
+<p>酒损精神破丧家，语言无状闹喧哗。</p>
+<p>疏亲慢友多由你，背义忘恩亦是他。</p>
+<p>切须戒，饮流霞。若能依此实无差。</p>
+<p>失却万事皆因此，今后逢宾只待茶。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="色">色<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E8%89%B2" class="hash-link" aria-label="色的直接链接" title="色的直接链接">​</a></h2>
+<p>休爱绿鬓美朱颜，少贪红粉翠花钿。</p>
+<p>损身害命多娇态，倾国倾城色更鲜。</p>
+<p>莫恋此，养丹田。人能寡欲寿长年。</p>
+<p>从今罢却闲风月，纸帐梅花独自眠。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="财">财<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E8%B4%A2" class="hash-link" aria-label="财的直接链接" title="财的直接链接">​</a></h2>
+<p>钱帛金珠笼内收，若非公道少贪求。</p>
+<p>亲朋道义因财失，父子怀情为利休。</p>
+<p>急缩手，且抽头。免使身心昼夜愁。</p>
+<p>儿孙自有儿孙福，莫与儿孙作远忧。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="气">气<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E6%B0%94" class="hash-link" aria-label="气的直接链接" title="气的直接链接">​</a></h2>
+<p>莫使强梁逞技能，挥拳捰袖弄精神。</p>
+<p>一时怒发无明穴，到后忧煎祸及身。</p>
+<p>莫太过，免灾迍，劝君凡事放宽情。</p>
+<p>合撒手时须撒手，得饶人处且饶人。</p>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="文字" term="文字"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[那些年的成功学]]></title>
+        <id>https://docs.zazds.top/blog/那些年的成功学</id>
+        <link href="https://docs.zazds.top/blog/那些年的成功学"/>
+        <updated>2024-04-25T17:13:01.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<blockquote>
+<p><em><strong>虽然你懂了那么多道理，可还是过不好这一生。</strong></em></p>
+</blockquote>
+<p>时光匆匆,遥想当年的各位成功学专家名声是如雷贯耳,他们的演讲是多么的激情澎湃,多少人趋之若鹜的追求那人人都能成功的发家秘籍,可回过头来一望,当年那些上过所谓成功学课程的人们,成者几数也,民者几数也.</p>
+<p>前不久看完一本书，看完过后真的如梦初醒，恍然大悟，我更加相信那些我们所谓的成功人士他们之所以能成功，最主要的原因在于他们自身的条件，他们当时所处的社会时代环境，个人气运，个人能力。种什么因，得什么果，一切因果循环，道法自然，如来。再也不会相信有些人说的“别人的成功可以复制”类似的的屁话了。书名《天幕红尘》，有兴趣的朋友可以看一看。</p>
+<p>在如今你卷他，他卷你，你卷我，我卷你，人卷人的世俗风气之下，咱们偶尔也会疲惫，懒散，无趣吧，这时候还是需要一些那看似无味的鸡汤呢。如果你也和我一样感觉疲惫，无精打采，自甘堕落，想要躺平的时候，一起来看看——安东尼•罗宾大师的经典语录吧</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="人生垃圾想法">人生垃圾想法<a href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E4%BA%BA%E7%94%9F%E5%9E%83%E5%9C%BE%E6%83%B3%E6%B3%95" class="hash-link" aria-label="人生垃圾想法的直接链接" title="人生垃圾想法的直接链接">​</a></h2>
+<ul>
+<li>
+<p>没必要做</p>
+</li>
+<li>
+<p>没人帮我</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>获得巨大成就的人几乎都有一种神奇的力量，他们能够集合众多人的力量，但是，他们从来没有刻意地去追随这种力量，而是让这种力量追随自己，而且他们总是首先知道依靠自己的力量改变身边的事物。</p></div></div>
+</li>
+<li>
+<p>以后再说吧</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>拖延能杀伤人的积极性。如果你没有立即动手做的习惯，你的所有理想以及目标就只是空想。 要实现一个理想或者计划，首先要有明确的思路，然后必须依靠持续不断地努力把它变成现实。</p></div></div>
+</li>
+<li>
+<p>我心情不好</p>
+</li>
+<li>
+<p>我不想做</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>懒散、懈怠是心灵的毒药，也是失败的罪魁祸首。竞争的“惯性定律”，开好头与积极心态的“引力定律”。</p><p>上帝是公平的，至少在成功的机会方面。只不过。积极主动者抓住了它们，消极怠惰者则与它们擦肩而过。</p></div></div>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="快乐工作的�方法">快乐工作的方法<a href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E5%BF%AB%E4%B9%90%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%96%B9%E6%B3%95" class="hash-link" aria-label="快乐工作的方法的直接链接" title="快乐工作的方法的直接链接">​</a></h2>
+<ol>
+<li>把工作当成一种享受</li>
+<li>把工作当成一种体验</li>
+<li>培养良好的人际关系</li>
+<li>注重工作计划，做到有条不紊</li>
+<li>不要把工作想复杂，从最简单的开始做</li>
+<li>一次做好一件事情</li>
+<li>细心口味每一个进步</li>
+<li>眼光要放远</li>
+<li>劳逸结合，张驰有度。最佳的工作状态是“忙里偷闲，闲中吃紧”</li>
+<li>把你对工作的感受写出来或说出来</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="每日一滴汤">每日一滴汤<a href="https://docs.zazds.top/blog/%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6#%E6%AF%8F%E6%97%A5%E4%B8%80%E6%BB%B4%E6%B1%A4" class="hash-link" aria-label="每日一滴汤的直接链接" title="每日一滴汤的直接链接">​</a></h2>
+<p><strong>当你能飞的时候就不要放弃飞，当你能梦的时候就不要放弃梦</strong></p>
+<p><strong>看世界要看到真实的世界，千万不要向自己撒谎。你对自己都撒谎，那么你不可能改变。为什么很多人要夸大事实，因为他们害怕失败。</strong></p>
+<p><strong>没有天生的信心，只有不断培养的信心，在真实的生命里，每桩伟业都由信心开始，并由信心跨出第一步</strong></p>
+<p><em><strong>不要抱怨，请你改变自己</strong></em></p>
+<p><em><strong>过去不等于未来</strong></em></p>
+<p><strong>因为我恐惧，所以我必须立刻行动，朝着想要的方向奔跑</strong></p>
+<p><strong>有成之人必然有他们独到的方法</strong></p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>一是知道自己想要的。</p><p>二是知道怎么去做。</p><p>三是知道自己当前正在接近目标还是远离目标。</p></div></div>
+<p><strong>绝不逃避</strong></p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>逃避绝不是一种明智的做法，而如果你想你从逃避中躲过一些困难或责任，那更是一件大错特错的事情。</p><p>试着想想看，你何时从逃避中获得了什么积极的效果？ 如果有，那也一定是暂时的。长远来看，它反而会塑造成更大的灾难。</p></div></div>
+<p><strong>绝不推托</strong></p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>没有人愿意偷懒，只不过他们欠缺诱人的目标，激发不出他们的干劲。 但这不是外在的原因，而是他们缺乏一种重要的观念，那就是匪夷所思的良性循环过程</p><p>当你越发挥你的才干，就越有能力；你越有能力，就越能挖掘出更大的才干，以及建立更积极、更乐观的心态。</p></div></div>
+<p><strong>一点一点解决它（分解困难）</strong></p>
+<p><strong>你必须在自己的生命里刻下一个观点：不休止地朝着一个目标，那就是成功的秘诀。</strong></p>
+<p><strong>任何谈论都是没有用的，只有去做才有用。</strong></p>
+<p><strong>绝对相信自己</strong></p>
+<p><strong>保持理智，客观认识困难</strong></p>
+<p><strong>任何事情都影响不了我们，真正能影响我们的乃是我们自己的认知。</strong></p>
+<p><strong>永远不要因胜利而过度兴奋,或因失败而过度沮丧</strong></p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>在成功者的身上，有一种神奇的能力，留意任何情况中的可能性，找出有利因素，从而积极主动地作出相应的努力与改变。</p><p>不管他们的处境如何，总相信事有可为，任何事情的发生，都会对自己有益。担心失败，是一种毒害心灵的方式</p><p>当我们存在消极的想法时，生理状态、思考方式和心境就都跟着而变，而我们最消极的想法，就莫过于担心失败了。</p><p>我们不应该轻易相信失败。 实际上，在所有成功者眼里，没有失败，只有结果。即使有不利的结果出现，只要改变方式，他们便会得到新的结果。“心境的力量是第一位的。”</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>一个人是否成熟，不在年龄，在于心智。当他不再冲动莽撞，开始懂得分寸与担当，就是在走向成熟。有担当，有胸怀，懂得珍惜，暗自努力，就是对成熟最好的定义。</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>每个人都有不同之处，不要辜负了生命的行程，切莫在嫉妒和羡慕中迷失了自我。百味人生，总有残缺的存在。知足常乐，才能自在逍遥。</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>人生不可能时常降临奇迹，除了你自己，没有谁可以一直被你依赖。指望别人，你就输了。凡事不要太怨天尤人，也不要一味等待他人施以援手。靠自己的力量一步步路过泥泞，才能离想要的东西越来越近。记住：人生中最好的贵人，永远是努力的自己。</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>一个人最为清醒的自觉，就是知道自己的位置，能够根据自己的实际情况，按照预先设定的目标，一步一个脚印地去努力。不畏惧困难，不妄自菲薄，不好高骛远，也不着急慌忙。</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>当一个人去追求生活的必需品时，他往往是勤奋的勇敢的；</p><p>当一个人去追求生活的消费品时，他往往是懒惰的温和的；</p><p>当一个人去追求生活的奢侈品时，他往往是消极的软弱的！</p><p>一个人一个家庭一个单位一个民族一个国家，奢饰品越多，就愿意用剩余财富，而不是以自己的生命为代价去守卫其财富。</p></div></div>
+<hr>
+<blockquote>
+<p><em><strong>光学习, 不练习,铁定没出息.</strong></em></p>
+</blockquote>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="文字" term="文字"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[公交车坠江事故所思]]></title>
+        <id>https://docs.zazds.top/blog/公交车坠江事故</id>
+        <link href="https://docs.zazds.top/blog/公交车坠江事故"/>
+        <updated>2018-11-02T20:55:47.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<blockquote>
+<p>2018年10月28日10时08分，重庆市万州区一大巴车在万州长江二桥桥面与小轿车发生碰撞后，坠入江中。</p>
+</blockquote>
+<p>还清晰的记得当日我得知此恶号当时那震惊、悲叹、哀伤的神态。那日和往常一样趁着周末睡了个懒觉，然后懒懒散散的洗漱完，一转身，一抬手，一睁眼———我看到了手机微信上有位家人给我发来的三段事故视频。“天呐，不可能吧，为什么会这样呢”,突然脑海中浮现出了这些念头，转眼间心情变的无比的失落和伤感。时至今日，救援队伍们经过5天5夜辛苦的搜救打捞。终于在今天，该起事故的原因终于出现在了我们眼前，法律判断该起事故的造成者（公交司机和女乘客）都触犯了刑法，都已构成犯罪。从事发之日到今天为上，那些网上流传的流言蜚语终于可以消散，此时此刻是不是也是我们自我反省的时刻呢？</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟一--关于网络暴力">感悟一  关于“网络暴力”<a href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%B8%80--%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E6%9A%B4%E5%8A%9B" class="hash-link" aria-label="感悟一  关于“网络暴力”的直接链接" title="感悟一  关于“网络暴力”的直接链接">​</a></h3>
+<p>我想如果知道这件事故的朋友们来讲一定听到过这样————“都是因为一位女司机，她不遵守交通规则逆向行驶，导致所致严重事故”，一个在事发后被广泛传播的事故起因。不知道看文章的朋友你之前是不是也相信这个理由然后激起你心中的伟大的正义力量愤怒的谴责这位九死一生的女司机呢？我记得当时我听到这个原因的时候反应很平常，因为我心里想着事故原因一定只能在“黑匣子”里才能被发现。不能怪网络世界信息传播的太快，不能怪我们内心深处都有一颗明亮的善良之心，不能怪我们对那些做出令人可恶行为的愤怒谴责。网络上各种辱骂、各种诅咒、各种言语上的人身攻击，直到真相大白，这些恶毒的流言蜚语才慢慢淡出人们的视线。在此，让我们冷静下来，让我们换位思考一下，假如自己是那位九死一生的女司机，你会有怎样的感受呢。我能想象的到的是她一定需要一个肩膀，一个可以依靠哭泣的肩膀，哭泣自己为什么这么倒霉；哭泣自己九死一生与死神擦肩而过；哭泣与自己相撞而坠入江中的公交车上的生命。这个时候的好可能是最需要家人、朋友安慰的时候吧。然而事实是这个时候众多的陌生网友们一个个手拿着正义之剑去审判一位被冤枉的受害者，其势何其像是严刑逼供般，此时此刻我们会有什么感觉呢？或许会突然感觉到背心一凉；感觉这个世界很冷；感觉自己险象环生后却又遭遇了更大的劫难。如是是我呢，因为看到过很多类似案例，我或许会这样劝自己——“不要在意网络上的流言蜚语，感恩自己的幸运，为遇难者祈福，如是而矣”。你呢？</p>
+<p>“安医生自杀事件”大家有所耳闻吗？一位男孩在游泳池侵犯了安医生，安医生丈夫出言教育了这男孩，结果这男孩的父母不论是非，有意的剪切出自己孩子被打的视频录像发上网络，恶意的到安医生工作单位打骂安医生，有意的让安医生失业。随着男孩被打的视频在网络上传播的同时，各种正义的谴责之声也都不胫而走，各种脏乱的言语传入了安医生的耳中，对于一位从事医疗工作，时常奉献自己救助别人真正的善良好人却被一个真正恶人栽赃陷害，颠倒事件的黑白，在光明的善良正义之剑下使的自己不得不以死来表明自己的清白，自己的无辜善良。</p>
+<p>今天看到到这样一则新闻，说是有一些网友在名星谢娜、黄日华的微博下面留言指责他们没有为金庸先生的离开而发条微博表达下自己不舍和感恩。我看到这则新闻不自觉的就想笑，笑他们夜郎自大，笑他们可笑至极。还记得有看春晚里的小品《郝建与老太太》吗？有一人看到老太太摔倒在地光拍张照片发微博他就真有爱心了吗？人们的情绪表达方式必需要以微博文字的形式？——可笑至极。人难道可以狂妄自大到唯我独大的地步吗？自己的判断一定是正确的？自己有足够的能力去指责别人的对与错？——狂妄至极。</p>
+<p>网络暴力是一种危害严重、影响恶劣的暴力形式，它是一类在网络上发表具有伤害性、侮辱性和煽动性的言语、图片、视频的行为现象，人们习惯称之为“网络暴力”。</p>
+<p>曾参杀人、人言可畏就不都是在说恶毒的流言蜚语的可怕之处吗？古时候有苛政猛于虎也，而如今人言又何尝比猛虎弱多少呢？我们通过网络很容易获取社会上发生的各种突发事情，而往往发生的事情中总会有正义道德的一方，这个时候众多网友们纷纷展示出了自己善良正义可贵的一面，而且人数众多。这让我心里很高兴，因为正义善良的人们还是越来越多了，我也希望我们能一直坚守这份正义和善良。可是我在这里想提醒你下你们，我们没有看穿过去和看透未来的能力，如果不是当事人，没有谁知道事情发生的来龙去脉，以及事情的真相。所以，请我们用善良正义的心静静的等待下去吧，等待事情的经过，等待事故的真想，汲取教训，完善自己，用自己善良正义之心在今后的生活中阻止、预防类似之事的发生。我们有能力辨别正义与邪恶，有能力辨别感恩与忘恩，这是人最根本的能力，可是我们真得有必要要让所有人都按照你所认为的感恩方式来表达感恩？你所认为的指责方式来表达与邪恶斗争？有很多东西都是需要实际行动来表达的，而不是通过一个“微博”来表达出来。让我们变得更理智、更理性一点吧，远离“网络暴力”,消灭“网络暴力”，与君共勉。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟二-关于人情冷漠">感悟二 关于“人情冷漠”<a href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%BA%8C-%E5%85%B3%E4%BA%8E%E4%BA%BA%E6%83%85%E5%86%B7%E6%BC%A0" class="hash-link" aria-label="感悟二 关于“人情冷漠”的直接链接" title="感悟二 关于“人情冷漠”的直接链接">​</a></h3>
+<p>从女乘客和公交车司机互相争吵到动手互斗时间持续不算短，足足有5分钟之多，车上的其它乘客为什么没有人出来阻止一下？记得在我大学刚毕业那年，我在一家在线网校做销售实习，有一次跟一位同事到一所学校门口销售课程的途中遇到了两位在大街上争吵的人，当时我还很清晰的记得我脑中突然出现了想走上去劝说一下，问了傍边的人才知道他俩是一家人，因为什么事情在争吵，慢慢的他们争吵声也小了我就打消了劝说的念头。我记得那位同事还夸了我一名“助人为乐”。我在想如果我在那辆公交车上，我会阻止得了这次事故的发生吗？如果是我，我或许对他们只是用口头争吵时无动于衷，因为我认为孰对孰错很明显，女乘客会因为自己理亏而不了了。如果女乘客无理之极，把自己的情绪胡乱发泄动手打司机影响司机专心驾驶，在已经影响到整车乘客生命的时刻我应该有百分之八十的几率会挺身号召车内乘客一起制止无理的女乘客吧。车内的十余人为什么没有起向阻止呢？是因为认为自己力量太小阻止不了？是因为没意识到事情的严重性？是因为事不关己高高挂起的自私之心吗？是因为人情变得冷漠了吗？</p>
+<p>想起小学上的课本《思想品德与教育》中的一篇故事，讲的是一位警察与一位歹徒搏斗，警察负伤了还是紧紧的 抓住歹徒不让歹徒离去。这则故事从小就告诉我们要勇敢的与不法分子斗争啊。或许是由于现在人们变得更加聪明了，太知道如保“明哲保身”了，在危机时刻没有人能挺身而出，让自己成了别人冲动情绪下的附属品。我们一起警醒吧，让我们多一点正义的行为，多一点关爱的行为，多一点见义勇为的行为。这些行为可能会帮人渡过劫难，这些行为可能会帮助别人重获新生；这些行为可能会造福你的子孙后辈。让我们用正义善良的行动让自己身边的事物变更友善和睦，善良美好吧，共勉。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="感悟三-关于道德和读书">感悟三 关于“道德和读书”<a href="https://docs.zazds.top/blog/%E5%85%AC%E4%BA%A4%E8%BD%A6%E5%9D%A0%E6%B1%9F%E4%BA%8B%E6%95%85#%E6%84%9F%E6%82%9F%E4%B8%89-%E5%85%B3%E4%BA%8E%E9%81%93%E5%BE%B7%E5%92%8C%E8%AF%BB%E4%B9%A6" class="hash-link" aria-label="感悟三 关于“道德和读书”的直接链接" title="感悟三 关于“道德和读书”的直接链接">​</a></h3>
+<p>对于这个女乘客大家有什么看法呢？我想有很多人会说“这世上真是什么人都有啊！”，是啊，事实确实如此，我们社会中确实有一小部分和这位女乘客一样，毫无是非之分之意识，毫无基本道德之素质，有的只是冲动霸道、无理取闹之行为。她为什么会做出如此冲动霸道的行为来呢？是因为她善恶不分？我相信只要不是专门做些伤天害理之事的人都知道是什么是善什么是恶。那又是什么原因呢？我想大概是因为“金钱”吧，一不小心又说到了这个敏感的词语，我为什么这么说呢，因为我认为一个人所拥有的财富和他所拥有的知识境界不相当的时候，金钱会使人产生一种精神上一种“虚无的上位者的姿态”———它会压制人们内心对善恶的判断，压制社会道德的底线，刺激人们做出一些以强欺弱的行为。</p>
+<p>因为自己的过失去迁怒无辜的司机，这已经很少有人能做出这样的事情呢吧，而且她居然还先动手打正在开车的司机，这个行为充分的看出了这女乘客的之霸道，那么她的霸道从何而来？从她那自我感觉出来的上位者状态而来，或许她看不起公交车司机，或许他认为她就可以随便的打位于她之下的任何人，最后她为自己的愚昧行为付出了代价，可悲的是她还伤害了一群无辜的生命，就是这种虚假的上位者姿态直接导致了事故的发生。</p>
+<p>“虚无的上位者姿态”会刺激人做出一些与社会道德相违背的事情，所以它应该越来越少，更应该消失。想要消除“虚无的上位者姿态”那就要获得与相应数量金钱相匹配的知识境界，然而正是由于这些“虚无的上位者”的狂妄自大，他们自称自己没读什么书却成就了现在的他们，所有社会上就流传了一名“读书无用论”。 真的是这样吗？读书真的“无用”？难道我们人的一生去追求那“虚无的上位者状态”就有意义了？</p>
+<p>纵观从古自今社会的进步靠的是什么？靠的是知识和创新？知识从那里来？当然是从前人们通过经验总结出来的书上来。大到国家需要知识来创新创造出先进的国防武器，小到我们日常生活需要知识创新来提高我们的生活品质。没有知识积累就没有创新就没有进步，有的只有慢慢退步到野蛮时代，我们难道想过回以往那种时代吗？纵观世界富豪榜，有多少不是通过积累足够多的知识然后通过创新创造出革命性，颠覆人类认知的产品呢？时代要有所进步必定先要学习接受前人的经验总结教训，然后再不断创新推动社会的向前发展，也只有通过学习知识才能提高自己的思想境界，才能脱离出那“虚无的上位者状态”。让我们人生所求变得有意义起来吧————“为天地立心，为生民立命，为往圣继绝学，为万世开太平！”</p>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="memory" term="memory"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MacOS实用指南]]></title>
+        <id>https://docs.zazds.top/blog/MacOS实用指南</id>
+        <link href="https://docs.zazds.top/blog/MacOS实用指南"/>
+        <updated>2018-11-01T20:59:06.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<p>简单记录使用MacOS的一些错误异常是如何恢复正常的。</p>
+<p><em><strong>如何解决Launchpad 图标完全错乱</strong></em></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># 重置Dock图标数据库</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rm ~/Library/Application\ Support/Dock/*.db &amp;&amp; killall Dock</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 重置Launchpad图标数据库</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">defaults write com.apple.dock ResetLaunchPad -bool true &amp;&amp; killall Dock</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="MacOS" term="MacOS"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一个人过很好的五条建议]]></title>
+        <id>https://docs.zazds.top/blog/一个人过很好的五条建议</id>
+        <link href="https://docs.zazds.top/blog/一个人过很好的五条建议"/>
+        <updated>2018-10-26T21:39:55.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1适应孤独努力成长">1.适应孤独，努力成长<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#1%E9%80%82%E5%BA%94%E5%AD%A4%E7%8B%AC%E5%8A%AA%E5%8A%9B%E6%88%90%E9%95%BF" class="hash-link" aria-label="1.适应孤独，努力成长的直接链接" title="1.适应孤独，努力成长的直接链接">​</a></h3>
+<p>《夏目友人帐》中说，我必须承认，生命中的大部分时光是属于孤独的，努力成长是在孤独中可以做的最好的事情。</p>
+<p>人生这趟旅途中，注定有很多时刻只能一个人经历，很多路只能一个人走，孤独是人生常态，你总要学着消化掉那些难捱的情绪，让自己变得独立坚强。</p>
+<p>当你尝试着把孤独的情绪转化为独处的时光，在这期间不断积蓄向上的力量，让自己变得充实，变得优于过去的自己，你会发现，没有什么事情比这更酷了。</p>
+<p>做最好的自己，才会遇见最好的别人，才会遇见更好的生活。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2拒绝拖延保持自律">2.拒绝拖延，保持自律<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#2%E6%8B%92%E7%BB%9D%E6%8B%96%E5%BB%B6%E4%BF%9D%E6%8C%81%E8%87%AA%E5%BE%8B" class="hash-link" aria-label="2.拒绝拖延，保持自律的直接链接" title="2.拒绝拖延，保持自律的直接链接">​</a></h3>
+<p>比起玩手机、打游戏、刷微博这些在不知不觉间消耗你时间的事情，坚持一些能够让你变得更自律的习惯，会让生活变得更美好。</p>
+<p>改掉三分钟热度只停留在空想阶段的习惯，比如跑步、比如冥想、比如学习一种乐器，找到自己的兴趣，将它变成自己的特长。</p>
+<p>不要等事情拖到不得不做的时候再去做，学着规划自己的时间，慢慢地开始整理自己的生活，掌控自己的日常，让一切变得有条不紊。</p>
+<p>就像康德所言：“自律即自由。”有勇气挑出自己的舒适区，挑战自己的懒惰并且尽可能战胜它的人，才是真正的人生赢家。</p>
+<p>你有多自律，就会有多优秀。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3不再晚睡按时吃饭">3.不再晚睡，按时吃饭<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#3%E4%B8%8D%E5%86%8D%E6%99%9A%E7%9D%A1%E6%8C%89%E6%97%B6%E5%90%83%E9%A5%AD" class="hash-link" aria-label="3.不再晚睡，按时吃饭的直接链接" title="3.不再晚睡，按时吃饭的直接链接">​</a></h3>
+<p>夜晚适合休息，适合放空，适合听听舒缓的歌曲泡个温柔的澡，适合敷张面膜看会儿书，适合很多安逸的事情，唯独不适合想念，不适合沉沦。</p>
+<p>改掉吃油腻的宵夜的习惯，压下想去联系那个不该联系的人的躁动，把时间留给自己，别再晚睡，也别再打扰谁。</p>
+<p>比起消耗精力去想一些让自己纠结的人和事，不如好好睡一觉。</p>
+<p>第二天天一亮，那些在深夜作祟的情绪，往往就消散了大半。</p>
+<p>照顾好你黑色的头发、挑剔的胃和爱笑的眼睛，认真对待你的一日三餐，一生不过三万多天，好好爱自己，比什么都重要。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4坚持运动锻炼身体">4.坚持运动，锻炼身体<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#4%E5%9D%9A%E6%8C%81%E8%BF%90%E5%8A%A8%E9%94%BB%E7%82%BC%E8%BA%AB%E4%BD%93" class="hash-link" aria-label="4.坚持运动，锻炼身体的直接链接" title="4.坚持运动，锻炼身体的直接链接">​</a></h3>
+<p>我们在人世间行走，所有一切存在的前提，是活着。</p>
+<p>保护好肉体的神殿，使它尽量免受病痛折磨，是对自己最起码的珍惜。</p>
+<p>运动是体力活动，却也是放松身心最好的方式，不管是瑜伽、跑步，抑或是每周去几次健身房，都是不错的选择。</p>
+<p>让思绪放空，专注于当下的一呼一吸，一举一动，给心灵放松的空间，也给身体增强抵抗力的时间，一举两得，何乐不为呢。</p>
+<p>处在任何一个年龄段，都要做最好的自己，不要太胖，不要太油腻，保持鲜活的少女心和少女力，从一个有活力的身材和心态开始。</p>
+<p>健康是人这一生最大的财富，而我们也必须为之终生努力，从当下开始，坚持运动，做更好的自己。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5总结过去珍惜当下">5.总结过去，珍惜当下<a href="https://docs.zazds.top/blog/%E4%B8%80%E4%B8%AA%E4%BA%BA%E8%BF%87%E5%BE%88%E5%A5%BD%E7%9A%84%E4%BA%94%E6%9D%A1%E5%BB%BA%E8%AE%AE#5%E6%80%BB%E7%BB%93%E8%BF%87%E5%8E%BB%E7%8F%8D%E6%83%9C%E5%BD%93%E4%B8%8B" class="hash-link" aria-label="5.总结过去，珍惜当下的直接链接" title="5.总结过去，珍惜当下的直接链接">​</a></h3>
+<p>人这一生，注定是无法回头、无法重来的，过往种种，好的坏的，都成了过去式。</p>
+<p>时光会慢慢地变淡它们带来的影响，而你也不该再频频回头，旧人旧事，就让它们留在旧日的风景里吧，你要做的，是总结过去的得失，然后大步朝前走。</p>
+<p>过日子，过的是以后，不是以前。不念过去，不畏将来，珍惜当下，才是最好的状态。</p>
+<p>学会舍弃一些早就该放下的东西，不会再穿的衣服和鞋子，不会再看的旧报纸，不会再联系的人，没有意义的事，早点和它们断舍离，你才能容易和更好的自己不期而遇。</p>
+<p>这个世界有时候的确会让人觉得很累、很辛苦、很压抑，甚至是很绝望，但请你相信，生活一定是有弹性的，别轻易认输，前路尽头，一定有光。</p>
+<p>愿你始终做善良的自己，知世故而不世故，愿你可以一直勇敢坚强、自信坦荡，不惧风雨坎坷，也不畏人言挫折。</p>
+<p>任何时候，不管是不是一个人，都愿你好好爱自己、爱生活、爱当下，活成自己喜欢的模样，过上自己想要的生活。</p>
+<p>#来自-雪雪老师签到专区，与君共勉#</p>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="文字" term="文字"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MD语法规则]]></title>
+        <id>https://docs.zazds.top/blog/MD语法规则</id>
+        <link href="https://docs.zazds.top/blog/MD语法规则"/>
+        <updated>2018-10-25T17:07:08.000Z</updated>
+        <summary type="html"><![CDATA[*]]></summary>
+        <content type="html"><![CDATA[<hr>
+<p>😊😂🤣❤❤❤</p>
+<hr>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->Write the press release</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->Update the website</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Contact the media</li>
+</ul>
+<p><code>单行块</code></p>
+<blockquote>
+<p>引用内容</p>
+</blockquote>
+<p><strong>111</strong></p>
+<p><em>22</em></p>
+<p><del>删除内容</del></p>
+<div class="language-txt codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-txt codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[链接文字](链接地址)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">![图片名称](图片地址)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>普通表格:</p>
+<table><thead><tr><th>title</th><th>title2</th><th>title3</th></tr></thead><tbody><tr><td>cell</td><td>cell2</td><td>cell3</td></tr></tbody></table>
+<p>对齐表格</p>
+<table><thead><tr><th style="text-align:center">title</th><th style="text-align:center">title2</th><th style="text-align:center">title3</th></tr></thead><tbody><tr><td style="text-align:center">cell</td><td style="text-align:center">cell2</td><td style="text-align:center">cell3</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>提示</div><div class="admonitionContent_BuS1"><p>自定义块关键字： tip   danger  note   info  warning  caution   hint  success    summary  question error</p></div></div>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>警告</div><div class="admonitionContent_BuS1"><p>自定义块关键字： tip   danger  note   info  warning  caution  success</p></div></div>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="tool" term="tool"/>
+    </entry>
+</feed>
