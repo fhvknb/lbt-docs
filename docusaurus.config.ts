@@ -26,8 +26,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: "zh-Hans",
+    locales: ["zh-Hans"],
   },
 
   presets: [
@@ -57,12 +57,24 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
+    metadata: [
+      { name: 'algolia-site-verification', content: '45999D009F620D2F' },
+    ],
     image: "img/docusaurus-social-card.jpg",
     algolia: {
-      appId: "H0ROWH8W85",
-      apiKey: "17f9ee2ce29ec0620afcc161ff3d00a8",
-      indexName: "zazds",
-      contextualSearch: true,
+      appId: "2VW5QVY9D5",
+      apiKey: "ef1c8428c9260643a6b1511d154e0515",
+      indexName: "lbtdocs",
+      contextualSearch: false,
+      searchParameters: {
+        facetFilters: [
+          'language:zh-Hans',
+          [
+            "docusaurus_tag:default",
+            "docusaurus_tag:docs-default-current"
+          ]
+        ],
+      },
     },
     navbar: {
       title: "LBT-DOCS",
