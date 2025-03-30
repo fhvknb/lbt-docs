@@ -353,7 +353,7 @@ function preOrderTraverse(root) {
 :::
 
 
-### 二叉搜索树
+### 二叉搜索树(BST)
 特点：　
 - `left值 < root值 < right值`
 
@@ -381,7 +381,12 @@ function preOrderTraverse(root) {
 - 最小堆：父节点数值小于子节点
 - 逻辑结构为二叉树，物理结构为数组
 
-VS BST
+堆与数组的对应关系通过简单的数学公式计算父节点和子节点的索引：　　
+1. 父节点：\[\lfloor \frac{i - 1}{2} \rfloor\]
+2. 左子节点：\[2i + 1\]
+3. 右子节点：\[2i + 2\]
+
+和二叉搜索权的对比：　　
 - 查询比BST慢
 - 删除比BST快
 - 维持平衡比BST快
@@ -538,7 +543,7 @@ function quickSort(arr) {
     }
 
     const midIdx = Math.floor(len / 2);
-    const mid = arr.slice(midIdx, midIdx + 1)[0];
+    const midVal = arr.slice(midIdx, midIdx + 1)[0];
 
     let left = [];
     let right = [];
@@ -547,14 +552,14 @@ function quickSort(arr) {
         if(i === midIdx) {
             continue;
         }
-        if(arr[i] <= mid) {
+        if(arr[i] <= midVal) {
             left.push(arr[i]);
-        } else if (arr[i] > mid){
+        } else if (arr[i] > midVal){
             right.push(arr[i])
         } 
     }
 
-    return quickSort(left).concat([mid], quickSort(right));
+    return quickSort(left).concat([midVal], quickSort(right));
  }
 const arr1 = [1,4,5,7,13,5,9];
 quickSort(arr1)

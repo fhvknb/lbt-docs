@@ -14,3 +14,4 @@ sidebar_position: 3
 - [javascript.patterns](https://github.com/lxj/javascript.patterns)
 - [Learning Blogs](https://github.com/iloveyou11/learning-blog?tab=readme-ov-file)
 - [Frontend Knowledge Structure](https://github.com/JacksonTian/fks?tab=readme-ov-file)
+- [小林Coding](https://www.xiaolincoding.com/)

@@ -43,7 +43,7 @@ commit 阶段会由渲染器进行处理，根据副作用进行UI的更新，�
 
 **协调器**
 
-协调器是 Render 的第二阶段工作。该阶段会采用深度优先的原则遍历井且创建一个一个的 FiberNode，井将其串联在一起，在遍历时分为了"递”与 归”两个阶段，其中在“递”阶段会执行 beginwork 方法，该方法会根据传入的 FiberNode 创建下一级 FiberNode。而“归”阶段则会执行 CompleteWork 方法，做一些副作用的收集
+协调器是 Render 的第二阶段工作。该阶段会采用深度优先的原则遍历并且创建一个一个的 FiberNode，并将其串联在一起，在遍历时分为了"递”与 归”两个阶段，其中在“递”阶段会执行 beginwork 方法，该方法会根据传入的 FiberNode 创建下一级 FiberNode。而“归”阶段则会执行 CompleteWork 方法，做一些副作用的收集，生成真实DOM。
 
 **渲染器**
 
@@ -105,7 +105,7 @@ diff 计算发生在更新阶段，当第一次渲染完成后，就会产生 Fi
 第一轮遍历会从前往后进行遍历，存在以下三种情况：
 
 1. 如果新旧子节点的key 和type 都相同，说明可以复用
-2. 如果新旧子节点的key 相同，但是type不相同，这个时候就会根据 ReactElement 来生成一个全新的fiber，旧的fiber 被放入到 deletions 数组里面，回头统一删除。但是注意，此时遍历井不会终止。
+2. 如果新旧子节点的key 相同，但是type不相同，这个时候就会根据 ReactElement 来生成一个全新的fiber，旧的fiber 被放入到 deletions 数组里面，回头统一删除。但是注意，此时遍历并不会终止。
 3. 如果新旧子节点的key 和type 都不相同，结束遍历如果第一轮遍历被提前终止了，那么意味着还有新的JSX 元素或者旧的 FiberNode 没有被遍历，因此会采用第二轮遍历去处理。
    
 第二轮遍历会遇到三种情况：
@@ -116,7 +116,7 @@ diff 计算发生在更新阶段，当第一次渲染完成后，就会产生 Fi
 整个 diff 算法最最核心的就是两个字"复用”。
 
 - React 不使用双端 diff 的原因：
- 由于双端dit需要向前查找节点，但每个 FibenNode 节点上都没有反向指针，即前-一个FiberNode 通过 sibing属性指向后一个FiberNode，只能从前往后遍历，而不能反过来，因此该算法无法通过双端搜索来进行优化。
+ 由于双端diff需要向前查找节点，但每个 FibenNode 节点上都没有反向指针，即前一个FiberNode 通过 sibing属性指向后一个FiberNode，只能从前往后遍历，而不能反过来，因此该算法无法通过双端搜索来进行优化。
 
 React想看下现在用这种方式能走多远，如果这种方式不理想，以后再考虑实现双端 diff。 React 认为对于列表反转和需要进行双端搜素的场景是少见的，所以在这一版的实现中，先不对bad case 做额外的优化。
 
@@ -136,7 +136,7 @@ React想看下现在用这种方式能走多远，如果这种方式不理想，
 1. SyntheticEvent（合成事件对象）
 SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流汉览器，同时拥有与浏览器原生事件相同的 API，例如stopPropagation 和 preventDefault。 SyntheticEvent 存在的目的是为了消除不同浏览器在“事件对家“问的差异。
 2.　模拟实现事件传播机制
-利用事件委托的原理，React 基于FiberTree 实现了事件的捕获、目标、冒泡的流程（类似于原生事件在 DOM 元素中传递的流程)，井且在这套事件传插机制中加入了许多新的特性，例如：
+利用事件委托的原理，React 基于FiberTree 实现了事件的捕获、目标、冒泡的流程（类似于原生事件在 DOM 元素中传递的流程)，并且在这套事件传插机制中加入了许多新的特性，例如：
 - 不同事件对应了不同的优先级
 - 定制事件名
 - 例如事件统一采用如“onxox 的驼峰写法了
@@ -159,7 +159,7 @@ next: null
 - useEffect：对于 useEffectt callback, [...deps])，memoizedstate 保存的是 callback、 [...deps]等数据，
 一个组件中的hook 会以链表的形式串起来，FiberNode 的memoizedstate 中保存了 Hooks 锥表中的第一个 Hook
 
-在更新时，会复用之前的Hook，如果通过 并条件语句，增加或者删除 hooks，在复用 hooks 过程中，会产生复用 hooks 状态和当前hooks 不一致的问题。
+在更新时，会复用之前的Hook，如果通过循环并和使用条件语句，增加或者删除 hooks，在复用 hooks 过程中，会产生复用 hooks 状态和当前hooks 不一致的问题。
 
 
 ## useState 和 useReducer 有什么样的区别？
@@ -176,7 +176,7 @@ usestate 本质上就是一个简易版的 useReducer 。
 
 
 ## 说一说 useEfTect 和 useLayoutEffect 的区别？
-在Reaet 中，更手定义有副作用因变量的Hook有
+在Reaet 中，可以定义有副作用因变量的Hook有
 - useEffect：回调函数会在 commit 阶段完成后异步执行，所以不会阻塞视園渲染
 - uselayoutEffect：回调函数会在 commit 阶段的Layout 子阶段同步执行，一般用于执行 DOM 相关的操作
 
@@ -196,11 +196,11 @@ uselayoutEffeat 的工作流程可以分为：
 ## 题目：useCallback 和 useMemo 的区别是什么？
 在useCallback 内部。会将函数和依赖项一起缓存到hook对象上的的 memoizedstate 属性上，在组件更新阶段，首先会拿到之前的hook 对象，从之前的hook 对象的 memoizedstate 属性上获取到之前的依赖项目，对比依赖项目是否相同，如果相同返回之前的callback，否则就重新缓存，然后返回新的 callback。
 
-在 useMemo 内部，会将传入的函效执行并得到计算值，将计算值和依赖项目存储到hook 对象的memoizedstate 上面，最后向外部返回计算得到的值。更新的时候首先是从 updateWorkinProgressHook 上拿到之前的 hook 对象，从而获取到之前的依赖值，和新传入的依赖进行一个对比，如果相同，就返回上一次的计算值，否则就重新调用传入的两数得到新的计算值井缓存，最后向外部返回新的计算值。
+在 useMemo 内部，会将传入的函效执行并得到计算值，将计算值和依赖项目存储到hook 对象的memoizedstate 上面，最后向外部返回计算得到的值。更新的时候首先是从 updateWorkinProgressHook 上拿到之前的 hook 对象，从而获取到之前的依赖值，和新传入的依赖进行一个对比，如果相同，就返回上一次的计算值，否则就重新调用传入的两数得到新的计算值并缓存，最后向外部返回新的计算值。
 
 
 ## useRef 是干什么的？ref 的工作流程是怎样的？什么叫做ref 的失控？
-useRef 的主要作用就是用來创建 ref保存对 DoM 元素的引用。在React 发展过程中，出现过三种 ref 相关的引用模式：
+useRef 的主要作用就是用來创建 ref保存对 DOM 元素的引用。在React 发展过程中，出现过三种 ref 相关的引用模式：
 - String 类型（己不推荐使用）
 - 函数类型
 - `{ current: T}`
@@ -211,12 +211,12 @@ useRef 的主要作用就是用來创建 ref保存对 DoM 元素的引用。在R
 
 ref 内部的工作流程整体上可以分为两个阶段：
 - render 阶段：标记 Ref flag，对应的内部函数为 markRef
-- commit 阶段：根据 Ref 11ag，执行 ref相关的操作，对应的相关函数有 commitDetachRef. commitAttachRef
+- commit 阶段：根据 Ref flag，执行 ref相关的操作，对应的相关函数有 commitDetachRef. commitAttachRef
   
 所谓ref的失控，本质是由于开发者通过 ref操作了 DOM，而这一行为本身是应该由 React 来进行接管的，所以两者之间发生了冲突导致的。
 
 ref 失控的防治主要体现在两个方面：
-- 防：控制ref 失控影像的范围，使ref 失控造成的影响更容易被定位，例如使用 forwardRef
+- 防：控制ref 失控影响的范围，使ref 失控造成的影响更容易被定位，例如使用 forwardRef
 - 治：从ref 引用的数据结构入手，尽力避免可能引起失控的操作，例如使用 uselmperativeHandle
 
 
@@ -228,7 +228,7 @@ ref 失控的防治主要体现在两个方面：
   
 eagerState 的核心逻辑是如果某个状态更新前后没有变化，则可以跳过后续的更新流程。该策略将状态的计算提前到了 schedule 阶段之前。当有FiberNode 命中 eagerState 策略后，就不会再进入schedule 阶段，直接使用上一次的状态。
 
-该策路有一个前提条件，那就是当前的 FiberNode 不存在待执行的更新，因为如果不存在待执行的更新，当前的更新就是第一个更新，计算出来的 state 即便不能命中 eagerstate，也能够在后面作为基础 state 来使用，这就是为什么FC 所使用的 Update 数据中有hasEagerState 以及 eagerState 宇段的原因。
+该策路有一个前提条件，那就是当前的 FiberNode 不存在待执行的更新，因为如果不存在待执行的更新，当前的更新就是第一个更新，计算出来的 state 即便不能命中 eagerstate，也能够在后面作为基础 state 来使用，这就是为什么FC 所使用的 Update 数据中有hasEagerState 以及 eagerState 字段的原因。
 
 
 ## 谈一谈React 中的 bailout 策略
@@ -241,7 +241,7 @@ eagerState 的核心逻辑是如果某个状态更新前后没有变化，则可
   
 当以上条件都满足时会命中 bailout 策略，之后会执行 bailoutOnAlreadyFinishedWork 方法，该方法会进一步判断能够优化到何种程度。
 
-通过 wip.childLanes 可以快速排查”当前 FiberNode 的整颗子树中是否存在更新”，如果不存在，则可以跳过整个子树的beginWork。这其实也是为什么React 每次更新都要生成一棵完整的 Fiebr Tree 但是性能井不差的原因
+通过 wip.childLanes 可以快速排查”当前 FiberNode 的整颗子树中是否存在更新”，如果不存在，则可以跳过整个子树的beginWork。这其实也是为什么React 每次更新都要生成一棵完整的 Fiebr Tree 但是性能并不差的原因
 
 - 第二次判断
  - 开发者使用了性能优化API， 此时要求当前的 FiberNode 要同时满足：
@@ -253,7 +253,7 @@ eagerState 的核心逻辑是如果某个状态更新前后没有变化，则可
 
 ## 为什么要重构 ContextAPI，旧版的ContextAPI 有什么问题？
 旧版的 Context　API 存在一些缺陷。
-context 中的的据是保存在栈里面的。在beginWork中，context 会不断的人栈，所以 context consumer可以通过 context栈向上找到对应的contextvalue，在completework 中，context 会不断出栈。
+context 中的的据是保存在栈里面的。在beginWork中，context 会不断的入栈，所以 context consumer可以通过 context栈向上找到对应的contextvalue，在completework 中，context 会不断出栈。
 
 这种入栈出栈的模式刚好可以用来应对reconcile 流程以及一般的bailout 策略。但是，对于“跳过整颗子树的 beginWork”这种程度的 bailout 策路，被跳过的子树就不会再经历 context 的入栈和出栈过程，因此在使用旧的ContextAPI时，即使context里面的数据发生了变化，但只要子树命中了bailout策略被跳过了，那么子树中的 Consumer就不会响应更新。
 
