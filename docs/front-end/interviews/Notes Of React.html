@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="LBT Docs" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.bf8e46cd.css">
-<script src="/assets/js/runtime~main.dee19481.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.66cc7f46.js" defer="defer"></script>
 <script src="/assets/js/main.a4c39d1c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -43,7 +43,7 @@
 <p><strong>调度器</strong></p>
 <p>调度器的主要工作就是调度任务，让所有的任务有优先级的概念，这样的话紧急的任务可以优先执行。Scheduler 实际上在浏览器的API 中是有原生实现的，这个 API 叫做 requestidleCallback，但是由于兼容性问题，React 放弃了使用这个 API，而是自己实现了一套这样的机制，并且后期会把 Scheduler 这个包单独的进行发布，变成一个独立的包。这就意味Scheduler 不仅仅是只能在 React中使用，后面如果有其他的项目涉及到了任务调度的需求，都可以使用这个 scheduler。</p>
 <p><strong>协调器</strong></p>
-<p>协调器是 Render 的第二阶段工作。该阶段会采用深度优先的原则遍历井且创建一个一个的 FiberNode，井将其串联在一起，在遍历时分为了&quot;递”与 归”两个阶段，其中在“递”阶段会执 行 beginwork 方法，该方法会根据传入的 FiberNode 创建下一级 FiberNode。而“归”阶段则会执行 CompleteWork 方法，做一些副作用的收集</p>
+<p>协调器是 Render 的第二阶段工作。该阶段会采用深度优先的原则遍历并且创建一个一个的 FiberNode，并将其串联在一起，在遍历时分为了&quot;递”与 归”两个阶段，其中在“递”阶段会执 行 beginwork 方法，该方法会根据传入的 FiberNode 创建下一级 FiberNode。而“归”阶段则会执行 CompleteWork 方法，做一些副作用的收集，生成真实DOM。</p>
 <p><strong>渲染器</strong></p>
 <p>渲染器的工作主要就是将各种副作用 (flags 表示）commit 到宿主环境的UI中。整个阶段可以分为三个子阶段，分别是
 BeforeMutation 阶段、Mutation 阶段和 Layout 阶段。</p>
@@ -58,7 +58,7 @@ React v15及其之前的架枸：</p>
 <p>但是随看应用规模的逐渐增大，之前的架构模式无法再满足&quot;快速响应&quot;这一需求，主要受限于如下两个方面：</p>
 <ul>
 <li>CPU瓶颈：由于 VDOM 在进行差异比较时，采用的是递归的方式，JS计算会消耗大最的时间，从而导致动画、还有一些需要实时更新的内容产生视觉上的卡顿。</li>
-<li>IO瓶颈：由于各种基于“自变量”变化而产生約更新任务没有优先級的概念，因此  在某些更新任务（例如文本框的输入） 有稍微的延迟，对于用户来讲也是非常敏感的，会让用户产生卡顿的感觉。</li>
+<li>IO瓶颈：由于各种基于“自变量”变化而产生約更新任务没有优先  級的概念，因此在某些更新任务（例如文本框的输入） 有稍微的延迟，对于用户来讲也是非常敏感的，会让用户产生卡顿的感觉。</li>
 </ul>
 <p>新的架构称之为 Fiber 架构：</p>
 <ul>
@@ -73,13 +73,13 @@ React v15及其之前的架枸：</p>
 <p>参考答案：
 Fiber 可以从三个方面去理解:</p>
 <ul>
-<li>FiberNode 作为一种架构：在React v15 以及之前的版本中，Reconceiler 采用的是递归的方式，因此被称之为 StackReconciler，到了 React v16 版本之后，引入了 Fiber, Reconceiler 也从 Stack Reconciler 变为了 Fiber Reconceiler, 各个FiberNode 之间通过链表的形式串联了起来。</li>
+<li>FiberNode 作为一种架构：在React v15 以及之前的版本中，Reconceiler 采用的是递归的方式，因此被称之为 StackReconciler，  到了 React v16 版本之后，引入了 Fiber, Reconceiler 也从 Stack Reconciler 变为了 Fiber Reconceiler, 各个FiberNode 之间通过链表的形式串联了起来。</li>
 <li>FiberNode 作为一种数据类型：Fiber 本质上也是一个对象，是之前虛拟 DOM 对象(React 元素，createElement 的返回值)的一种升级版本，每个Fiber 对象里面会包含 React 元素的类型，周围链接的 FiberNode，DOM 相关信息。</li>
 <li>FiberNode 作为动态的工作单元：在每个 FiberNode 中，保存了“本次更新中该 React 元素变化的数据、要执行的工作（增、删、改、更新Ref、副作用等）&quot;等信息。</li>
 </ul>
 <p>所谓 Fiber 双缓冲树，指的是在内存中构建两颗树，并直接在内存中进行替换的技术。在React 中使用 Wip　Fiber　Tree 和 Current　Fiber Tree 这两颗树来实现更新的逻辑。Wip　Fiber　Tree 在内存中完成更新，而 Current　Fiber　Tree 是最终要渲染的树，两颗树通过alternate 指针相互指向，这样在下一次渲染的时候，直接复用 Wip　Fiber Tree 作为下一次的渲染树，而上一次的渲染树又作为新的Wip Fiber Tree， 这样可以加快 DOM 节点的替换与更新。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="react-diff-算法有没有了解过为什么不使用vue中的双端比较算法">React diff 算法有没有了解过？为什么不使用Vue中的双端比较算法？<a href="#react-diff-算法有没有了解过为什么不使用vue中的双端比较算法" class="hash-link" aria-label="React diff 算法有没有了解过？为什么不使用Vue中的双端比较算法？的直接链接" title="React diff 算法有没有了解过？为什么不使用Vue中的双端比较算法？的直接链接">​</a></h2>
-<p>diff 计算发生在更新阶段，当第一次渲染完成后，就会产生 Fiber 树，再次渲染的时候 （更新），就会拿新的JSX 对象(vdom)和旧的 FiberNode 节点进行一个对比，再决定如何来产生新的 FiberNode，它的目标是尽可能的复用己有的Fiber 节点。这个就是diff 算法。</p>
+<p>diff 计算发生在更新阶段，当第一次渲染完成后，就会产生 Fiber 树，再次渲染的时候 （更新），就会拿新的JSX 对象(vdom)和旧的 FiberNode 节点进行一个对比，再决定如 何来产生新的 FiberNode，它的目标是尽可能的复用己有的Fiber 节点。这个就是diff 算法。</p>
 <p>在React 中整个 diff 分为单节点diff 和多节点diff。</p>
 <p>所谓单节点是指新的节点为单一节点，但是旧节点的数量是不一定的。</p>
 <p>单节点 diff 是否能够复用遵循如下的顺序</p>
@@ -102,25 +102,25 @@ Fiber 可以从三个方面去理解:</p>
 <p>第一轮遍历会从前往后进行遍历，存在以下三种情况：</p>
 <ol>
 <li>如果新旧子节点的key 和type 都相同，说明可以复用</li>
-<li>如果新旧子节点的key 相同，但是type不相同，这个时候就会根据 ReactElement 来生成一个全新的fiber，旧的fiber 被放入到 deletions 数组里面，回头统一删除。但是注意，此时遍历井不会终止。</li>
+<li>如果新旧子节点的key 相同，但是type不相同，这个时候就会根据 ReactElement 来生成一个全新的fiber，旧的fiber 被放入到 deletions 数组里面，回头统一删除。但是注意，此时遍历并不会终止。</li>
 <li>如果新旧子节点的key 和type 都不相同，结束遍历如果第一轮遍历被提前终止了，那么意味着还有新的JSX 元素或者旧的 FiberNode 没有被遍历，因此会采用第二轮遍历去处理。</li>
 </ol>
 <p>第二轮遍历会遇到三种情况：</p>
 <ol>
 <li>只剩下旧子节点：将旧的子节点添加到 deletions 数组里面直接删除掉（刪除的情況）</li>
 <li>只剩下新的JSX 元素：根据 ReactElement 元素来创建 FiberNode 节点(新增的情况）</li>
-<li>新旧子节点都有剩余：会将剩余的 FiberNode 节点放入一个map 里面，遍历剩余的新的J5X 元素，然后从 map 中去寻找能够复用的 FiberNode 节点，如果能够找 到，就拿来复用。（移动的情况）如果不能找到，就新增呗。然后如果剩余的JSX 元素都遍历完了，map结构中还有剩余的 Fiber 节点，就将这些 Fiber 节点添加到 deletions 数组里面，之后统一做删除操作</li>
+<li>新旧子节点都有剩余：会将剩余的 FiberNode 节点放入一个map 里面，遍历剩余的新的J5X 元素，然后从 map 中去寻找能够复用的 FiberNode  节点，如果能够找到，就拿来复用。（移动的情况）如果不能找到，就新增呗。然后如果剩余的JSX 元素都遍历完了，map结构中还有剩余的 Fiber 节点，就将这些 Fiber 节点添加到 deletions 数组里面，之后统一做删除操作</li>
 </ol>
 <p>整个 diff 算法最最核心的就是两个字&quot;复用”。</p>
 <ul>
 <li>React 不使用双端 diff 的原因：
-由于双端dit需要向前查找节点，但每个 FibenNode 节点上都没有反向指针，即前-一个FiberNode 通过 sibing属性指向后一个FiberNode，只能从前往后遍历，而不能反过来，因此该算法无法通过双端搜索来进行优化。</li>
+由于双端diff需要向前查找节点，但每个 FibenNode 节点上都没有反向指针，即前一个FiberNode 通过 sibing属性指向后一个FiberNode，只能从前往后遍历，而不能反过来，因此该算法无法通过双端搜索来进行优化。</li>
 </ul>
 <p>React想看下现在用这种方式能走多远，如果这种方式不理想，以后再考虑实现双端 diff。 React 认为对于列表反转和需要进行双端搜素的场景是少见的，所以在这一版的实现中，先不对bad case 做额外的优化。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="是否了解过-react-中的lane-模型为什么要从之前的-expirationtime-模型转换为-lane-模型">是否了解过 React 中的lane 模型？为什么要从之前的 expirationTime 模型转换为 lane 模型？<a href="#是否了解过-react-中的lane-模型为什么要从之前的-expirationtime-模型转换为-lane-模型" class="hash-link" aria-label="是否了解过 React 中的lane 模型？为什么要从之前的 expirationTime 模型转换为 lane 模型？的直接链接" title="是否了解过 React 中的lane 模型？为什么要从之前的 expirationTime 模型转换为 lane 模型？的直接链接">​</a></h2>
 <p>在React 中有一套独立的粒度更细的优先级算法，这就是lane 模型。</p>
 <p>这是一个基于位运算的算法，每一个lane 是一个32bit Integer ，不同的优先级对应了不同的lane，越低的位代表越高的优先级。</p>
-<p>早期的 React 并没有使用lane 横型，而是采用的的基于 expirationTime 桢型的算法，但是这种算法揉合了  “优先级”和”批&quot;这两个概念，限制了模型的表达能力。优先级算法的本质是&quot;为update 排序”，但 expiration Time 模型在完成排序的同时还默认的划定了&quot;批”。</p>
+<p>早期的 React 并没有使用lane 横型，而是采用的的基于 expirationTime 桢型的算法，但  是这种算法揉合了“优先级”和”批&quot;这两个概念，限制了模型的表达能力。优先级算法的本质是&quot;为update 排序”，但 expiration Time 模型在完成排序的同时还默认的划定了&quot;批”。</p>
 <p>使用lane 模型就不存在这个问题，因为是基于位运算，所以在批的划分上会更加的灵活。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="简述一下-react-中的事件是如何处理的">简述一下 React 中的事件是如何处理的？<a href="#简述一下-react-中的事件是如何处理的" class="hash-link" aria-label="简述一下 React 中的事件是如何处理的？的直接链接" title="简述一下 React 中的事件是如何处理的？的直接链接">​</a></h2>
 <p>在React 中，有一套自己的事件系统，如果说React 用 FiberTree 这一数据结构是用来描述 UI的话，那么事件系统则是基于FiberTree 来描述和UI之问的交互。
@@ -129,7 +129,7 @@ Fiber 可以从三个方面去理解:</p>
 <li>SyntheticEvent（合成事件对象）
 SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流汉览器，同时拥有与浏览器原生事件相同的 API，例如stopPropagation 和 preventDefault。 SyntheticEvent 存在的目的是为了消除不同浏览器在“事件对家“问的差异。
 2.　模拟实现事件传播机制
-利用事件委托的原理，React 基于FiberTree 实现了事件的捕获、目标、冒泡的流程（类似于原生事件在 DOM 元素中传递的流程)，井且在这套事件传插机制中加入了许多新的特性，例如：</li>
+利用事件委托的原理，React 基于FiberTree 实现了事件的捕获、目标、冒泡的流程（类似于原生事件在 DOM 元素中传递的流程)，并且在这套事件传插机制中加入了许多新的特性，例如：</li>
 </ol>
 <ul>
 <li>不同事件对应了不同的优先级</li>
@@ -138,7 +138,7 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 <li>定制事件行为</li>
 <li>例如 onChange 的默认行为与原生 oninput 相同</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hook是如何保存函数组件狀态的-为什么不能在循环条件或嵌套函数中调用-hook">Hook  是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?<a href="#hook是如何保存函数组件狀态的-为什么不能在循环条件或嵌套函数中调用-hook" class="hash-link" aria-label="Hook是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?的直接链接" title="Hook是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hook是如何保存函数组件狀态的-为什么不能在循环条件或嵌套函 数中调用-hook">Hook是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?<a href="#hook是如何保存函数组件狀态的-为什么不能在循环条件或嵌套函数中调用-hook" class="hash-link" aria-label="Hook是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?的直接链接" title="Hook是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?的直接链接">​</a></h2>
 <p>首先 Hook 是一个对象，大致有如下的结构：</p>
 <div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> hook </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token literal-property property" style="color:#36acaa">memoizedstate</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token keyword null nil" style="color:#00009f">null</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token literal-property property" style="color:#36acaa">baseState</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token keyword null nil" style="color:#00009f">null</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token literal-property property" style="color:#36acaa">baseQueue</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token keyword null nil" style="color:#00009f">null</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token literal-property property" style="color:#36acaa">queue</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token keyword null nil" style="color:#00009f">null</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token literal-property property" style="color:#36acaa">next</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token keyword null nil" style="color:#00009f">null</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>不同类型的hook 的memoizedstate 中保存了不同的值，例如：</p>
@@ -147,7 +147,7 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 <li>useEffect：对于 useEffectt callback, [...deps])，memoizedstate 保存的是 callback、 [...deps]等数据，
 一个组件中的hook 会以链表的形式串起来，FiberNode 的memoizedstate 中保存了 Hooks 锥表中的第一个 Hook</li>
 </ul>
-<p>在更新时，会复用之前的Hook，如果通过 并条件语句，增加或者删除 hooks，在复用 hooks 过程中，会产生复用 hooks 状态和当前hooks 不一致的问题。</p>
+<p>在更新时，会复用之前的Hook，如果通过循环并和使用条件语句，增加或者删除 hooks，在复用 hooks 过程中，会产生复用 hooks 状态和当前hooks 不一致的问题。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="usestate-和-usereducer-有什么样的区别">useState 和 useReducer 有什么样的区别？<a href="#usestate-和-usereducer-有什么样的区别" class="hash-link" aria-label="useState 和 useReducer 有什么样的区别？的直接链接" title="useState 和 useReducer 有什么样的区别？的直接链接">​</a></h2>
 <p>usestate 本质上就是一个简易版的 useReducer 。</p>
 <p>在mount 阶段，两者之间的区别在于：</p>
@@ -158,9 +158,9 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 <p>所以，useState 可以视为reducer 参数为 basicStateReducer 的 useReducer。</p>
 <p>在 update 阶段，updateState 内部直接调用的就是 updateReducer，传入的reducer 仍然是basicStateReducer。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="说一说-useeftect-和-uselayouteffect-的区别">说一说 useEfTect 和 useLayoutEffect 的区别？<a href="#说一说-useeftect-和-uselayouteffect-的区别" class="hash-link" aria-label="说一说 useEfTect 和 useLayoutEffect 的区别？的直接链接" title="说一说 useEfTect 和 useLayoutEffect 的区别？的直接链接">​</a></h2>
-<p>在Reaet 中，更手定义有副作用因变量的Hook有</p>
+<p>在Reaet 中，可以定义有副作用因变量的Hook  有</p>
 <ul>
-<li>useEffect：回调函 数会在 commit 阶段完成后异步执行，所以不会阻塞视園渲染</li>
+<li>useEffect：回调函数会在 commit 阶段完成后异步执行，所以不会阻塞视園渲染</li>
 <li>uselayoutEffect：回调函数会在 commit 阶段的Layout 子阶段同步执行，一般用于执行 DOM 相关的操作</li>
 </ul>
 <p>每一个effect 会与当前 FC 其他的effect 形成环状链表，连接方式为单向环状链表。
@@ -178,9 +178,9 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 <p>之所以useEffect 会比 uselayoutEtfect 多一个阶段，就是因为useEftect的回调函数会在commit 阶段完成后异步执行，因此需要经历调度阶段。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="题目usecallback-和-usememo-的区别是什么">题目：useCallback 和 useMemo 的区别是什么？<a href="#题目usecallback-和-usememo-的区别是什么" class="hash-link" aria-label="题目：useCallback 和 useMemo 的区别是什么？的直接链接" title="题目：useCallback 和 useMemo 的区别是什么？的直接链接">​</a></h2>
 <p>在useCallback 内部。会将函数和依赖项一起缓存到hook对象上的的 memoizedstate 属性上，在组件更新阶段，首先会拿到之前的hook 对象，从之前的hook 对象的 memoizedstate 属性上获取到之前的依赖项目，对比依赖项目是否相同，如果相同返回之前的callback，否则就重新缓存，然后返回新的 callback。</p>
-<p>在 useMemo 内部，会将传入的函效执行并得到计算值，将计算值和依赖项目存储到hook 对象的memoizedstate 上面，最后向外部返回计算得到的值。更新的时候首先是从 updateWorkinProgressHook 上拿到之前的 hook 对象，从而获取到之前的依赖值，和新传入的依赖进行一个对比，如果相同，就返回上一次的计算值，否则就重新调用传入的两数得到新的计算值井缓存，最后向外部返回新的计算值。</p>
+<p>在 useMemo 内部，会将传入的函效执行并得到计算值，将计算值和依赖项目存储到hook 对象的memoizedstate 上面，最后向外部返回计算得到的值。更新的时候首先是从 updateWorkinProgressHook 上拿到之前的 hook 对象，从而获取到之前的依赖值，和新传入的依赖进行一个对比，如果相同，就返回上一次的计算值，否则就重新调用传入的两数得到新的计算值并缓存，最后向外部返回新的计算值。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="useref-是干什么的ref-的工作流程是怎样的什么叫做ref-的失控">useRef 是干什么的？ref 的工作流程是怎样的？什么叫做ref 的失控？<a href="#useref-是干什么的ref-的工作流程是怎样的什么叫做ref-的失控" class="hash-link" aria-label="useRef 是干什么的？ref 的工作流程是怎样的？什么叫做ref 的失控？的直接链接" title="useRef 是干什么的？ref 的工作流程是怎样的？什么叫做ref 的失控？的直接链接">​</a></h2>
-<p>useRef 的主要作用就是用來创建 ref保存对 DoM 元素的引用。在React 发展过程中，出现过三种 ref 相关的引用模式：</p>
+<p>useRef 的主要作用就是用來创建 ref保存对 DOM 元素的引用。在React 发展过程中，出现过三种 ref 相关的引用模式：</p>
 <ul>
 <li>String 类型（己不推荐使用）</li>
 <li>函数类型</li>
@@ -191,13 +191,13 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 <p>ref 内部的工作流程整体上可以分为两个阶段：</p>
 <ul>
 <li>render 阶段：标记 Ref flag，对应的内部函数为 markRef</li>
-<li>commit 阶段：根据 Ref 11ag，执行 ref相关的操作，对应的相关函数有 commitDetachRef. commitAttachRef</li>
+<li>commit 阶段：根据 Ref flag，执行 ref相关的操作，对应的相关函数有 commitDetachRef. commitAttachRef</li>
 </ul>
 <p>所谓ref的失控，本质是由于开发者通过 ref操作了 DOM，而这一行为本身是应该由 React 来进行接管的，所以两者之间发生了冲突导致的。</p>
 <p>ref 失控的防治主要体现在两个方面：</p>
 <ul>
-<li>防：控制ref 失控影像的范围，使ref 失控造成的影响更容易被定位，例如使用 forwardRef</li>
-<li>治：从ref 引用的数据结构入手，尽力避免可能引起失控的操作，例如使用 uselmperativeHandle</li>
+<li>防：控制ref 失控影响的范围，使ref 失控造成的影响更容易被定位，例如使用 forwardRef</li>
+<li>治：从ref 引用的数据结构入手，尽力避免可能引 起失控的操作，例如使用 uselmperativeHandle</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="谈一谈-react-中的eagerstate-策略是什么">谈一谈 React 中的eagerstate 策略是什么？<a href="#谈一谈-react-中的eagerstate-策略是什么" class="hash-link" aria-label="谈一谈 React 中的eagerstate 策略是什么？的直接链接" title="谈一谈 React 中的eagerstate 策略是什么？的直接链接">​</a></h2>
 <p>在React 内部，性能优化策路可以分为：</p>
@@ -206,7 +206,7 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 <li>bailout 策略</li>
 </ul>
 <p>eagerState 的核心逻辑是如果某个状态更新前后没有变化，则可以跳过后续的更新流程。该策略将状态的计算提前到了 schedule 阶段之前。当有FiberNode 命中 eagerState 策略后，就不会再进入schedule 阶段，直接使用上一次的状态。</p>
-<p>该策路有一个前提条件，那就是当前的 FiberNode 不存在待执行的更新，因为如果不存在待执行的更新，当前的更新就是第一个更新，计算出来的 state 即便不能命中 eagerstate，也能够在后面作为基础 state 来使用，这就是为什么FC 所使用的 Update 数据中有hasEagerState 以及 eagerState 宇段的原因。</p>
+<p>该策路有一个前提条件，那就是当前的 FiberNode 不存在待执行的更新，因为如果不存在待执行的更新，当前的更新就是第一个更新，计算出来的 state 即便不能命中 eagerstate，也能够在后面作为基础 state 来使用，这就是为什么FC 所使用的 Update 数据中有hasEagerState 以及 eagerState 字段的原因。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="谈一谈react-中的-bailout-策略">谈一谈React 中的 bailout 策略<a href="#谈一谈react-中的-bailout-策略" class="hash-link" aria-label="谈一谈React 中的 bailout 策略的直接链接" title="谈一谈React 中的 bailout 策略的直接链接">​</a></h2>
 <p>在beginwork 中，会根据 wip FiberNode 生成对应的子 FiberNode， 此时会有两次“是否命中 bailout策路”的相关判断。</p>
 <ul>
@@ -219,8 +219,8 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 </ul>
 </li>
 </ul>
-<p>当以上条件都满足时会命中 bailout 策略，之后会执行 bailoutOnAlreadyFinishedWork 方法，该方法会  进一步判断能够优化到何种程度。</p>
-<p>通过 wip.childLanes 可以快速排查”当前 FiberNode 的整颗子树中是否存在更新”，如果不存在，则可以跳过整个子树的beginWork。这其实也是为什么React 每次更新都要生成一棵完整的 Fiebr Tree 但是性能井不差的原因</p>
+<p>当以上条件都满足时会命中 bailout 策略，之后会执行 bailoutOnAlreadyFinishedWork 方法，该方法会进一步判断能够优化到何种程度。</p>
+<p>通过 wip.childLanes 可以快速排查”当前 FiberNode 的整颗子树中是否存在更新”，如果不存在，则可以跳过整个子树的beginWork。这其实也是为什么React 每次更新都要生成一棵完整的 Fiebr Tree 但是性能并不差的原因</p>
 <ul>
 <li>第二次判断</li>
 <li>开发者使用了性能优化API， 此时要求当前的 FiberNode 要同时满足：<!-- -->
@@ -234,9 +234,9 @@ SyntheticEvent 是对浏览群原生事件对家的一层封装，兼容主流�
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="为什么要重构-contextapi旧版的contextapi-有什么问题">为什么要重构 ContextAPI，旧版的ContextAPI 有什么问题？<a href="#为什么要重构-contextapi旧版的contextapi-有什么问题" class="hash-link" aria-label="为什么要重构 ContextAPI，旧版的ContextAPI 有什么问题？的直接链接" title="为什么要重构 ContextAPI，旧版的ContextAPI 有什么问题？的直接链接">​</a></h2>
 <p>旧版的 Context　API 存在一些缺陷。
-context 中的的据是保存在栈里面的。在beginWork中，context 会不断的人栈，所以 context consumer可以通过 context栈向上找到对应的contextvalue，在completework 中，context 会不断出栈。</p>
+context 中的的据是保存在栈里面的。在beginWork中，context 会不断的入栈，所以 context consumer可以通过 context栈向上找到对应的contextvalue，在completework 中，context 会不断出栈。</p>
 <p>这种入栈出栈的模式刚好可以用来应对reconcile 流程以及一般的bailout 策略。但是，对于“跳过整颗子树的 beginWork”这种程度的 bailout 策路，被跳过的子树就不会再经历 context 的入栈和出栈过程，因此在使用旧的ContextAPI时，即使context里面的数据发生了变化，但只要子树命中了bailout策略被跳过了，那么子树中的 Consumer就不会响应更新。</p>
 <p>新版的 ContextAPI 当context value 发生变化时，beginWork 会从 Provider立刻向下开启一次深度优先遍历，目的是寻找 ContextConsumer。 Context Consumer 找到后，会为其对应的 FiberNode.lanes 附加renderLanes，再从ContextConsumer　往上深度遍历，为祖先的FiberNode.childLanes标记一个renderLanes。因此如果子树深处存在 ContextConsumer，即使子树的根 FiberNode 命中 bailout 策略，也不会完全跳过子树的beginwork 流程。</p>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>React 中的hooks都分为Mount阶段和Update阶段，</p><p>render阶段标记，commit阶段进行删除和更新</p></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/front-end/interviews/Notes Of JS &amp; TS"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">Notes Of JS &amp; TS</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/front-end/interviews/Notes Of Vue"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Notes Of Vue</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#react渲染过程" class="table-of-contents__link toc-highlight">React渲 染过程</a></li><li><a href="#react中setstate的更新机制16版本之前" class="table-of-contents__link toc-highlight">react中setState的更新机制（16版本之前）</a></li><li><a href="#setstate是微任务还是普通任务" class="table-of-contents__link toc-highlight">setState是微任务还是普通任务？</a></li><li><a href="#是否了解过-react-的整体渲染流程-里面主要有哪些阶段" class="table-of-contents__link toc-highlight">是否了解过 React 的整体渲染流程？ 里面主要有哪些阶段？</a></li><li><a href="#是否了解过-react-的架构新的fiber-架构相较于之前的-stack-架构有什么优势" class="table-of-contents__link toc-highlight">是否了解过 React 的架构？新的Fiber 架构相较于之前的 Stack 架构有什么优势？</a></li><li><a href="#谈一谈你对-react-中-fiber-的理解以及什么是fiber-双缓冲" class="table-of-contents__link toc-highlight">谈一谈你对 React 中 Fiber 的理解以及什么是Fiber 双缓冲？</a></li><li><a href="#react-diff-算法有没有了解过为什么不使用vue中的双端比较算法" class="table-of-contents__link toc-highlight">React diff 算法有没有了解过？为什么不使用Vue中的双端比较算法？</a></li><li><a href="#是否了解过-react-中的lane-模型为什么要从之前的-expirationtime-模型转换为-lane-模型" class="table-of-contents__link toc-highlight">是否了解过 React 中的lane 模型？为什么要从之前的 expirationTime 模型转换为 lane 模型？</a></li><li><a href="#简述一下-react-中的事件是如何处理的" class="table-of-contents__link toc-highlight">简述一下 React 中的事件是如何处理的？</a></li><li><a href="#hook是如何保存函数组件狀态的-为什么不能在循环条件或嵌套函数中调用-hook" class="table-of-contents__link toc-highlight">Hook是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?</a></li><li><a href="#usestate-和-usereducer-有什么样的区别" class="table-of-contents__link toc-highlight">useState 和 useReducer 有什么样的区别？</a></li><li><a href="#说一说-useeftect-和-uselayouteffect-的区别" class="table-of-contents__link toc-highlight">说一说 useEfTect 和 useLayoutEffect 的区别？</a></li><li><a href="#题目usecallback-和-usememo-的区别是什么" class="table-of-contents__link toc-highlight">题目：useCallback 和 useMemo 的区别是什么？</a></li><li><a href="#useref-是干什么的ref-的工作流程是怎样的什么叫做ref-的失控" class="table-of-contents__link toc-highlight">useRef 是干什么的？ref 的工作流程是怎样的？什么叫做ref 的失控？</a></li><li><a href="#谈一谈-react-中的eagerstate-策略是什么" class="table-of-contents__link toc-highlight">谈一谈 React 中的eagerstate 策略是什么？</a></li><li><a href="#谈一谈react-中的-bailout-策略" class="table-of-contents__link toc-highlight">谈一谈React 中的 bailout 策略</a></li><li><a href="#为什么要重构-contextapi旧版的contextapi-有什么问题" class="table-of-contents__link toc-highlight">为什么要重构 ContextAPI，旧版的ContextAPI 有什么问题？</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 LBT-DOCS, Inc. Built with Docusaurus.</div></div></div></footer></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>React 中的hooks都分为Mount阶段和Update阶段，</p><p>render阶段标记，commit阶段进行删除和更新</p></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/front-end/interviews/Notes Of JS &amp; TS"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">Notes Of JS &amp; TS</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/front-end/interviews/Notes Of Vue"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Notes Of Vue</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#react渲染过程" class="table-of-contents__link toc-highlight">React渲染过程</a></li><li><a href="#react中setstate的更新机制16版本之前" class="table-of-contents__link toc-highlight">react中setState的更新机制（16版本之前）</a></li><li><a href="#setstate是微任务还是普通任务" class="table-of-contents__link toc-highlight">setState是微任务还是普通任务？</a></li><li><a href="#是否了解过-react-的整体渲染流程-里面主要有哪些阶段" class="table-of-contents__link toc-highlight">是否了解过 React 的整体渲染流程？ 里面主要有哪些阶段？</a></li><li><a href="#是否了解过-react-的架构新的fiber-架构相较于之前的-stack-架构有什么优势" class="table-of-contents__link toc-highlight">是否了解过 React 的架构？新的Fiber 架构相较于之前的 Stack 架构有什么优势？</a></li><li><a href="#谈一谈你对-react-中-fiber-的理解以及什么是fiber-双缓冲" class="table-of-contents__link toc-highlight">谈一谈你对 React 中 Fiber 的理解以及什么是Fiber 双缓冲？</a></li><li><a href="#react-diff-算法有没有了解过为什么不使用vue中的双端比较算法" class="table-of-contents__link toc-highlight">React diff 算法有没有了解过？为什么不使用Vue中的双端比较算法？</a></li><li><a href="#是否了解过-react-中的lane-模型为什么要从之前的-expirationtime-模型转换为-lane-模型" class="table-of-contents__link toc-highlight">是否了解过 React 中的lane 模型？为什么要从之前的 expirationTime 模型转换为 lane 模型？</a></li><li><a href="#简述一下-react-中的事件是如何处理的" class="table-of-contents__link toc-highlight">简述一下 React 中的事件是如何处理的？</a></li><li><a href="#hook是如何保存函数组件狀态的-为什么不能在循环条件或嵌套函数中调用-hook" class="table-of-contents__link toc-highlight">Hook是如何保存函数组件狀态的？ 为什么不能在循环，条件或嵌套函数中调用 Hook?</a></li><li><a href="#usestate-和-usereducer-有什么样的区别" class="table-of-contents__link toc-highlight">useState 和 useReducer 有什么样的区别？</a></li><li><a href="#说一说-useeftect-和-uselayouteffect-的区别" class="table-of-contents__link toc-highlight">说一说 useEfTect 和 useLayoutEffect 的区别？</a></li><li><a href="#题目usecallback-和-usememo-的区别是什么" class="table-of-contents__link toc-highlight">题目：useCallback 和 useMemo 的区别是什么？</a></li><li><a href="#useref-是干什么的ref-的工作流程是怎样的什么叫做ref-的失控" class="table-of-contents__link toc-highlight">useRef 是干什么的？ref 的工作流程是怎样的？什么叫做ref 的失控？</a></li><li><a href="#谈一谈-react-中的eagerstate-策略是什么" class="table-of-contents__link toc-highlight">谈一谈 React 中的eagerstate 策略是什么？</a></li><li><a href="#谈一谈react-中的-bailout-策略" class="table-of-contents__link toc-highlight">谈一谈React 中的 bailout 策略</a></li><li><a href="#为什么要重构-contextapi旧版的contextapi-有什么问题" class="table-of-contents__link toc-highlight">为什么要重构 ContextAPI，旧版的ContextAPI 有什么问题？</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 LBT-DOCS, Inc. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
