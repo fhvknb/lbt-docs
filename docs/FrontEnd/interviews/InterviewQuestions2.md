@@ -1,13 +1,13 @@
 ---
 sidebar_position: 4
-title: Interview Notes 
+title: InterviewQuestions2 
 tag: [frontend]
 ---
 
 
  ![interview-skill](./imgs/interview-skill.png)
 
- # 常见面试题
+ ## 常见面试题
 
  ### 防抖和节流
 
