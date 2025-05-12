@@ -6,8 +6,7 @@ tags:
 
 
 
-```docker
-
+```bash
 # 运行一个容器
 docker run -it --rm --name mynginx nginx:latest
 # 查看容器日志
