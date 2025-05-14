@@ -332,6 +332,6 @@ Markdown 的各种语法可以组合使用，比如引用中嵌套列表、代�
 :::
 ```
 
-自定义块关键字: `tip   danger  note   info  warning  caution   hint  success  summary  question error ` 
+自定义块关键字: `tip   danger  note   info  warning  caution   success` 
 
 

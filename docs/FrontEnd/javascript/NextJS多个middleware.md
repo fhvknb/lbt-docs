@@ -4,7 +4,7 @@ tag:
   - javascript
 ---
 
-# NextJS中应用多个middleware实践指南
+# NextJS中多个middleware实践指南
 
 1. 首先，在项目根目录创建 `middleware.ts` 文件
 2. 在该文件中，您需要结合 NextAuth 的 withAuth 中间件和您的自定义 Locale 中间件逻辑

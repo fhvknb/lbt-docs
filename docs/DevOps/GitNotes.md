@@ -48,6 +48,14 @@ git reset --hard HEAD^ 切换到上一个版本
 git reset --hard 版本id  切换到指定id的版本
 git reflog 查看修改的历史版本的信息
 
+
+# 只摘取某个分支的代码
+git clone --single-branch --branch main https://github.com/username/repository.git
+
+git clone --depth 1 --branch main https://github.com/username/repository.git
+
+
+
 ```
 
 ## Git Flow分支管理流程
