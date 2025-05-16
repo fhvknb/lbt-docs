@@ -60,7 +60,7 @@ const config: Config = {
     metadata: [
       { name: 'algolia-site-verification', content: '45999D009F620D2F' },
     ],
-    image: "img/docusaurus-social-card.jpg",
+    // image: "img/docusaurus-social-card.jpg",
     algolia: {
       appId: "2VW5QVY9D5",
       apiKey: "ef1c8428c9260643a6b1511d154e0515",
