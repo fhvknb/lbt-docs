@@ -2,11 +2,211 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.zazds.top/blog</id>
     <title>LBT Docs Blog</title>
-    <updated>2025-05-14T00:41:13.000Z</updated>
+    <updated>2025-05-15T04:02:01.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.zazds.top/blog"/>
     <subtitle>LBT Docs Blog</subtitle>
-    <icon>https://docs.zazds.top/img/favicon.ico</icon>
+    <icon>https://docs.zazds.top/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[磁力资源的生成和传递过程原理]]></title>
+        <id>https://docs.zazds.top/blog/磁力资源的生成和传递过程原理</id>
+        <link href="https://docs.zazds.top/blog/磁力资源的生成和传递过程原理"/>
+        <updated>2025-05-15T04:02:01.000Z</updated>
+        <summary type="html"><![CDATA[磁力资源(也称为磁力链接或磁链)是一种在P2P网络中分享文件的技术。]]></summary>
+        <content type="html"><![CDATA[<p>磁力资源(也称为磁力链接或磁链)是一种在P2P网络中分享文件的技术。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="基本概念">基本概念<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5" class="hash-link" aria-label="基本概念的直接链接" title="基本概念的直接链接">​</a></h2>
+<p>磁力链接(Magnet Link)是一种特殊的URI格式，不直接指向资源的具体位置，而是包含了资源的元数据信息，主要是资源的哈希值(通常是SHA-1或SHA-256哈希)。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="磁力资源的生成过程">磁力资源的生成过程<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E8%BF%87%E7%A8%8B" class="hash-link" aria-label="磁力资源的生成过程的直接链接" title="磁力资源的生成过程的直接链接">​</a></h2>
+<ol>
+<li>
+<p><strong>文件哈希计算</strong>：</p>
+<ul>
+<li>系统对要分享的文件计算唯一的哈希值(通常使用SHA-1算法)</li>
+<li>这个哈希值成为识别该资源的唯一标识符</li>
+</ul>
+</li>
+<li>
+<p><strong>元数据文件(种子信息)生成</strong>：</p>
+<ul>
+<li>系统创建包含文件信息的元数据，如文件大小、名称、分块信息等</li>
+<li>对于大文件，会被分割成多个小块(通常为256KB或512KB)，每个块也有自己的哈希值</li>
+</ul>
+</li>
+<li>
+<p><strong>磁力链接格式化</strong>：</p>
+<ul>
+<li>将哈希值和其他可选参数组合成URI格式</li>
+<li>典型格式: <code>magnet:?xt=urn:btih:[哈希值]&amp;dn=[显示名称]&amp;tr=[Tracker地址]</code></li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="磁力资源的传递过程">磁力资源的传递过程<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B" class="hash-link" aria-label="磁力资源的传递过程的直接链接" title="磁力资源的传递过程的直接链接">​</a></h2>
+<ol>
+<li>
+<p><strong>用户获取磁力链接</strong>：</p>
+<ul>
+<li>用户从网站、论坛或朋友处获得磁力链接</li>
+</ul>
+</li>
+<li>
+<p><strong>DHT网络查询</strong>：</p>
+<ul>
+<li>当用户点击磁力链接时，BitTorrent客户端启动</li>
+<li>客户端连接到分布式哈希表(DHT)网络</li>
+<li>通过哈希值在DHT网络中查询拥有该资源的节点(peers)</li>
+</ul>
+</li>
+<li>
+<p><strong>Tracker服务器辅助(可选)</strong>：</p>
+<ul>
+<li>如果磁力链接包含tracker服务器地址，客户端也会向tracker查询拥有该资源的节点</li>
+</ul>
+</li>
+<li>
+<p><strong>节点发现与连接</strong>：</p>
+<ul>
+<li>客户端找到拥有资源的节点后建立连接</li>
+<li>使用"握手"协议确认双方都在寻找/拥有相同的资源</li>
+</ul>
+</li>
+<li>
+<p><strong>数据交换</strong>：</p>
+<ul>
+<li>客户端请求特定的文件块</li>
+<li>拥有这些块的节点将数据传输给请求方</li>
+<li>同时，已下载的块也可以分享给其他节点(这就是P2P的核心理念)</li>
+</ul>
+</li>
+<li>
+<p><strong>文件验证与组装</strong>：</p>
+<ul>
+<li>客户端接收到文件块后，通过哈希值验证其完整性</li>
+<li>所有块下载完成后，组装成完整文件</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="技术特点">技术特点<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#%E6%8A%80%E6%9C%AF%E7%89%B9%E7%82%B9" class="hash-link" aria-label="技术特点的直接链接" title="技术特点的直接链接">​</a></h2>
+<ul>
+<li><strong>去中心化</strong>：不依赖中央服务器存储文件</li>
+<li><strong>冗余性</strong>：多个节点可能拥有相同的数据块</li>
+<li><strong>效率</strong>：可以从多个来源同时下载不同部分</li>
+<li><strong>弹性</strong>：即使部分节点离线，仍可从其他节点获取数据</li>
+<li><strong>自验证</strong>：通过哈希值保证数据完整性</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="磁力资源分享操作步骤">磁力资源分享操作步骤<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4" class="hash-link" aria-label="磁力资源分享操作步骤的直接链接" title="磁力资源分享操作步骤的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-准备分享内容">1. 准备分享内容<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#1-%E5%87%86%E5%A4%87%E5%88%86%E4%BA%AB%E5%86%85%E5%AE%B9" class="hash-link" aria-label="1. 准备分享内容的直接链接" title="1. 准备分享内容的直接链接">​</a></h3>
+<p>首先确保您有权分享该内容，如自创作品、开源软件或公共领域的作品。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-安装bittorrent客户端">2. 安装BitTorrent客户端<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#2-%E5%AE%89%E8%A3%85bittorrent%E5%AE%A2%E6%88%B7%E7%AB%AF" class="hash-link" aria-label="2. 安装BitTorrent客户端的直接链接" title="2. 安装BitTorrent客户端的直接链接">​</a></h3>
+<p>选择一个可靠的BitTorrent客户端软件，常见的有:</p>
+<ul>
+<li>qBittorrent (开源)</li>
+<li>Transmission (开源)</li>
+<li>uTorrent</li>
+<li>BitTorrent</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-创建种子文件">3. 创建种子文件<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#3-%E5%88%9B%E5%BB%BA%E7%A7%8D%E5%AD%90%E6%96%87%E4%BB%B6" class="hash-link" aria-label="3. 创建种子文件的直接链接" title="3. 创建种子文件的直接链接">​</a></h3>
+<ol>
+<li>在BitTorrent客户端中找到"创建新种子"或"创建Torrent"选项</li>
+<li>选择要分享的文件或文件夹</li>
+<li>设置种子信息:<!-- -->
+<ul>
+<li>添加Tracker服务器地址(可选但推荐)</li>
+<li>设置块大小(通常默认即可)</li>
+<li>添加描述和标签(可选)</li>
+</ul>
+</li>
+<li>生成种子文件(.torrent文件)</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-生成磁力链接">4. 生成磁力链接<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#4-%E7%94%9F%E6%88%90%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5" class="hash-link" aria-label="4. 生成磁力链接的直接链接" title="4. 生成磁力链接的直接链接">​</a></h3>
+<p>大多数现代BitTorrent客户端会在创建种子的同时生成磁力链接。也可以:</p>
+<ul>
+<li>右键点击已添加的种子，选择"复制磁力链接"</li>
+<li>或使用在线工具从.torrent文件生成磁力链接</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5-开始做种">5. 开始做种<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#5-%E5%BC%80%E5%A7%8B%E5%81%9A%E7%A7%8D" class="hash-link" aria-label="5. 开始做种的直接链接" title="5. 开始做种的直接链接">​</a></h3>
+<ol>
+<li>将创建的种子文件添加到您的BitTorrent客户端</li>
+<li>确保指向正确的文件位置</li>
+<li>保持客户端运行以"做种"(上传数据给其他下载者)</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="6-分享磁力链接">6. 分享磁力链接<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#6-%E5%88%86%E4%BA%AB%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5" class="hash-link" aria-label="6. 分享磁力链接的直接链接" title="6. 分享磁力链接的直接链接">​</a></h3>
+<p>可以通过以下方式分享磁力链接:</p>
+<ul>
+<li>电子邮件</li>
+<li>即时通讯工具</li>
+<li>论坛或社区网站</li>
+<li>个人博客或网站</li>
+<li>专门的种子索引网站(确保合法)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="提高分享效率的技巧">提高分享效率的技巧<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#%E6%8F%90%E9%AB%98%E5%88%86%E4%BA%AB%E6%95%88%E7%8E%87%E7%9A%84%E6%8A%80%E5%B7%A7" class="hash-link" aria-label="提高分享效率的技巧的直接链接" title="提高分享效率的技巧的直接链接">​</a></h2>
+<ol>
+<li>
+<p><strong>保持长时间做种</strong></p>
+<ul>
+<li>做种时间越长，资源可用性越高</li>
+</ul>
+</li>
+<li>
+<p><strong>使用多个Tracker</strong></p>
+<ul>
+<li>添加多个可靠的Tracker服务器地址可以提高资源被发现的几率</li>
+</ul>
+</li>
+<li>
+<p><strong>启用DHT和PEX</strong></p>
+<ul>
+<li>分布式哈希表(DHT)和对等交换(PEX)可以帮助用户在没有Tracker的情况下找到彼此</li>
+</ul>
+</li>
+<li>
+<p><strong>设置合理的上传速度限制</strong></p>
+<ul>
+<li>避免占用全部带宽，但也要保证足够的上传速度</li>
+</ul>
+</li>
+<li>
+<p><strong>提供完整的元数据</strong></p>
+<ul>
+<li>详细的文件名、描述和标签有助于其他用户找到您的资源</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="磁力资源分享注意事项">磁力资源分享注意事项<a href="https://docs.zazds.top/blog/%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86#%E7%A3%81%E5%8A%9B%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="hash-link" aria-label="磁力资源分享注意事项的直接链接" title="磁力资源分享注意事项的直接链接">​</a></h2>
+<ol>
+<li>
+<p><strong>法律风险</strong></p>
+<ul>
+<li>仅分享您有权分享的内容</li>
+<li>不同国家和地区对P2P分享有不同的法律规定</li>
+</ul>
+</li>
+<li>
+<p><strong>隐私考虑</strong></p>
+<ul>
+<li>在P2P网络中，您的IP地址对其他参与者可见</li>
+<li>如需隐私保护，可考虑使用VPN服务</li>
+</ul>
+</li>
+<li>
+<p><strong>带宽消耗</strong></p>
+<ul>
+<li>做种会消耗您的上传带宽</li>
+<li>注意ISP可能对大量P2P流量有限制政策</li>
+</ul>
+</li>
+<li>
+<p><strong>存储空间</strong></p>
+<ul>
+<li>确保有足够的存储空间保存要分享的文件</li>
+</ul>
+</li>
+</ol>]]></content>
+        <author>
+            <name>Damas NanPu</name>
+            <uri>https://github.com/fhvknb</uri>
+        </author>
+        <category label="tool" term="tool"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Markdown画图指南]]></title>
         <id>https://docs.zazds.top/blog/Mermaid 画图指南</id>
@@ -18,7 +218,7 @@
 <p>流程图是 Mermaid 最基本的图表类型，用于表示流程或步骤。</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="基本语法">基本语法<a href="https://docs.zazds.top/blog/Mermaid%20%E7%94%BB%E5%9B%BE%E6%8C%87%E5%8D%97#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95" class="hash-link" aria-label="基本语法的直接链接" title="基本语法的直接链接">​</a></h3>
 <div class="language-mermaid codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-mermaid codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">flowchart TD</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    A[开始] --&gt; B{判断条件}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    B --&gt;|是| C[处理1]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    B --&gt;|否| D[处理2]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    C --&gt; E[结束]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    D --&gt; E</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="方向选项">方向选项<a href="https://docs.zazds.top/blog/Mermaid%20%E7%94%BB%E5%9B%BE%E6%8C%87%E5%8D%97#%E6%96%B9%E5%90%91%E9%80%89%E9%A1%B9" class="hash-link" aria-label="方向选项的直接链接" title="方向选项的直接链��接">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="方向选项">方向选项<a href="https://docs.zazds.top/blog/Mermaid%20%E7%94%BB%E5%9B%BE%E6%8C%87%E5%8D%97#%E6%96%B9%E5%90%91%E9%80%89%E9%A1%B9" class="hash-link" aria-label="方向选项的直接链��接" title="方向选项的直接链接">​</a></h3>
 <ul>
 <li><code>TD</code> 或 <code>TB</code>: 从上到下 (Top to Bottom)</li>
 <li><code>BT</code>: 从下到上 (Bottom to Top)</li>
@@ -75,7 +275,7 @@
 <div class="language-mermaid codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-mermaid codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">pie</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    title 收入分布</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    "薪资" : 50</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    "投资" : 30</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    "其他" : 20</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="7-er图-entity-relationship-diagram">7. ER图 (Entity Relationship Diagram)<a href="https://docs.zazds.top/blog/Mermaid%20%E7%94%BB%E5%9B%BE%E6%8C%87%E5%8D%97#7-er%E5%9B%BE-entity-relationship-diagram" class="hash-link" aria-label="7. ER图 (Entity Relationship Diagram)的直接链接" title="7. ER图 (Entity Relationship Diagram)的直接链接">​</a></h2>
 <p>ER图用于数据库设计，展示实体间的关系。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="基本语法-6">基本语法<a href="https://docs.zazds.top/blog/Mermaid%20%E7%94%BB%E5%9B%BE%E6%8C%87%E5%8D%97#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-6" class="hash-link" aria-label="基本语法的直接链接" title="基本语法的�直接链接">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="基本语法-6">基本语法<a href="https://docs.zazds.top/blog/Mermaid%20%E7%94%BB%E5%9B%BE%E6%8C%87%E5%8D%97#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-6" class="hash-link" aria-label="基本语法的�直接链接" title="基本语法的直接链接">​</a></h3>
 <div class="language-mermaid codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-mermaid codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">erDiagram</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    CUSTOMER ||--o{ ORDER : places</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ORDER ||--|{ LINE-ITEM : contains</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="关系类型-1">关系类型<a href="https://docs.zazds.top/blog/Mermaid%20%E7%94%BB%E5%9B%BE%E6%8C%87%E5%8D%97#%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9E%8B-1" class="hash-link" aria-label="关系类型的直接链接" title="关系类型的直接链接">​</a></h3>
 <ul>
@@ -465,7 +665,7 @@
 <p>又巴马，丢矢矣</p>
 <p>慈母无心弓和匕，幼无力</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔字根键位">五笔字根键位<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E5%AD%97%E6%A0%B9%E9%94%AE%E4%BD%8D" class="hash-link" aria-label="五笔字根键位的直接链接" title="五笔字根键位的直接链接">​</a></h2>
-<img src="https://docs.zazds.top/img/wubizigen.png" alt="五笔字根图">
+<img src="https://docs.zazds.top/images/wubizigen.png" alt="五笔字根图">
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="五笔简单拆字规则">五笔简单拆字规则<a href="https://docs.zazds.top/blog/4202%E5%B9%B4%E5%86%8D%E8%AF%B4%E4%BA%94%E7%AC%94%E6%89%93%E5%AD%97#%E4%BA%94%E7%AC%94%E7%AE%80%E5%8D%95%E6%8B%86%E5%AD%97%E8%A7%84%E5%88%99" class="hash-link" aria-label="五笔简单拆字规则的直接链接" title="五笔简单拆字规则的直接链接">​</a></h2>
 <p><strong>一级简码</strong>：击一个键即可</p>
 <p><strong>二级简码</strong>：击其前两个字根加空格键</p>
@@ -501,7 +701,7 @@
 <p>疏亲慢友多由你，背义忘恩亦是他。</p>
 <p>切须戒，饮流霞。若能依此实无差。</p>
 <p>失却万事皆因此，今后逢宾只待茶。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="色">色<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%E8%89%B2" class="hash-link" aria-label="色的直接链接" title="色的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="色">色<a href="https://docs.zazds.top/blog/%E6%B4%92%E8%89%B2%E8%B4%A2%E6%B0%94#%EF%BF%BD%E8%89%B2" class="hash-link" aria-label="色的直接链接" title="色的直接链接">​</a></h2>
 <p>休爱绿鬓美朱颜，少贪红粉翠花钿。</p>
 <p>损身害命多娇态，倾国倾城色更鲜。</p>
 <p>莫恋此，养丹田。人能寡欲寿长年。</p>
@@ -742,7 +942,7 @@
 <em>斜体文字</em><br>
 <em><strong>加粗且斜体文字</strong></em></p>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-列表"><strong>4. 列表</strong><a href="https://docs.zazds.top/blog/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99#4-%E5%88%97%E8%A1%A8" class="hash-link" aria-label="4-列表的直接链接" title="4-列表的直�接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-列表"><strong>4. 列表</strong><a href="https://docs.zazds.top/blog/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99#4-%E5%88%97%E8%A1%A8" class="hash-link" aria-label="4-列表的直接链接" title="4-列表的直接链接">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="41-无序列表"><strong>4.1 无序列表</strong><a href="https://docs.zazds.top/blog/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99#41-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8" class="hash-link" aria-label="41-无序列表的直接链接" title="41-无序列表的直接链接">​</a></h3>
 <p>使用 <code>-</code>、<code>*</code> 或 <code>+</code> 表示无序列表。</p>
 <div class="language-markdown codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-markdown codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> 项目 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> 项目 2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> 子项目 2.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> 子项目 2.2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">*</span><span class="token plain"> 项目 3</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">+</span><span class="token plain"> 项目 4</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
@@ -830,7 +1030,7 @@
 <p><strong>效果：</strong></p>
 <table><thead><tr><th style="text-align:left">左对齐</th><th style="text-align:center">居中对齐</th><th style="text-align:right">右对齐</th></tr></thead><tbody><tr><td style="text-align:left">内容1</td><td style="text-align:center">内容2</td><td style="text-align:right">内容3</td></tr><tr><td style="text-align:left">内容4</td><td style="text-align:center">内容5</td><td style="text-align:right">内容6</td></tr></tbody></table>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="10-特殊字符转义"><strong>10. 特殊字符转义</strong><a href="https://docs.zazds.top/blog/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99#10-%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E8%BD%AC%E4%B9%89" class="hash-link" aria-label="10-特殊字符转义的直接链接" title="10-特殊字符转义的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="10-特殊字符转义"><strong>10. 特殊字符转义</strong><a href="https://docs.zazds.top/blog/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99#10-%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%EF%BF%BD%EF%BF%BD%E8%BD%AC%E4%B9%89" class="hash-link" aria-label="10-特殊字符转义的直接链接" title="10-特殊字符转义的直接链接">​</a></h2>
 <p>Markdown 的特殊字符需要使用反斜杠 <code>\</code> 转义。</p>
 <table><thead><tr><th>特殊字符</th><th>转义方式</th></tr></thead><tbody><tr><td><code>\</code></td><td><code>\\</code></td></tr><tr><td><code>`</code></td><td><code>\`</code></td></tr><tr><td><code>*</code></td><td><code>\*</code></td></tr><tr><td><code>_</code></td><td><code>\_</code></td></tr><tr><td><code>{}</code></td><td><code>\{\}</code></td></tr><tr><td><code>[]</code></td><td><code>\[\]</code></td></tr><tr><td><code>()</code></td><td><code>\(\)</code></td></tr><tr><td><code>#</code></td><td><code>\#</code></td></tr><tr><td><code>+</code></td><td><code>\+</code></td></tr><tr><td><code>-</code></td><td><code>\-</code></td></tr><tr><td><code>.</code></td><td><code>\.</code></td></tr><tr><td><code>!</code></td><td><code>\!</code></td></tr></tbody></table>
 <p>示例：</p>
@@ -853,7 +1053,7 @@
 <p><strong>效果：</strong>
 这是一个 <b>加粗</b> 的 HTML 示例。</p>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="13-注脚"><strong>13. 注脚</strong><a href="https://docs.zazds.top/blog/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99#13-%E6%B3%A8%E8%84%9A" class="hash-link" aria-label="13-注脚的直接链接" title="13-�注脚的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="13-注脚"><strong>13. 注脚</strong><a href="https://docs.zazds.top/blog/MD%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99#13-%E6%B3%A8%E8%84%9A" class="hash-link" aria-label="13-注脚的直接链接" title="13-注脚的直接链接">​</a></h2>
 <p>使用 <code>[^注脚标识]</code> 添加注脚。</p>
 <div class="language-markdown codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-markdown codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">这是一个带有注脚的句子[^1]。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token url-reference url punctuation" style="color:#393A34">[</span><span class="token url-reference url variable" style="color:#36acaa">^1</span><span class="token url-reference url punctuation" style="color:#393A34">]</span><span class="token url-reference url punctuation" style="color:#393A34">:</span><span class="token url-reference url" style="color:#36acaa"> 这是注脚的内容。</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p><strong>效果：</strong>
