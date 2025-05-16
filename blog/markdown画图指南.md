@@ -24,6 +24,7 @@ flowchart TD
     C --> E[结束]
     D --> E
 ```
+<!-- truncate -->
 
 ### 方向选项
 - `TD` 或 `TB`: 从上到下 (Top to Bottom)

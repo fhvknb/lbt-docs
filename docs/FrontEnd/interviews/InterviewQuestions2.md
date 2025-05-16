@@ -5,7 +5,7 @@ tag: [frontend]
 ---
 
 
- ![interview-skill](./imgs/interview-skill.png)
+ ![interview-skill](imgs/interview-skill.png)
 
  ## 常见面试题
 
