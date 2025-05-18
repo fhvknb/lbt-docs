@@ -14,6 +14,9 @@ Mermaid 是一个基于 JavaScript 的图表和图形生成工具，它允许您
 
 流程图是 Mermaid 最基本的图表类型，用于表示流程或步骤。
 
+<!-- truncate -->
+
+
 ### 基本语法
 
 ```mermaid
@@ -24,7 +27,6 @@ flowchart TD
     C --> E[结束]
     D --> E
 ```
-<!-- truncate -->
 
 ### 方向选项
 - `TD` 或 `TB`: 从上到下 (Top to Bottom)
