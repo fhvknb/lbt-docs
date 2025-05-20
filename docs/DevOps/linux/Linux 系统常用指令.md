@@ -6,6 +6,7 @@ tags:
 
 
 ```bash
+#!/bin/bash
 
 # Terminal写文件内容
 echo "[credential]" >> .git/config
@@ -103,5 +104,11 @@ netstat -tuln: 显示网络端口监听情况。
 # 查看主机端口是否开放
 telnet 远程主机IP 3306
 nc -zv 远程主机IP 3306
+
+
+# 管理文件权限和所有权
+chmod u+rwx file.txt 
+chown new_owner file.txt 
+chown :new_group file.txt
  
 ```

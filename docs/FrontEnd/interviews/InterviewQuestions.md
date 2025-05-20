@@ -84,3 +84,8 @@ ArrayBuffer 本身不提供读写数据的方法，需要通过"视图"对象来
 ## xhr和fetch的区别？
 ![fetch](./imgs/xhrfetch.png)
 
+
+
+## 性能优化方向
+
+![performance](./imgs/performance.jpg)

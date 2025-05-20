@@ -67,3 +67,8 @@ tag: [frontend]
 ## CSS LVHA伪类样式
 
 爱（LoVe）恨（HAte）法则，书写顺序`:link`、`:visited`、`:hover`、`:active`。
+
+
+## CSS Weight Fish
+
+![weight-fish.png](./imgs/css-fish.png)
