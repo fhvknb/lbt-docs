@@ -65,6 +65,14 @@ cat /etc/os-release #（Linux查看版本当前操作系统发行版信息）
 lsb_release -a
 cat /etc/lsb-release
 
+# 查看用户组
+cat /etc/group
+
+# 查看用户
+cat /etc/passwd
+cut -d: -f1 /etc/passwd
+
+
 lsblk # （查看磁盘信息 – 列出所有可用块设备的信息，而且还能显示他们之间的依赖关系，但是它不会列出RAM盘的信息）
 
 fdisk -l  # （观察硬盘实体使用情况，也可对硬盘分区）

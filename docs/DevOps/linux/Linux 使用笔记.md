@@ -105,4 +105,23 @@ sudo yum install htop
 htop
 ```
 
+## 文件压缩与解压
+
+```bash
+
+# zip and unzip:
+
+# zip [选项] 压缩包名称.zip 文件或目录 
+# -r	递归压缩目录及其子目录
+# -q	静默模式，不显示压缩过程
+# -x	排除特定文件或目录
+# -m	压缩后删除原文件（移动文件到压缩包中）
+
+zip -rq archive.zip my_folder  # 压缩整个目录
+
+
+unzip archive.zip -d /path/to/destination  # 解压到指定目录
+
+```
+
 

@@ -83,3 +83,17 @@ echo "Current Docker disk usage:"
 docker system df
 
 ```
+
+## docker 镜像的导出导入
+
+```bash
+# docker save -o <保存路径> <镜像名>:<标签>
+
+docker save -o my-image.tar my-image:latest
+
+# docker load -i <导入文件路径>
+
+docker load -i my-image.tar
+
+
+```
