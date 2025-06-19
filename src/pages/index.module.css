@@ -3,21 +3,94 @@
  * and scoped locally.
  */
 
-.container {
+ .heroContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100vh - 150px);
-    color: aliceblue;
-    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    min-height: calc(100vh - 150px);
+    color: white;
+    background: linear-gradient(45deg, hsl(271, 76%, 53%), hsl(282, 27%, 82%), hsl(260, 60%, 65%));
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
+    padding: 2rem 1rem;
 }
 
-.container > div {
-    font-size: 32px;
+.heroContent {
+    max-width: 850px;
+    min-width: 520px;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.heroTitle {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.typeContainer {
+    margin: 2rem 0;
+    min-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.typeText {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background-color: white;
+    color: hsl(282, 27%, 82%);
+    border: 2px solid white;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.buttonSecondary {
+    background-color: transparent;
+    color: white;
+}
+
+.buttonSecondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 @keyframes gradientBG {
@@ -32,3 +105,35 @@
     }
 }
 
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .typeText {
+        font-size: 1.5rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .heroContent {
+        padding: 1.5rem;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

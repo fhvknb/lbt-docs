@@ -7,7 +7,7 @@ import rehypeKatex from 'rehype-katex';
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "LBT Docs",
+  title: "LBT DOCS",
   tagline: "The palest ink is better than the best memory.",
   favicon: "favicon.ico",
 
