@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://docs.zazds.top/blog</id>
-    <title>LBT Docs Blog</title>
+    <title>LBT DOCS Blog</title>
     <updated>2025-05-17T17:39:45.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://docs.zazds.top/blog"/>
-    <subtitle>LBT Docs Blog</subtitle>
+    <subtitle>LBT DOCS Blog</subtitle>
     <icon>https://docs.zazds.top/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Math LaTeX使用指南]]></title>
