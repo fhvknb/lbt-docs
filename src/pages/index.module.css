@@ -11,15 +11,14 @@
     width: 100%;
     min-height: calc(100vh - 150px);
     color: white;
-    background: linear-gradient(45deg, hsl(271, 76%, 53%), hsl(282, 27%, 82%), hsl(260, 60%, 65%));
+    background: linear-gradient(45deg, hsl(271, 60%, 54%), hsl(282, 27%, 82%), hsl(260, 60%, 65%));
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     padding: 2rem 1rem;
 }
 
 .heroContent {
-    max-width: 850px;
-    min-width: 520px;
+    max-width: 800px;
     text-align: center;
     padding: 2rem;
     border-radius: 12px;

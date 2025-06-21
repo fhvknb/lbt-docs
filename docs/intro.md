@@ -3,9 +3,9 @@ sidebar_position: 1
 title: 好记性不如烂笔头
 ---
 
-:::caution 
-路漫漫其修远兮，吾将上下而求索。   
-初心不忘，见路不走。
+:::caution[警言]
+不忘初心
+见路不走
 :::
 
 ---
@@ -24,3 +24,4 @@ title: 好记性不如烂笔头
 - [Learning Blogs](https://github.com/iloveyou11/learning-blog?tab=readme-ov-file)
 - [Frontend Knowledge Structure](https://github.com/JacksonTian/fks?tab=readme-ov-file)
 - [小林Coding](https://www.xiaolincoding.com/)
+- [前端笔记](https://github.com/Wscats/articles?tab=readme-ov-file)
