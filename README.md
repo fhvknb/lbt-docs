@@ -40,13 +40,7 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-
 ### Document
+
 Read the [official documentation](https://docusaurus.io/)
-
-
-**Nodejs Packages **
-
-`class-validator`,  `class-transformer`,  `refleact-metadata`, `connect-history-api-fallback`  `node-proxy-middleware` , `react-router-config` 
-
 

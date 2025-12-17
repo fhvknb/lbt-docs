@@ -238,7 +238,7 @@ async function main() {
       
       try {
         // 使用 pandoc 进行格式转换
-        execSync(`pandoc "${srcFile}" -o "${outputFile}"`, { stdio: 'pipe' });
+        execSync(`pandoc "${srcFile}" --reference-links -o "${outputFile}"`, { stdio: 'pipe' });
         
         printSuccess(`成功转换: ${srcFile} -> ${outputFile}`);
         successCount++;
