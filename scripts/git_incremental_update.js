@@ -51,10 +51,8 @@ let srcDir = args[0] || '';
 const destDir = args[1] || '';
 const targetFormat = args[2] || '';
 
-// 移除末尾斜杠以规范化路径
-if (srcDir.endsWith('/') || srcDir.endsWith('\\')) {
-  srcDir = srcDir.slice(0, -1);
-}
+// 规范化路径
+const normalizedSrcDir = path.resolve(srcDir);
 
 // 检查参数是否正确
 if (!srcDir || !destDir || !targetFormat) {
@@ -64,13 +62,13 @@ if (!srcDir || !destDir || !targetFormat) {
   process.exit(1);
 }
 
-printInfo(`源目录: ${srcDir}`);
+printInfo(`源目录: ${normalizedSrcDir}`);
 printInfo(`目标目录: ${destDir}`);
 printInfo(`目标格式: ${targetFormat}`);
 
 // 检查源目录是否存在
-if (!fs.existsSync(srcDir) || !fs.statSync(srcDir).isDirectory()) {
-  printError(`源目录 ${srcDir} 不存在！`);
+if (!fs.existsSync(normalizedSrcDir) || !fs.statSync(normalizedSrcDir).isDirectory()) {
+  printError(`源目录 ${normalizedSrcDir} 不存在！`);
   process.exit(1);
 }
 
@@ -116,7 +114,7 @@ function ensureDirectoryExists(dirPath) {
 // 删除空目录
 function removeEmptyDirectories(dirPath, baseDir) {
   if (dirPath === baseDir) return;
-  
+
   try {
     const files = fs.readdirSync(dirPath);
     if (files.length === 0) {
@@ -128,32 +126,59 @@ function removeEmptyDirectories(dirPath, baseDir) {
   }
 }
 
+// 处理 Git 返回的文件路径，去除引号并正确解码
+function normalizeGitPath(gitPath) {
+  // 去除路径两端的引号
+  let cleanPath = gitPath.trim();
+  if ((cleanPath.startsWith('"') && cleanPath.endsWith('"')) || 
+      (cleanPath.startsWith("'") && cleanPath.endsWith("'"))) {
+    cleanPath = cleanPath.substring(1, cleanPath.length - 1);
+  }
+  
+  // 处理 Git 可能返回的转义字符
+  try {
+    // 尝试解码可能的 Git 转义
+    return cleanPath;
+  } catch (error) {
+    printWarning(`无法解码路径: ${gitPath}`);
+    return cleanPath;
+  }
+}
+
 // 获取 Git 状态中的文件变化
 function getGitChanges() {
-  // 获取已跟踪的修改和删除文件
+  // 获取已跟踪的修改文件（包括未暂存的更改）
   const trackedChanges = execSync('git diff --name-status HEAD', { encoding: 'utf8' }).trim();
-  
-  // 获取未跟踪的新文件
-  const untrackedFiles = execSync('git ls-files --others --exclude-standard', { encoding: 'utf8' }).trim();
-  
+
+  // 获取未暂存的修改文件
+  const untrackedChanges = execSync('git diff --name-status', { encoding: 'utf8' }).trim();
+
+  // 获取未跟踪的新文件，使用 -z 选项以 NUL 字符分隔，避免引号和转义问题
+  const untrackedFiles = execSync('git ls-files --others --exclude-standard -z', { encoding: 'utf8' }).trim();
+
   const changes = {
     added: [],
     modified: [],
     deleted: []
   };
-  
-  // 处理已跟踪的变化
+
+  // 处理已跟踪的变化（与最近一次提交相比）
   if (trackedChanges) {
     trackedChanges.split('\n').forEach(line => {
       if (!line) return;
-      
-      const [status, filePath] = line.split(/\s+/);
-      
-      // 只处理源目录下的文件
-      if (!filePath.startsWith(srcDir) || !supportedTypes.test(filePath)) return;
-      
-      const relativePath = path.relative(srcDir, filePath);
-      
+
+      const parts = line.split(/\s+/);
+      const status = parts[0];
+      const filePath = normalizeGitPath(parts.slice(1).join(' ')); // 处理文件名中可能包含空格的情况
+
+      // 规范化文件路径
+      const normalizedPath = path.resolve(filePath);
+
+      // 检查文件是否在源目录下
+      if (!normalizedPath.startsWith(normalizedSrcDir) || !supportedTypes.test(normalizedPath)) return;
+
+      const relativePath = path.relative(normalizedSrcDir, normalizedPath);
+
       if (status === 'A') {
         changes.added.push(relativePath);
       } else if (status === 'M') {
@@ -163,40 +188,77 @@ function getGitChanges() {
       }
     });
   }
-  
-  // 处理未跟踪的新文件
-  if (untrackedFiles) {
-    untrackedFiles.split('\n').forEach(filePath => {
-      if (!filePath) return;
-      
-      // 只处理源目录下的文件
-      if (!filePath.startsWith(srcDir) || !supportedTypes.test(filePath)) return;
-      
-      const relativePath = path.relative(srcDir, filePath);
-      changes.added.push(relativePath);
+
+  // 处理未暂存的变化
+  if (untrackedChanges) {
+    untrackedChanges.split('\n').forEach(line => {
+      if (!line) return;
+
+      const parts = line.split(/\s+/);
+      const status = parts[0];
+      const filePath = normalizeGitPath(parts.slice(1).join(' '));
+
+      // 规范化文件路径
+      const normalizedPath = path.resolve(filePath);
+
+      // 检查文件是否在源目录下
+      if (!normalizedPath.startsWith(normalizedSrcDir) || !supportedTypes.test(normalizedPath)) return;
+
+      const relativePath = path.relative(normalizedSrcDir, normalizedPath);
+
+      if (status === 'M' && !changes.modified.includes(relativePath) && !changes.added.includes(relativePath)) {
+        changes.modified.push(relativePath);
+      } else if (status === 'D' && !changes.deleted.includes(relativePath)) {
+        changes.deleted.push(relativePath);
+      }
     });
   }
-  
+
+  // 处理未跟踪的新文件，使用 NUL 字符分隔
+  if (untrackedFiles) {
+    // 使用 NUL 字符 (\0) 分割，这样可以正确处理包含特殊字符的文件名
+    untrackedFiles.split('\0').forEach(filePath => {
+      if (!filePath) return;
+
+      // 规范化文件路径，不需要额外处理引号，因为使用了 -z 选项
+      const normalizedPath = path.resolve(filePath);
+
+      // 检查文件是否在源目录下并且是支持的文件类型
+      if (!normalizedPath.startsWith(normalizedSrcDir) || !supportedTypes.test(normalizedPath)) return;
+
+      const relativePath = path.relative(normalizedSrcDir, normalizedPath);
+
+      if (!changes.added.includes(relativePath)) {
+        changes.added.push(relativePath);
+      }
+    });
+  }
+
+  // 去重
+  changes.added = [...new Set(changes.added)];
+  changes.modified = [...new Set(changes.modified)];
+  changes.deleted = [...new Set(changes.deleted)];
+
   return changes;
 }
 
 // 处理文件转换
 function processFile(relPath, action) {
-  const srcFile = path.join(srcDir, relPath);
+  const srcFile = path.join(normalizedSrcDir, relPath);
   const fileExt = path.extname(relPath);
   const baseName = path.basename(relPath, fileExt);
   const relDir = path.dirname(relPath);
   const outputFile = path.join(destDir, relDir, `${baseName}.${targetFormat}`);
-  
+
   if (action === 'delete') {
     if (fs.existsSync(outputFile)) {
       printProgress(`正在删除: ${outputFile}`);
-      
+
       try {
         fs.unlinkSync(outputFile);
         printSuccess(`成功删除: ${outputFile}`);
         deletedCount++;
-        
+
         // 检查并删除空目录
         removeEmptyDirectories(path.dirname(outputFile), destDir);
         return true;
@@ -208,15 +270,22 @@ function processFile(relPath, action) {
     }
     return true;
   } else {
+    // 检查源文件是否存在
+    if (!fs.existsSync(srcFile)) {
+      printError(`源文件不存在: ${srcFile}`);
+      failedCount++;
+      return false;
+    }
+
     // 创建目标文件的父目录
     ensureDirectoryExists(path.dirname(outputFile));
-    
+
     printProgress(`正在${action === 'add' ? '添加' : '更新'}: ${srcFile} -> ${outputFile}`);
-    
+
     try {
       // 使用 pandoc 进行格式转换
       execSync(`pandoc "${srcFile}" -o "${outputFile}"`, { stdio: 'pipe' });
-      
+
       printSuccess(`成功${action === 'add' ? '添加' : '更新'}: ${srcFile} -> ${outputFile}`);
       if (action === 'add') {
         addedCount++;
@@ -233,55 +302,57 @@ function processFile(relPath, action) {
 }
 
 // 主要处理逻辑
-async function main() {
-  // 获取 Git 变更状态
-  const changes = getGitChanges();
-  
-  printInfo(`发现 ${changes.added.length} 个新增文件`);
-  printInfo(`发现 ${changes.modified.length} 个修改文件`);
-  printInfo(`发现 ${changes.deleted.length} 个删除文件`);
-  
-  // 处理新增文件
-  if (changes.added.length > 0) {
-    printHeader('处理新增文件');
-    for (const relPath of changes.added) {
-      processFile(relPath, 'add');
+function main() {
+  try {
+    // 获取 Git 变更状态
+    const changes = getGitChanges();
+
+    printInfo(`发现 ${changes.added.length} 个新增文件`);
+    printInfo(`发现 ${changes.modified.length} 个修改文件`);
+    printInfo(`发现 ${changes.deleted.length} 个删除文件`);
+
+    // 处理新增文件
+    if (changes.added.length > 0) {
+      printHeader('处理新增文件');
+      for (const relPath of changes.added) {
+        processFile(relPath, 'add');
+      }
     }
-  }
-  
-  // 处理修改文件
-  if (changes.modified.length > 0) {
-    printHeader('处理修改文件');
-    for (const relPath of changes.modified) {
-      processFile(relPath, 'modify');
+
+    // 处理修改文件
+    if (changes.modified.length > 0) {
+      printHeader('处理修改文件');
+      for (const relPath of changes.modified) {
+        processFile(relPath, 'modify');
+      }
     }
-  }
-  
-  // 处理删除文件
-  if (changes.deleted.length > 0) {
-    printHeader('处理删除文件');
-    for (const relPath of changes.deleted) {
-      processFile(relPath, 'delete');
+
+    // 处理删除文件
+    if (changes.deleted.length > 0) {
+      printHeader('处理删除文件');
+      for (const relPath of changes.deleted) {
+        processFile(relPath, 'delete');
+      }
     }
+
+    // 显示统计信息
+    printHeader('转换完成统计');
+    console.log(`${colors.green}${colors.bold}新增文件:${colors.reset} ${addedCount}`);
+    console.log(`${colors.cyan}${colors.bold}更新文件:${colors.reset} ${modifiedCount}`);
+    console.log(`${colors.yellow}${colors.bold}删除文件:${colors.reset} ${deletedCount}`);
+
+    if (failedCount > 0) {
+      console.log(`${colors.red}${colors.bold}失败:${colors.reset} ${failedCount}`);
+    } else {
+      console.log(`${colors.bold}失败:${colors.reset} ${failedCount}`);
+    }
+
+    printHeader('转换任务完成');
+  } catch (error) {
+    printError(`执行过程中出错: ${error.message}`);
+    process.exit(1);
   }
-  
-  // 显示统计信息
-  printHeader('转换完成统计');
-  console.log(`${colors.green}${colors.bold}新增文件:${colors.reset} ${addedCount}`);
-  console.log(`${colors.cyan}${colors.bold}更新文件:${colors.reset} ${modifiedCount}`);
-  console.log(`${colors.yellow}${colors.bold}删除文件:${colors.reset} ${deletedCount}`);
-  
-  if (failedCount > 0) {
-    console.log(`${colors.red}${colors.bold}失败:${colors.reset} ${failedCount}`);
-  } else {
-    console.log(`${colors.bold}失败:${colors.reset} ${failedCount}`);
-  }
-  
-  printHeader('转换任务完成');
 }
 
 // 执行主函数
-main().catch(error => {
-  printError(`执行过程中出错: ${error.message}`);
-  process.exit(1);
-});
+main();
