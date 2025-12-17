@@ -126,51 +126,48 @@ function removeEmptyDirectories(dirPath, baseDir) {
   }
 }
 
-// 处理 Git 返回的文件路径，去除引号并正确解码
-function normalizeGitPath(gitPath) {
-  // 去除路径两端的引号
-  let cleanPath = gitPath.trim();
-  if ((cleanPath.startsWith('"') && cleanPath.endsWith('"')) || 
-      (cleanPath.startsWith("'") && cleanPath.endsWith("'"))) {
-    cleanPath = cleanPath.substring(1, cleanPath.length - 1);
+// 解析 git diff --name-status -z 的输出
+// 格式是: <状态>\0<文件路径>\0<状态>\0<文件路径>...
+function parseGitDiffNameStatus(output) {
+  const result = [];
+  const parts = output.split('\0');
+  
+  for (let i = 0; i < parts.length - 1; i += 2) {
+    const status = parts[i];
+    const filePath = parts[i + 1];
+    
+    if (status && filePath) {
+      result.push({ status, filePath });
+    }
   }
   
-  // 处理 Git 可能返回的转义字符
-  try {
-    // 尝试解码可能的 Git 转义
-    return cleanPath;
-  } catch (error) {
-    printWarning(`无法解码路径: ${gitPath}`);
-    return cleanPath;
-  }
+  return result;
 }
 
 // 获取 Git 状态中的文件变化
 function getGitChanges() {
-  // 获取已跟踪的修改文件（包括未暂存的更改）
-  const trackedChanges = execSync('git diff --name-status HEAD', { encoding: 'utf8' }).trim();
-
-  // 获取未暂存的修改文件
-  const untrackedChanges = execSync('git diff --name-status', { encoding: 'utf8' }).trim();
-
-  // 获取未跟踪的新文件，使用 -z 选项以 NUL 字符分隔，避免引号和转义问题
-  const untrackedFiles = execSync('git ls-files --others --exclude-standard -z', { encoding: 'utf8' }).trim();
-
   const changes = {
     added: [],
     modified: [],
     deleted: []
   };
 
-  // 处理已跟踪的变化（与最近一次提交相比）
-  if (trackedChanges) {
-    trackedChanges.split('\n').forEach(line => {
-      if (!line) return;
+  // 获取工作区相对于索引（暂存区）的变化
+  // 这会显示未暂存的修改
+  const workingChanges = execSync('git diff --name-status -z', { encoding: 'utf8' }).trim();
+  
+  // 获取索引（暂存区）相对于HEAD的变化
+  // 这会显示已暂存但未提交的修改
+  const stagedChanges = execSync('git diff --name-status -z --staged', { encoding: 'utf8' }).trim();
+  
+  // 获取未跟踪的新文件
+  const untrackedFiles = execSync('git ls-files --others --exclude-standard -z', { encoding: 'utf8' }).trim();
 
-      const parts = line.split(/\s+/);
-      const status = parts[0];
-      const filePath = normalizeGitPath(parts.slice(1).join(' ')); // 处理文件名中可能包含空格的情况
-
+  // 处理工作区的变化（未暂存的修改）
+  if (workingChanges) {
+    const parsedChanges = parseGitDiffNameStatus(workingChanges);
+    
+    parsedChanges.forEach(({ status, filePath }) => {
       // 规范化文件路径
       const normalizedPath = path.resolve(filePath);
 
@@ -179,34 +176,7 @@ function getGitChanges() {
 
       const relativePath = path.relative(normalizedSrcDir, normalizedPath);
 
-      if (status === 'A') {
-        changes.added.push(relativePath);
-      } else if (status === 'M') {
-        changes.modified.push(relativePath);
-      } else if (status === 'D') {
-        changes.deleted.push(relativePath);
-      }
-    });
-  }
-
-  // 处理未暂存的变化
-  if (untrackedChanges) {
-    untrackedChanges.split('\n').forEach(line => {
-      if (!line) return;
-
-      const parts = line.split(/\s+/);
-      const status = parts[0];
-      const filePath = normalizeGitPath(parts.slice(1).join(' '));
-
-      // 规范化文件路径
-      const normalizedPath = path.resolve(filePath);
-
-      // 检查文件是否在源目录下
-      if (!normalizedPath.startsWith(normalizedSrcDir) || !supportedTypes.test(normalizedPath)) return;
-
-      const relativePath = path.relative(normalizedSrcDir, normalizedPath);
-
-      if (status === 'M' && !changes.modified.includes(relativePath) && !changes.added.includes(relativePath)) {
+      if (status === 'M' && !changes.modified.includes(relativePath)) {
         changes.modified.push(relativePath);
       } else if (status === 'D' && !changes.deleted.includes(relativePath)) {
         changes.deleted.push(relativePath);
@@ -214,13 +184,35 @@ function getGitChanges() {
     });
   }
 
-  // 处理未跟踪的新文件，使用 NUL 字符分隔
+  // 处理暂存区的变化（已暂存但未提交的修改）
+  if (stagedChanges) {
+    const parsedChanges = parseGitDiffNameStatus(stagedChanges);
+    
+    parsedChanges.forEach(({ status, filePath }) => {
+      // 规范化文件路径
+      const normalizedPath = path.resolve(filePath);
+
+      // 检查文件是否在源目录下
+      if (!normalizedPath.startsWith(normalizedSrcDir) || !supportedTypes.test(normalizedPath)) return;
+
+      const relativePath = path.relative(normalizedSrcDir, normalizedPath);
+
+      if (status === 'A' && !changes.added.includes(relativePath)) {
+        changes.added.push(relativePath);
+      } else if (status === 'M' && !changes.modified.includes(relativePath)) {
+        changes.modified.push(relativePath);
+      } else if (status === 'D' && !changes.deleted.includes(relativePath)) {
+        changes.deleted.push(relativePath);
+      }
+    });
+  }
+
+  // 处理未跟踪的新文件
   if (untrackedFiles) {
-    // 使用 NUL 字符 (\0) 分割，这样可以正确处理包含特殊字符的文件名
     untrackedFiles.split('\0').forEach(filePath => {
       if (!filePath) return;
 
-      // 规范化文件路径，不需要额外处理引号，因为使用了 -z 选项
+      // 规范化文件路径
       const normalizedPath = path.resolve(filePath);
 
       // 检查文件是否在源目录下并且是支持的文件类型
@@ -233,11 +225,6 @@ function getGitChanges() {
       }
     });
   }
-
-  // 去重
-  changes.added = [...new Set(changes.added)];
-  changes.modified = [...new Set(changes.modified)];
-  changes.deleted = [...new Set(changes.deleted)];
 
   return changes;
 }
