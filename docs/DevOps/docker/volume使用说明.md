@@ -173,12 +173,14 @@ volumes:
 ## 实用技巧
 
 1. **使用环境变量**：
+   
    ```yaml
    volumes:
      - ${DATA_DIR:-./data}:/app/data
    ```
 
 2. **用户权限映射**：
+   
    ```yaml
    volumes:
      - type: bind
@@ -188,6 +190,7 @@ volumes:
    ```
 
 3. **卷标签**：
+   
    ```yaml
    volumes:
      db_data:
@@ -197,6 +200,7 @@ volumes:
    ```
 
 4. **备份卷**：
+   
    ```yaml
    services:
      backup:

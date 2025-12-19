@@ -4,8 +4,9 @@ title: 好记性不如烂笔头
 ---
 
 :::caution[警言]
-不忘初心
-见路不走
+> **不忘初心**   
+
+> **见路不走**
 :::
 
 ---
@@ -25,3 +26,18 @@ title: 好记性不如烂笔头
 - [Frontend Knowledge Structure](https://github.com/JacksonTian/fks?tab=readme-ov-file)
 - [小林Coding](https://www.xiaolincoding.com/)
 - [前端笔记](https://github.com/Wscats/articles?tab=readme-ov-file)
+
+## Temp Notes
+
+### 获取行情数据API
+
+
+[https://www.eastmoney.com](https://www.eastmoney.com)   
+
+[https://finance.yahoo.com](https://finance.yahoo.com)   
+
+[https://www.alphavantage.co](https://www.alphavantage.co)  
+
+[https://www.investing.com](https://www.investing.com)
+
+[https://tushare.pro](https://tushare.pro)
