@@ -1,0 +1,8 @@
+{
+  "label": "Archives",
+  "position": 99,
+  "link": {
+    "type": "generated-index",
+    "description": "Commonly Used Knowledge in Archives."
+  }
+}

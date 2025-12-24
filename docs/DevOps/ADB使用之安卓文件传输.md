@@ -1,5 +1,5 @@
 ---
-title: 安卓文件传输ADB使用说明
+title: ADB使用之安卓文件传输
 tag:
   - andorid
 ---

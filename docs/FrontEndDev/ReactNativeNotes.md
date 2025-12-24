@@ -2,7 +2,7 @@
 tag: 
   - RN
 ---
-# RN Tips
+# React Native Notes
 
 [Expo Docs](https://docs.expo.dev/)
 

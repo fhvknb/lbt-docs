@@ -1,9 +1,8 @@
 ---
-title: VSCode Tips
 sidebar_position: 3
 ---
 
-# VS Code 在 macOS 上的常用操作快捷键和技巧
+# VSCode Shortcuts For Mac
 
 ## 1. 基本文件操作
 | 快捷键                     | 功能                           |
