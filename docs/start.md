@@ -48,3 +48,19 @@ title: 好记性不如烂笔头
 [https://www.investing.com](https://www.investing.com)
 
 [https://tushare.pro](https://tushare.pro)
+
+
+
+##  Langchain Study 
+
+[Academy Langchain](https://academy.langchain.com/certificates/9vec3fn6nn)
+
+We hope you enjoyed the course and gained the skills to master LangChain to create powerful, production-ready AI agents. If you’d like to continue your learning,  check out our resources below:
+
+- [LangChain YouTube Channel](https://www.youtube.com/@LangChain)
+- [LangChain Blog](https://blog.langchain.dev/)
+- [LangChain Docs](https://docs.langchain.com/oss/python/langchain/overview)
+- [LangSmith for Observability & Evaluation](https://smith.langchain.com/)
+
+
+  

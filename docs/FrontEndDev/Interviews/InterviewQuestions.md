@@ -79,7 +79,7 @@ ArrayBuffer 本身不提供读写数据的方法，需要通过"视图"对象来
 - TypedArray 视图：如 Int8Array, Uint8Array, Float32Array 等
 - DataView 视图：提供更灵活的读写操作，可以控制字节序
 
-[ArrayBuffer详细](../javascript/ArrayBuffer.md)
+[ArrayBuffer详细](../Javascript/ArrayBuffer.md)
 
 ## xhr和fetch的区别？
 ![fetch](./imgs/xhrfetch.png)

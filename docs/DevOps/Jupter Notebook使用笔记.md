@@ -85,13 +85,10 @@ http://<服务器IP>:8888
    - 直接暴露 Jupyter Notebook 到外网可能存在安全风险，建议设置密码或使用 HTTPS。
    - 可以通过 SSH 隧道访问 Jupyter Notebook，而不是直接暴露端口。
 
-2. **设置访问密码**：
-   运行以下命令以生成密码哈希：
-   ```bash
-   from notebook.auth import passwd
-   passwd()
-   ```
-   将生成的哈希值复制到配置文件的 `c.NotebookApp.password` 中。
+2. **设置访问密码**：  
+```python
+c.NotebookApp.password = 'sha1:your_hashed_password'
+```
 
 3. **使用 HTTPS**：
    配置 SSL 证书以启用 HTTPS，参考配置文件中的 `c.NotebookApp.certfile` 和 `c.NotebookApp.keyfile`。
@@ -120,6 +117,15 @@ Jupyter Notebook 不直接存储明文密码，而是存储加密的哈希值。
    from notebook.auth import passwd
    passwd()
    ```
+Ps: *From Jupyter Notebook 7, use the jupyter_server.auth module instead of notebook.auth*
+
+```shell
+$ jupyter server password
+Enter password:  ****
+Verify password: ****
+[JupyterPasswordApp] Wrote hashed password to /Users/you/.jupyter/jupyter_server_config.json
+
+```
 
 3. 输入你想要设置的密码，系统会输出一个类似如下的哈希值：
    ```
@@ -202,3 +208,27 @@ https://<服务器IP>:8888
    - 配置 VPN 以限制外部访问。
 
 通过以上步骤，你的 Jupyter Notebook 将更加安全，支持密码验证和 HTTPS 加密访问。
+
+
+## 给Jupyter开启代码提示功能
+
+### 1. 基础配置：开启原生补全
+
+Jupyter Lab 自带基础的 Tab 键补全功能，如果按 Tab 没反应，请检查设置：  
+点击顶部菜单栏的 Settings -> Settings Editor。  
+在左侧列表中找到 Code Completion。   
+勾选 "Enable autocompletion"（启用自动补全）和 "Continuous hinting"（输入时实时提示）。    
+勾选 "Show the documentation panel".
+
+勾选 "Language Servers (Experimental)"
+
+
+### 2. 安装插件
+```shell
+pip install jupyterlab-lsp
+# 或者使用 conda
+conda install -c conda-forge jupyterlab-lsp
+
+pip install "python-lsp-server[all]"
+```
+

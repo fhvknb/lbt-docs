@@ -76,7 +76,7 @@ export default function Home(): JSX.Element {
           <div className={styles.buttonContainer}>
             <Link
               className={styles.button}
-              to="/docs/intro">
+              to="/docs/start">
               开始探索
             </Link>
             <Link
