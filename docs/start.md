@@ -7,6 +7,10 @@ title: 好记性不如烂笔头
 
 ---
 
+## 新兴流行开源技术
+
+[新兴流行开源技术](./FullStackDev/新兴流行技术List.md)
+
 ## 飞书数据
 
 - [实用工具](https://jcnt1gtyekhc.feishu.cn/share/base/view/shrcnYzr1L61ZhBSAknzJ2hQWBf)   
@@ -51,7 +55,7 @@ title: 好记性不如烂笔头
 
 
 
-##  Langchain Study 
+## Langchain Study
 
 [Academy Langchain](https://academy.langchain.com/certificates/9vec3fn6nn)
 
@@ -61,6 +65,11 @@ We hope you enjoyed the course and gained the skills to master LangChain to crea
 - [LangChain Blog](https://blog.langchain.dev/)
 - [LangChain Docs](https://docs.langchain.com/oss/python/langchain/overview)
 - [LangSmith for Observability & Evaluation](https://smith.langchain.com/)
+
+## LLM & AI 相关Blog
+
+[Claude Code 集成第三方API](https://www.kevnu.com/zh/posts/claude-code-usage-guide-from-official-configuration-to-integrating-third-party-models)
+
 
 
   

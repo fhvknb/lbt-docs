@@ -1,10 +1,8 @@
-
-
 在服务器上运行 Jupyter Notebook 并映射到 `0.0.0.0` 以便通过外部网络访问，可以按照以下步骤操作：
 
 ---
 
-### **步骤 1：安装 Jupyter Notebook**
+### *步骤 1：安装 Jupyter Notebook**
 如果尚未安装 Jupyter Notebook，可以通过以下命令安装：
 ```bash
 pip install notebook
@@ -117,7 +115,7 @@ Jupyter Notebook 不直接存储明文密码，而是存储加密的哈希值。
    from notebook.auth import passwd
    passwd()
    ```
-Ps: *From Jupyter Notebook 7, use the jupyter_server.auth module instead of notebook.auth*
+   Ps: *From Jupyter Notebook 7, use the jupyter_server.auth module instead of notebook.auth*
 
 ```shell
 $ jupyter server password
