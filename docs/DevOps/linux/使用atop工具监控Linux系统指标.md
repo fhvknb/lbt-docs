@@ -53,17 +53,17 @@ atop 30 10 > /tmp/atop.mem
 ```
 
 
-- [系统资源概览](#998b09feaegcb)：汇总了CPU、内存、交换空间、磁盘I/O和网络的整体使用情况。
+- [系统资源概览](#)：汇总了CPU、内存、交换空间、磁盘I/O和网络的整体使用情况。
 
 ![image](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4288950671/p1013903.png)
 
 
-- [进程级详情](#aaf1e0019cbee)：展示了各个进程的资源消耗详情。
+- [进程级详情](#)：展示了各个进程的资源消耗详情。
 
 ![image](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4288950671/p1013904.png)
 
 
-2. 在交互模式下，可使用单个字母键切换视图或者排序。
+1. 在交互模式下，可使用单个字母键切换视图或者排序。
 
 | 按键 | 功能 | 用途 |
 | --- | --- | --- |
