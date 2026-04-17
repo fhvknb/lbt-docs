@@ -46,11 +46,7 @@
 
 以下是一个完整的 `.proto` 文件示例，展示了各种语法的使用：
 
-````artifact
-id: example_proto
-name: example.proto
-type: code.proto
-content: |-
+````proto
   syntax = "proto3"; // 指定 Protobuf 版本
 
   // 定义包名
@@ -189,5 +185,3 @@ message Example {
 - 使用 `.proto` 文件定义数据结构，配合 `protoc` 工具生成代码。
 - 支持多种语言和扩展，灵活性强。
 - 遵循兼容性规则，确保数据格式的稳定性。
-
-如果需要更详细的内容，或者有其他问题，欢迎随时提问！

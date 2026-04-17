@@ -1,5 +1,3 @@
-以下是一个使用 MQTT 协议实现长连接通信的 Python 示例，包括服务端和客户端的代码。我们将使用流行的 MQTT 库 `paho-mqtt` 来实现。
-
 ### 步骤说明
 1. 服务端：通过 Mosquitto 或其他 MQTT Broker（如 EMQX）运行一个 MQTT 服务端。
 2. 客户端：编写 Python 客户端代码，连接到 MQTT 服务端并订阅/发布消息。
@@ -137,4 +135,3 @@ if __name__ == "__main__":
 2. 如果需要更高的安全性，可以启用 MQTT 的 TLS/SSL 和用户认证功能。
 3. 如果没有本地 Broker，可以使用公共的 MQTT Broker（如 mqtt.eclipseprojects.io）。
 
-通过这个示例，你可以实现一个简单的 MQTT 长连接通信模型，后续可以扩展为更复杂的应用。

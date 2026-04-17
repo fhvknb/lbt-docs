@@ -12,50 +12,46 @@
 
 ### **1. 定义 .proto 文件**
 
-````artifact
-id: user_service_proto
-name: user_service.proto
-type: code.proto
-content: |-
-  syntax = "proto3";
+````proto
+syntax = "proto3";
 
-  // 定义包名
-  package user;
+// 定义包名
+package user;
 
-  // 定义服务接口
-  service UserService {
-    // 创建用户
-    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
-    // 获取用户信息
-    rpc GetUser(GetUserRequest) returns (GetUserResponse);
-  }
+// 定义服务接口
+service UserService {
+// 创建用户
+rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+// 获取用户信息
+rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
 
-  // 创建用户的请求消息
-  message CreateUserRequest {
-    string name = 1;       // 用户名
-    string email = 2;      // 用户邮箱
-    int32 age = 3;         // 用户年龄
-  }
+// 创建用户的请求消息
+message CreateUserRequest {
+string name = 1;       // 用户名
+string email = 2;      // 用户邮箱
+int32 age = 3;         // 用户年龄
+}
 
-  // 创建用户的响应消息
-  message CreateUserResponse {
-    bool success = 1;      // 操作是否成功
-    string message = 2;    // 返回消息
-    int32 user_id = 3;     // 创建的用户 ID
-  }
+// 创建用户的响应消息
+message CreateUserResponse {
+bool success = 1;      // 操作是否成功
+string message = 2;    // 返回消息
+int32 user_id = 3;     // 创建的用户 ID
+}
 
-  // 获取用户信息的请求消息
-  message GetUserRequest {
-    int32 user_id = 1;     // 用户 ID
-  }
+// 获取用户信息的请求消息
+message GetUserRequest {
+int32 user_id = 1;     // 用户 ID
+}
 
-  // 获取用户信息的响应消息
-  message GetUserResponse {
-    string name = 1;       // 用户名
-    string email = 2;      // 用户邮箱
-    int32 age = 3;         // 用户年龄
-    bool found = 4;        // 是否找到用户
-  }
+// 获取用户信息的响应消息
+message GetUserResponse {
+string name = 1;       // 用户名
+string email = 2;      // 用户邮箱
+int32 age = 3;         // 用户年龄
+bool found = 4;        // 是否找到用户
+}
 ````
 
 ---
@@ -98,95 +94,88 @@ content: |-
 #### **Python 示例**
 
 ##### **服务端实现**
-````artifact
-id: grpc_server
-name: gRPC 服务端示例
-type: code.python
-content: |-
-  from concurrent import futures
-  import grpc
-  import user_service_pb2
-  import user_service_pb2_grpc
+````python
+from concurrent import futures
+import grpc
+import user_service_pb2
+import user_service_pb2_grpc
 
-  # 模拟数据库
-  DATABASE = {}
-  USER_ID = 1
+# 模拟数据库
+DATABASE = {}
+USER_ID = 1
 
-  # 实现服务
-  class UserService(user_service_pb2_grpc.UserServiceServicer):
-      def CreateUser(self, request, context):
-          global USER_ID
-          user_id = USER_ID
-          DATABASE[user_id] = {
-              "name": request.name,
-              "email": request.email,
-              "age": request.age
-          }
-          USER_ID += 1
-          return user_service_pb2.CreateUserResponse(
-              success=True,
-              message="User created successfully",
-              user_id=user_id
-          )
+# 实现服务
+class UserService(user_service_pb2_grpc.UserServiceServicer):
+  def CreateUser(self, request, context):
+	  global USER_ID
+	  user_id = USER_ID
+	  DATABASE[user_id] = {
+		  "name": request.name,
+		  "email": request.email,
+		  "age": request.age
+	  }
+	  USER_ID += 1
+	  return user_service_pb2.CreateUserResponse(
+		  success=True,
+		  message="User created successfully",
+		  user_id=user_id
+	  )
 
-      def GetUser(self, request, context):
-          user = DATABASE.get(request.user_id)
-          if user:
-              return user_service_pb2.GetUserResponse(
-                  name=user["name"],
-                  email=user["email"],
-                  age=user["age"],
-                  found=True
-              )
-          else:
-              return user_service_pb2.GetUserResponse(
-                  found=False
-              )
+  def GetUser(self, request, context):
+	  user = DATABASE.get(request.user_id)
+	  if user:
+		  return user_service_pb2.GetUserResponse(
+			  name=user["name"],
+			  email=user["email"],
+			  age=user["age"],
+			  found=True
+		  )
+	  else:
+		  return user_service_pb2.GetUserResponse(
+			  found=False
+		  )
 
-  # 启动 gRPC 服务
-  def serve():
-      server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-      user_service_pb2_grpc.add_UserServiceServicer_to_server(UserService(), server)
-      server.add_insecure_port('[::]:50051')
-      server.start()
-      print("Server started on port 50051")
-      server.wait_for_termination()
+# 启动 gRPC 服务
+def serve():
+  server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+  user_service_pb2_grpc.add_UserServiceServicer_to_server(UserService(), server)
+  server.add_insecure_port('[::]:50051')
+  server.start()
+  print("Server started on port 50051")
+  server.wait_for_termination()
 
-  if __name__ == '__main__':
-      serve()
+if __name__ == '__main__':
+  serve()
 ````
 
 ##### **客户端实现**
-````artifact
-id: grpc_client
-name: gRPC 客户端示例
-type: code.python
-content: |-
-  import grpc
-  import user_service_pb2
-  import user_service_pb2_grpc
+````python
 
-  def run():
-      # 连接到 gRPC 服务
-      channel = grpc.insecure_channel('localhost:50051')
-      stub = user_service_pb2_grpc.UserServiceStub(channel)
+import grpc
+import user_service_pb2
+import user_service_pb2_grpc
 
-      # 调用 CreateUser 方法
-      create_response = stub.CreateUser(user_service_pb2.CreateUserRequest(
-          name="Alice",
-          email="alice@example.com",
-          age=25
-      ))
-      print(f"Create User Response: {create_response}")
+def run():
+  # 连接到 gRPC 服务
+  channel = grpc.insecure_channel('localhost:50051')
+  stub = user_service_pb2_grpc.UserServiceStub(channel)
 
-      # 调用 GetUser 方法
-      get_response = stub.GetUser(user_service_pb2.GetUserRequest(
-          user_id=create_response.user_id
-      ))
-      print(f"Get User Response: {get_response}")
+  # 调用 CreateUser 方法
+  create_response = stub.CreateUser(user_service_pb2.CreateUserRequest(
+	  name="Alice",
+	  email="alice@example.com",
+	  age=25
+  ))
+  print(f"Create User Response: {create_response}")
 
-  if __name__ == '__main__':
-      run()
+  # 调用 GetUser 方法
+  get_response = stub.GetUser(user_service_pb2.GetUserRequest(
+	  user_id=create_response.user_id
+  ))
+  print(f"Get User Response: {get_response}")
+
+if __name__ == '__main__':
+  run()
 ````
 
 ---
@@ -194,122 +183,115 @@ content: |-
 #### **Go 示例**
 
 ##### **服务端实现**
-````artifact
-id: grpc_go_server
-name: gRPC Go 服务端示例
-type: code.go
-content: |-
-  package main
+````go
+package main
 
-  import (
-      "context"
-      "log"
-      "net"
+import (
+  "context"
+  "log"
+  "net"
 
-      pb "path/to/generated"
-      "google.golang.org/grpc"
-  )
+  pb "path/to/generated"
+  "google.golang.org/grpc"
+)
 
-  // 模拟数据库
-  var database = make(map[int32]*pb.Person)
-  var userID int32 = 1
+// 模拟数据库
+var database = make(map[int32]*pb.Person)
+var userID int32 = 1
 
-  // 定义服务
-  type server struct {
-      pb.UnimplementedUserServiceServer
+// 定义服务
+type server struct {
+  pb.UnimplementedUserServiceServer
+}
+
+func (s *server) CreateUser(ctx context.Context, req *pb.CreateUserRequest) (*pb.CreateUserResponse, error) {
+  newUser := &pb.Person{
+	  Id:    userID,
+	  Name:  req.Name,
+	  Email: req.Email,
+	  Age:   req.Age,
   }
+  database[userID] = newUser
+  userID++
+  return &pb.CreateUserResponse{
+	  Success: true,
+	  Message: "User created successfully",
+	  UserId:  newUser.Id,
+  }, nil
+}
 
-  func (s *server) CreateUser(ctx context.Context, req *pb.CreateUserRequest) (*pb.CreateUserResponse, error) {
-      newUser := &pb.Person{
-          Id:    userID,
-          Name:  req.Name,
-          Email: req.Email,
-          Age:   req.Age,
-      }
-      database[userID] = newUser
-      userID++
-      return &pb.CreateUserResponse{
-          Success: true,
-          Message: "User created successfully",
-          UserId:  newUser.Id,
-      }, nil
+func (s *server) GetUser(ctx context.Context, req *pb.GetUserRequest) (*pb.GetUserResponse, error) {
+  user, exists := database[req.UserId]
+  if !exists {
+	  return &pb.GetUserResponse{Found: false}, nil
   }
+  return &pb.GetUserResponse{
+	  Name:   user.Name,
+	  Email:  user.Email,
+	  Age:    user.Age,
+	  Found:  true,
+  }, nil
+}
 
-  func (s *server) GetUser(ctx context.Context, req *pb.GetUserRequest) (*pb.GetUserResponse, error) {
-      user, exists := database[req.UserId]
-      if !exists {
-          return &pb.GetUserResponse{Found: false}, nil
-      }
-      return &pb.GetUserResponse{
-          Name:   user.Name,
-          Email:  user.Email,
-          Age:    user.Age,
-          Found:  true,
-      }, nil
+func main() {
+  lis, err := net.Listen("tcp", ":50051")
+  if err != nil {
+	  log.Fatalf("Failed to listen: %v", err)
   }
-
-  func main() {
-      lis, err := net.Listen("tcp", ":50051")
-      if err != nil {
-          log.Fatalf("Failed to listen: %v", err)
-      }
-      s := grpc.NewServer()
-      pb.RegisterUserServiceServer(s, &server{})
-      log.Println("Server is running on port 50051")
-      if err := s.Serve(lis); err != nil {
-          log.Fatalf("Failed to serve: %v", err)
-      }
+  s := grpc.NewServer()
+  pb.RegisterUserServiceServer(s, &server{})
+  log.Println("Server is running on port 50051")
+  if err := s.Serve(lis); err != nil {
+	  log.Fatalf("Failed to serve: %v", err)
   }
+}
 ````
 
 ##### **客户端实现**
-````artifact
-id: grpc_go_client
-name: gRPC Go 客户端示例
-type: code.go
-content: |-
-  package main
+````go
 
-  import (
-      "context"
-      "fmt"
-      "log"
-      "time"
+package main
 
-      pb "path/to/generated"
-      "google.golang.org/grpc"
-  )
+import (
+  "context"
+  "fmt"
+  "log"
+  "time"
 
-  func main() {
-      conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
-      if err != nil {
-          log.Fatalf("Failed to connect: %v", err)
-      }
-      defer conn.Close()
+  pb "path/to/generated"
+  "google.golang.org/grpc"
+)
 
-      client := pb.NewUserServiceClient(conn)
-
-      // 调用 CreateUser 方法
-      createResp, err := client.CreateUser(context.Background(), &pb.CreateUserRequest{
-          Name:  "Alice",
-          Email: "alice@example.com",
-          Age:   25,
-      })
-      if err != nil {
-          log.Fatalf("CreateUser error: %v", err)
-      }
-      fmt.Printf("CreateUser Response: %v\n", createResp)
-
-      // 调用 GetUser 方法
-      time.Sleep(1 * time.Second) // 模拟延迟
-      getResp, err := client.GetUser(context.Background(), &pb.GetUserRequest{
-          UserId: createResp.UserId,
-      })
-      if err != nil {
-          log.Fatalf("GetUser error: %v", err)
-      }
-      fmt.Printf("GetUser Response: %v\n", getResp)
+func main() {
+  conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+  if err != nil {
+	  log.Fatalf("Failed to connect: %v", err)
   }
+  defer conn.Close()
+
+  client := pb.NewUserServiceClient(conn)
+
+  // 调用 CreateUser 方法
+  createResp, err := client.CreateUser(context.Background(), &pb.CreateUserRequest{
+	  Name:  "Alice",
+	  Email: "alice@example.com",
+	  Age:   25,
+  })
+  if err != nil {
+	  log.Fatalf("CreateUser error: %v", err)
+  }
+  fmt.Printf("CreateUser Response: %v\n", createResp)
+
+  // 调用 GetUser 方法
+  time.Sleep(1 * time.Second) // 模拟延迟
+  getResp, err := client.GetUser(context.Background(), &pb.GetUserRequest{
+	  UserId: createResp.UserId,
+  })
+  if err != nil {
+	  log.Fatalf("GetUser error: %v", err)
+  }
+  fmt.Printf("GetUser Response: %v\n", getResp)
+}
 ````
 
 ---
@@ -328,7 +310,3 @@ content: |-
 
 4. **跨语言服务**：
    - Protobuf 支持多种语言（如 Python、Java、Go 等），适用于需要跨语言交互的场景。
-
----
-
-如果需要更多的案例或具体实现细节，请随时告诉我！
