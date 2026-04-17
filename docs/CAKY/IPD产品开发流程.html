@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-CAKY/IPD产品开发流程" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">IPD产品开发流程 | LBT DOCS</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.zazds.top/docs/CAKY/IPD产品开发流程"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="algolia-site-verification" content="45999D009F620D2F"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="IPD产品开发流程 | LBT DOCS"><meta data-rh="true" name="description" content="CK-PDS（Customer Knowledge Product Development System）是一种以客户需求为导向的产品开发系统，广泛应用于产品开发流程中。以下是CK-PDS开发流程的主要阶段、每个阶段需要完成的工作以及需要交付的内容。"><meta data-rh="true" property="og:description" content="CK-PDS（Customer Knowledge Product Development System）是一种以客户需求为导向的产品开发系统，广泛应用于产品开发流程中。以下是CK-PDS开发流程的主要阶段、每个阶段需要完成的工作以及需要交付的内容。"><link data-rh="true" rel="icon" href="/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.zazds.top/docs/CAKY/IPD产品开发流程"><link data-rh="true" rel="alternate" href="https://docs.zazds.top/docs/CAKY/IPD产品开发流程" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://docs.zazds.top/docs/CAKY/IPD产品开发流程" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://2VW5QVY9D5-dsn.algolia.net" crossorigin="anonymous"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="LBT DOCS RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="LBT DOCS Atom Feed">
+
+
+
+
+<link rel="search" type="application/opensearchdescription+xml" title="LBT DOCS" href="/opensearch.xml">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.7be516ec.css">
+<script src="/assets/js/runtime~main.48d140ea.js" defer="defer"></script>
+<script src="/assets/js/main.fa52b7ab.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/images/logo.png" alt="LBT Docs Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/images/logo.png" alt="LBT Docs Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">LBT-DOCS</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/start">Documents</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/fhvknb" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为浅色模式）" aria-label="切换浅色/暗黑模式（当前为浅色模式）" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><button type="button" class="DocSearch DocSearch-Button" aria-label="搜索 (Command+K)"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">搜索</span></span><span class="DocSearch-Button-Keys"></span></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/start">好记性不如烂笔头</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/aillm">AI&amp;LLM</a><button aria-label="展开侧边栏分类 &#x27;AI&amp;LLM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/fullstackdev">FullStackDev</a><button aria-label="展开侧边栏分类 &#x27;FullStackDev&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/frontenddev">FrontEndDev</a><button aria-label="展开侧边栏分类 &#x27;FrontEndDev&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/devops">DevOps</a><button aria-label="展开侧边栏分类 &#x27;DevOps&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/personalgrowth">PersonalGrowth</a><button aria-label="展开侧边栏分类 &#x27;PersonalGrowth&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/caky">CAKY</a><button aria-label="折叠侧边栏分类 &#x27;CAKY&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/DBC 文件文件介绍">DBC 文件文件介绍</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/ECU软件开发、通讯、发布与升级的核心知识体系">ECU软件开发、通讯、发布与升级的核心知识体系</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/CAKY/IPD产品开发流程">IPD产品开发流程</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/JDK管理篇">JDK管理篇</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/Java Spring Boot 微服务CI-CD">Java Spring Boot 微服务CI-CD</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/Java Spring Boot 微服务开发学习手册">Java Spring Boot 微服务开发学习手册</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/MQTT长连接消息通讯">MQTT长连接消息通讯</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/MacOS 安装多个版本JDK">MacOS 安装多个版本JDK</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/Maven 项目安装本地jar包">Maven 项目安装本地jar包</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/NVH 介绍">NVH 介绍</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/Protobuf使用示例">Protobuf使用示例</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/React Native 热更新方案">React Native 热更新方案</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/T-BOX 介绍">T-BOX 介绍</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/T-BOX通讯方式及实现">T-BOX通讯方式及实现</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/TSP 相关内容介绍">TSP 相关内容介绍</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/V模型开发模式详细介绍">V模型开发模式详细介绍</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/gRPC服务示例">gRPC服务示例</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/proto文件语法及工具命令">proto文件语法及工具命令</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/商用车车联网（Telematics）系统架构师">商用车车联网（Telematics）系统架构师</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/整车开发流程（Vehicle Development Process）">整车开发流程（Vehicle Development Process）</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/整车电子架构（EE架构）、域控制器与SOA服务">整车电子架构（EE架构）、域控制器与SOA服务</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/汽车行业专业名词">汽车行业专业名词</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/现代化高性能车载系统软件架构设计1">现代化高性能车载系统软件架构设计1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/现代化高性能车载系统软件架构设计2">现代化高性能车载系统软件架构设计2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/车载功能升级方向">车载功能升级方向</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/车载终端OBU（On-Board Unit）">车载终端OBU（On-Board Unit）</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/零信任安全体系（Zero Trust Security）">零信任安全体系（Zero Trust Security）</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/CAKY/📖 车载网联工程师知识体系与学习路径">📖 车载网联工程师知识体系与学习路径</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/archives">Archives</a><button aria-label="展开侧边栏分类 &#x27;Archives&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/caky"><span itemprop="name">CAKY</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">IPD产品开发流程</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>IPD产品开发流程</h1></header><p>CK-PDS（Customer Knowledge Product Development System）是一种以客户需求为导向的产品开发系统，广泛应用于产品开发流程中。以下是CK-PDS开发流程的主要阶段、每个阶段需要完成的工作以及需要交付的内容。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-概念阶段concept-phase"><strong>1. 概念阶段（Concept Phase）</strong><a href="#1-概念阶段concept-phase" class="hash-link" aria-label="1-概念阶段concept-phase的直接链接" title="1-概念阶段concept-phase的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="目标"><strong>目标</strong>：<a href="#目标" class="hash-link" aria-label="目标的直接链接" title="目标的直接链接">​</a></h3>
+<p>明确产品的核心概念，分析市场需求，定义产品的愿景和目标。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="主要工作"><strong>主要工作</strong>：<a href="#主要工作" class="hash-link" aria-label="主要工作的直接链接" title="主要工作的直接链接">​</a></h3>
+<ul>
+<li><strong>市场调研</strong>：分析目标市场、用户需求、竞争对手情况。</li>
+<li><strong>用户需求收集</strong>：与客户沟通，明确用户的痛点、需求和期望。</li>
+<li><strong>技术可行性评估</strong>：初步评估技术实现的可能性和挑战。</li>
+<li><strong>概念设计</strong>：提出产品的核心理念、功能框架和创新点。</li>
+<li><strong>成本和时间评估</strong>：初步估算开发成本和时间。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="交付内容"><strong>交付内容</strong>：<a href="#交  付内容" class="hash-link" aria-label="交付内容的直接链接" title="交付内容的直接链接">​</a></h3>
+<ul>
+<li>市场调研报告</li>
+<li>用户需求文档（User Requirements Document, URD）</li>
+<li>产品概念文档（包含功能概述、目标用户、核心价值等）</li>
+<li>初步项目计划（时间表、预算估算等）</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-方案设计阶段design-phase"><strong>2. 方案设计阶段（Design Phase）</strong><a href="#2-方案设计阶段design-phase" class="hash-link" aria-label="2-方案设计阶段design-phase的直接链接" title="2-方案设计阶段design-phase的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="目标-1"><strong>目标</strong>：<a href="#目标-1" class="hash-link" aria-label="目标-1的直接链接" title="目标-1的直接链接">​</a></h3>
+<p>基于概念阶段的成果，设计详细的产品方案，明确技术规格和功能实现路径。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="主要工作-1"><strong>主要工作</strong>：<a href="#主要工作-1" class="hash-link" aria-label="主要工作-1的直接链接" title="主要工作-1的直接链接">​</a></h3>
+<ul>
+<li><strong>功能需求分析</strong>：将用户需求转化为技术需求，定义产品功能。</li>
+<li><strong>技术选型与架构设计</strong>：选择适合的技术栈，设计系统架构。</li>
+<li><strong>原型设计</strong>：开发产品的低保真或高保真原型，展示界面和交互逻辑。</li>
+<li><strong>风险评估</strong>：识别潜在的技术和项目风险，制定应对措施。</li>
+<li><strong>资源规划</strong>：明确开发所需的人员、设备和其他资源。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="交付内容-1"><strong>交付内容</strong>：<a href="#交付内容-1" class="hash-link" aria-label="交付内容-1的直接链接" title="交付内容-1的直接链接">​</a></h3>
+<ul>
+<li> 产品需求文档（Product Requirement Document, PRD）</li>
+<li>系统架构设计文档</li>
+<li>原型设计（低保真或高保真原型）</li>
+<li>风险评估报告</li>
+<li>资源需求清单</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-开发阶段development-phase"><strong>3. 开发阶段（Development Phase）</strong><a href="#3-开发阶段development-phase" class="hash-link" aria-label="3-开发阶段development-phase的直接链接" title="3-开发阶段development-phase的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="目标-2"><strong>目标</strong>：<a href="#目标-2" class="hash-link" aria-label="目标-2的直接链接" title="目标-2的直接链接">​</a></h3>
+<p>按照设计阶段的方案进行产品的实际开发，实现产品的核心功能。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="主要工作-2"><strong>主要工作</strong>：<a href="#主要工作-2" class="hash-link" aria-label="主要工作-2的直接链接" title="主要工作-2的直接链接">​</a></h3>
+<ul>
+<li><strong>开发任务分配</strong>：将开发任务分解，分配给团队成员。</li>
+<li><strong>编码与实现</strong>：按照设计文档进行功能模块的开发。</li>
+<li><strong>单元测试</strong>：开发过程中进行单元测试，确保代码质量。</li>
+<li><strong>版本管理</strong>：使用版本控制系统（如 Git）管理代码。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="交付内容-2"><strong>交付内容</strong>：<a href="#交付内容-2" class="hash-link" aria-label="交付内容-2的直接链接" title="交付内容-2的直接链接">​</a></h3>
+<ul>
+<li>开发完成的功能模块</li>
+<li>单元测试报告</li>
+<li>源代码库（包含版本控制记录）</li>
+<li>开发进度报告</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-集成与测试阶段integration-and-testing-phase"><strong>4. 集成与测试阶段（Integration and Testing Phase）</strong><a href="#4-集成与测试阶段integration-and-testing-phase" class="hash-link" aria-label="4-集成与测试阶段integration-and-testing-phase的直接链接" title="4-集成与测试阶段integration-and-testing-phase的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="目标-3"><strong>目标</strong>：<a href="#目标-3" class="hash-link" aria-label="目标-3的直接链接" title="目标-3的直接链接">​</a></h3>
+<p>将开发完成的模块进行集成，并对产品进行全面的测试，确保其功能完整性和质量。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="主要工作-3"><strong>主要工作</strong>：<a href="#主要工作-3" class="hash-link" aria-label="主要工作-3的直接链接" title="主要工作-3的直接链接">​</a></h3>
+<ul>
+<li><strong>模块集成</strong>：将各个功能模块整合为一个完整的系统。</li>
+<li><strong>功能测试</strong>：验证系统是否满足功能需求。</li>
+<li><strong>性能测试</strong>：测试系统在高负载下的性能和稳定性。</li>
+<li><strong>安全测试</strong>：检查系统是否存在安全漏洞。</li>
+<li><strong>用户测试</strong>：邀请用户参与测试，收集用户反馈。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="交付内容-3"><strong>交付内容</strong>：<a href="#交付内容-3" class="hash-link" aria-label="交付内容-3的直接链接" title="交付内容-3的直接链接">​</a></h3>
+<ul>
+<li>集成后的完整系统</li>
+<li>测试计划和测试用例</li>
+<li>测试报告（包括功能测试、性能测试、安全测试结果等）</li>
+<li>用户反馈报告</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-发布阶段release-phase"><strong>5. 发布阶段（Release Phase）</strong><a href="#5-发布阶段release-phase" class="hash-link" aria-label="5-发布阶段release-phase的直接链接" title="5-发布阶段release-phase的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="目标-4"><strong>目标</strong>：<a href="#目标-4" class="hash-link" aria-label="目标-4的直接链接" title="目标-4的直接链接">​</a></h3>
+<p>完成产品的部署和发布，确保产品能够顺利交付给客户或上线。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="主要工作-4"><strong>主要工作</strong>：<a href="#主要工作-4" class="hash-link" aria-label="主要工作-4的直接链接" title="主要工作-4的直接链接">​</a></h3>
+<ul>
+<li><strong>部署准备</strong>：准备生产环境，完成系统部署。</li>
+<li><strong>用户培训</strong>：为客户或最终用户提供培训，确保其能够正确使用产品。</li>
+<li><strong>文档交付</strong>：交付用户手册、技术文档等。</li>
+<li><strong>试运行</strong>：产品上线试运行，监控运行状态，解决初期问题。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="交付内容-4"><strong>交付内容</strong>：<a href="#交付内容-4" class="hash-link" aria-label="交付内容-4的直接链接" title="交付内容-4的直接链接">​</a></h3>
+<ul>
+<li>部署完成的产品</li>
+<li>用户手册</li>
+<li>技术支持文档</li>
+<li>培训材料</li>
+<li>上线报告</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="6-运营与维护阶段operation-and-maintenance-phase"><strong>6. 运营与维护阶段（Operation and Maintenance Phase）</strong><a href="#6-运营与维护阶段operation-and-maintenance-phase" class="hash-link" aria-label="6-运营与维护阶段operation-and-maintenance-phase的直接链接" title="6-运营与维护阶段operation-and-maintenance-phase的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="目标-5"><strong>目标</strong>：<a href="#目标-5" class="hash-link" aria-label="目标-5的直接链接" title="目标-5的直接链接">​</a></h3>
+<p>确保产品在实际使用中的稳定性，收集用户反馈，进行持续优化和改进。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="主要工作-5"><strong>主要工作</strong>：<a href="#主要工作-5" class="hash-link" aria-label="主要工作-5的直接链接" title="主要工作-5的直接链接">​</a></h3>
+<ul>
+<li><strong>监控与支持</strong>：监控产品运行状态，提供技术支持。</li>
+<li><strong>问题修复</strong>：快速响应用户反馈，修复发现的问题。</li>
+<li><strong>版本升级</strong>：根据用户需求和技术发展，持续优化产品功能。</li>
+<li><strong>性能优化</strong>：根据运行数据，优化系统性能。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="交付内容-5"><strong>交付内容</strong>：<a href="#交付内容-5" class="hash-link" aria-label="交付内容-5的直接链接" title="交付内容-5的直接链接">​</a></h3>
+<ul>
+<li>监控报告</li>
+<li>问题修复记录</li>
+<li>版本更新日志</li>
+<li>用户反馈分析报告</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="总结"><strong>总结</strong><a href="#总结" class="hash-link" aria-label="总结的直接链接" title="总结的直接链接">​</a></h3>
+<p>以下是 CK-PDS 开发流程的主要阶段及其交付物的概览：</p>
+<table><thead><tr><th>阶段</th><th>主要工作</th><th>交付内容</th></tr></thead><tbody><tr><td><strong>概念阶段</strong></td><td>市场调研、需求分析、概念设计、成本评估等</td><td>市场调研报告、用户需求文档、产品概念文档、初步项目计划</td></tr><tr><td><strong>方案设计阶段</strong></td><td>功能需求分析、技术选型、原型设计、风险评估等</td><td>PRD、系统架构设计文档、原型设计、风险评估报告、资源需求清单</td></tr><tr><td><strong>开发阶段</strong></td><td>开发任务分配、编码实现、单元测试、版本管理</td><td>功能模块、单元测试报告、源代码库、开发进度报告</td></tr><tr><td><strong>集成与测试阶段</strong></td><td>模块集  成、功能测试、性能测试、安全测试、用户测试</td><td>集成系统、测试计划、测试报告、用户反馈报告</td></tr><tr><td><strong>发布阶段</strong></td><td>部署准备、用户培训、文档交付、试运行</td><td>部署完成的产品、用户手册、技术文档、培训材料、上线报告</td></tr><tr><td><strong>运营与维护阶段</strong></td><td>监控与支持、问题修复、版本升级、性能优化</td><td>监控报告、问题修复记录、版本更新日志、用户反馈分析报告</td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-fko-feasibility-kick-off"><strong>1. FKO (Feasibility Kick-Off)</strong><a href="#1-fko-feasibility-kick-off" class="hash-link" aria-label="1-fko-feasibility-kick-off的直接链接" title="1-fko-feasibility-kick-off的直接链接">​</a></h3>
+<ul>
+<li><strong>全称</strong>：可行性启动阶段</li>
+<li><strong>描述</strong>：这是产品开发流程的初始阶段，主要用于确定项目的可行性。团队会对项目的技术、市场、预算、资源等方面进行初步评估，确保项目具备开发的基本条件。</li>
+<li><strong>关键活动</strong>：<!-- -->
+<ul>
+<li>确定项目目标和范围</li>
+<li>进行初步的市场调研</li>
+<li>评估技术实现的难度和可行性</li>
+<li>制定初步的项目计划和成本预算</li>
+</ul>
+</li>
+<li><strong>交付物</strong>：<!-- -->
+<ul>
+<li>可行性报告</li>
+<li>初步项目计划</li>
+<li>资源需求清单</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-ko-kick-off"><strong>2. KO (Kick-Off)</strong><a href="#2-ko-kick-off" class="hash-link" aria-label="2-ko-kick-off的直接链接" title="2-ko-kick-off的直接链接">​</a></h3>
+<ul>
+<li><strong>全称</strong>：项目启动阶段</li>
+<li><strong>描述</strong>：在确认项目可行后，正式启动开发项目。团队成员和相关方会召开项目启动会议，明  确项目目标、范围、时间表和资源分配。</li>
+<li><strong>关键活动</strong>：<!-- -->
+<ul>
+<li>确定项目团队和职责分工</li>
+<li>明确项目的详细目标和范围</li>
+<li>制定详细的项目计划和时间表</li>
+<li>识别潜在风险并制定应对策略</li>
+</ul>
+</li>
+<li><strong>交付物</strong>：<!-- -->
+<ul>
+<li>项目计划书</li>
+<li>项目团队职责分工表</li>
+<li>风险管理计划</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-ptc-prototype-confirmation"><strong>3. PTC (Prototype Confirmation)</strong><a href="#3-ptc-prototype-confirmation" class="hash-link" aria-label="3-ptc-prototype-confirmation的直接链接" title="3-ptc-prototype-confirmation的直接链接">​</a></h3>
+<ul>
+<li><strong>全称</strong>：原型确认阶段</li>
+<li><strong>描述</strong>：在设计阶段完成后，开发产品的原型，并通过用户或客户的反馈确认原型是否符合需求。这是产品开发从概念到实际实现的重要过渡阶段。</li>
+<li><strong>关键活动</strong>：<!-- -->
+<ul>
+<li>开发产品的低保真或高保真原型</li>
+<li>与客户或用户进行原型评审</li>
+<li>根据反馈迭代优化原型</li>
+</ul>
+</li>
+<li><strong>交付物</strong>：<!-- -->
+<ul>
+<li>产品原型（低保真或高保真）</li>
+<li>原型评审报告</li>
+<li>更新后的产品需求文档（PRD）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-pa-production-approval"><strong>4. PA (Production Approval)</strong><a href="#4-pa-production-approval" class="hash-link" aria-label="4-pa-production-approval的直接链接" title="4-pa-production-approval的直接链接">​</a></h3>
+<ul>
+<li><strong>全称</strong>：生产批准阶段</li>
+<li><strong>描述</strong>：在开发完成后，产品需要通过一系列测试（功能、性能、安全性等）以确保其质量达到发布标准。通过测试后，产品会进入生产或部署阶段。</li>
+<li><strong>关键活动</strong>：<!-- -->
+<ul>
+<li>功能测试、性能测试和安全测试</li>
+<li>验证产品是否符合需求和质量标准</li>
+<li>获得客户或管理层的批准</li>
+</ul>
+</li>
+<li><strong>交付物</strong>：<!-- -->
+<ul>
+<li>测试报告（功能、性能、安全性等）</li>
+<li>产品发布审批文件</li>
+<li>最终的产品版本</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5-dr-design-review"><strong>5. DR (Design Review)</strong><a href="#5-dr-design-review" class="hash-link" aria-label="5-dr-design-review的直接链接" title="5-dr-design-review的直接链接">​</a></h3>
+<ul>
+<li><strong>全称</strong>：设计评审阶段</li>
+<li><strong>描述</strong>：对产品的设计方案进行全面评审，确保其符合客户需求和技术要求。设计评审是一个反复迭代的过程，可能需要多次调整和优化。</li>
+<li><strong>关键活动</strong>：<!-- -->
+<ul>
+<li>评审产品需求文档（PRD）和系统架构设计文档</li>
+<li>确认技术选型和开发方案</li>
+<li>识别设计中的潜在问题并优化</li>
+</ul>
+</li>
+<li><strong>交付物</strong>：<!-- -->
+<ul>
+<li>通过评审的设计文档</li>
+<li>更新的PRD和架构设计文档</li>
+<li>设计评审会议纪要</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="6-plr-production-launch-readiness"><strong>6. PLR (Production Launch Readiness)</strong><a href="#6-plr-production-launch-readiness" class="hash-link" aria-label="6-plr-production-launch-readiness的直接链接" title="6-plr-production-launch-readiness的直接链接">​</a></h3>
+<ul>
+<li><strong>全称</strong>：生产准备就绪阶段</li>
+<li><strong>描述</strong>：在产品发布之前，确认所有准备工作是否就绪，包括生产环境的搭建、用户培训和文档准备等。确保产品可以顺利上线或交付。</li>
+<li><strong>关键活动</strong>：<!-- -->
+<ul>
+<li>部署生产环境并进行测试</li>
+<li>准备好用户手册和技术  文档</li>
+<li>进行用户培训</li>
+<li>确认试运行结果并解决问题</li>
+</ul>
+</li>
+<li><strong>交付物</strong>：<!-- -->
+<ul>
+<li>部署完成的生产环境</li>
+<li>用户手册</li>
+<li>技术支持文档</li>
+<li>试运行报告</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="7-ls-launch-and-support"><strong>7. LS (Launch and Support)</strong><a href="#7-ls-launch-and-support" class="hash-link" aria-label="7-ls-launch-and-support的直接链接" title="7-ls-launch-and-support的直接链接">​</a></h3>
+<ul>
+<li><strong>全称</strong>：发布与支持阶段</li>
+<li><strong>描述</strong>：产品正式上线或交付客户使用，并提供持续的技术支持和维护。收集用户反馈并进行后续的优化和改进。</li>
+<li><strong>关键活动</strong>：<!-- -->
+<ul>
+<li>产品上线或交付</li>
+<li>监控产品运行状态</li>
+<li>提供技术支持和维护</li>
+<li>收集用户反馈并优化产品</li>
+<li>规划后续版本的功能和改进</li>
+</ul>
+</li>
+<li><strong>交付物</strong>：<!-- -->
+<ul>
+<li>上线报告</li>
+<li>用户反馈报告</li>
+<li>问题修复记录</li>
+<li>版本更新日志</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table><thead><tr><th>阶段缩写</th><th>全称</th><th>主要目标</th></tr></thead><tbody><tr><td><strong>FKO</strong></td><td>Feasibility Kick-Off</td><td>确定项目的可行性，定义初步目标和范围</td></tr><tr><td><strong>KO</strong></td><td>Kick-Off</td><td>项目正式启动，明确计划和职责</td></tr><tr><td><strong>PTC</strong></td><td>Prototype Confirmation</td><td>确认原型是否符合需求，优化设计</td></tr><tr><td><strong>PA</strong></td><td>Production Approval</td><td>确认产品通过测试，获得发布批准</td></tr><tr><td><strong>DR</strong></td><td>Design Review</td><td>审核设计方案，确保符合需求和技术要求</td></tr><tr><td><strong>PLR</strong></td><td>Production Launch Readiness</td><td>确保产品部署和发布的所有准备工作  就绪</td></tr><tr><td><strong>LS</strong></td><td>Launch and Support</td><td>产品上线，提供支持并持续优化</td></tr></tbody></table></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/CAKY/ECU软件开发、通讯、发布与升级的核心知识体系"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">ECU软件开发、通讯、发布与升级的核心知识体系</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/CAKY/JDK管理篇"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">JDK管理篇</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-概念阶段concept-phase" class="table-of-contents__link toc-highlight"><strong>1. 概念阶段（Concept Phase）</strong></a><ul><li><a href="#目标" class="table-of-contents__link toc-highlight"><strong>目标</strong>：</a></li><li><a href="#主要工作" class="table-of-contents__link toc-highlight"><strong>主要工作</strong>：</a></li><li><a href="#交付内容" class="table-of-contents__link toc-highlight"><strong>交付内容</strong>：</a></li></ul></li><li><a href="#2-方案设计阶段design-phase" class="table-of-contents__link toc-highlight"><strong>2. 方案设计阶段（Design Phase）</strong></a><ul><li><a href="#目标-1" class="table-of-contents__link toc-highlight"><strong>目标</strong>：</a></li><li><a href="#主要工作-1" class="table-of-contents__link toc-highlight"><strong>主要工作</strong>：</a></li><li><a href="#交付内容-1" class="table-of-contents__link toc-highlight"><strong>交付内容</strong>：</a></li></ul></li><li><a href="#3-开发阶段development-phase" class="table-of-contents__link toc-highlight"><strong>3. 开发阶段（Development Phase ）</strong></a><ul><li><a href="#目标-2" class="table-of-contents__link toc-highlight"><strong>目标</strong>：</a></li><li><a href="#主要工作-2" class="table-of-contents__link toc-highlight"><strong>主要工作</strong>：</a></li><li><a href="#交付内容-2" class="table-of-contents__link toc-highlight"><strong>交付内容</strong>：</a></li></ul></li><li><a href="#4-集成与测试阶段integration-and-testing-phase" class="table-of-contents__link toc-highlight"><strong>4. 集成与测试阶段（Integration and Testing Phase）</strong></a><ul><li><a href="#目标-3" class="table-of-contents__link toc-highlight"><strong>目标</strong>：</a></li><li><a href="#主要工作-3" class="table-of-contents__link toc-highlight"><strong>主要工作</strong>：</a></li><li><a href="#交付内容-3" class="table-of-contents__link toc-highlight"><strong>交付内容</strong>：</a></li></ul></li><li><a href="#5-发布阶段release-phase" class="table-of-contents__link toc-highlight"><strong>5. 发布阶段（Release Phase）</strong></a><ul><li><a href="#目标-4" class="table-of-contents__link toc-highlight"><strong>目标</strong>：</a></li><li><a href="#主要工作-4" class="table-of-contents__link toc-highlight"><strong>主要工作</strong>：</a></li><li><a href="#交付内容-4" class="table-of-contents__link toc-highlight"><strong>交付内容</strong>：</a></li></ul></li><li><a href="#6-运营与维护阶段operation-and-maintenance-phase" class="table-of-contents__link toc-highlight"><strong>6. 运营与维护阶段（Operation and Maintenance Phase）</strong></a><ul><li><a href="#目标-5" class="table-of-contents__link toc-highlight"><strong>目标</strong>：</a></li><li><a href="#主要工作-5" class="table-of-contents__link toc-highlight"><strong>主要工作</strong>：</a></li><li><a href="#交付内容-5" class="table-of-contents__link toc-highlight"><strong>交付内容</strong>：</a></li><li><a href="#总结" class="table-of-contents__link toc-highlight"><strong>总结</strong></a></li><li><a href="#1-fko-feasibility-kick-off" class="table-of-contents__link toc-highlight"><strong>1. FKO (Feasibility Kick-Off)</strong></a></li><li><a href="#2-ko-kick-off" class="table-of-contents__link toc-highlight"><strong>2. KO (Kick-Off)</strong></a></li><li><a href="#3-ptc-prototype-confirmation" class="table-of-contents__link toc-highlight"><strong>3. PTC (Prototype Confirmation)</strong></a></li><li><a href="#4-pa-production-approval" class="table-of-contents__link toc-highlight"><strong>4. PA (Production Approval)</strong></a></li><li><a href="#5-dr-design-review" class="table-of-contents__link toc-highlight"><strong>5. DR (Design Review)</strong></a></li><li><a href="#6-plr-production-launch-readiness" class="table-of-contents__link toc-highlight"><strong>6. PLR (Production Launch Readiness)</strong></a></li><li><a href="#7-ls-launch-and-support" class="table-of-contents__link toc-highlight"><strong>7. LS (Launch and Support)</strong></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 LBT-DOCS, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
