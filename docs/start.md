@@ -9,7 +9,7 @@ title: 好记性不如烂笔头
 
 ## 新兴流行开源技术
 
-[新兴流行开源技术](./FullStackDev/新兴流行技术List.md)
+[新兴流行开源技术](./Programming/新兴流行技术List.md)
 
 ## 飞书数据
 

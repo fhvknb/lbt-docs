@@ -1,8 +1,8 @@
 {
-  "label": "DevOps",
+  "label": "Programming",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Commonly Used Knowledge in DevOps."
+    "description": "Commonly Used Knowledge in Programming."
   }
 }
