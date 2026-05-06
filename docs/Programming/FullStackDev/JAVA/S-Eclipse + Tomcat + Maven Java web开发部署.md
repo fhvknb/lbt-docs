@@ -99,7 +99,7 @@
 | 报错现象                                      | 可能原因                  | 解决办法                                                     |
 | :-------------------------------------------- | :------------------------ | :----------------------------------------------------------- |
 | **找不到菜单** (没有 Web Project Settings 等) | Eclipse 未识别为 Web 项目 | 执行 Maven Update，并在 Project Facets 中勾选 Dynamic Web Module。 |
-| **404 Not Found**                             | 路径错误或未正确部署      | 1. 检查 URL 是否包含 Context Root (`/ktm-test`)。<br>2. 检查 Deployment Assembly 是否将 `webapp` 映射到了 `/`。 |
+| **404 Not Found**                             | 路径错误或未正确部署      | 1. 检查 URL 是否包含 Context Root (`/ktm-test`)。 2. 检查 Deployment Assembly 是否将 `webapp` 映射到了 `/`。 |
 | **500 Internal Server Error**                 | Java 代码报错             | 查看 Eclipse Console 中的红色异常堆栈，定位具体报错的代码行数。 |
 | **ClassNotFoundException**                    | 缺少 Jar 包               | 检查 Deployment Assembly 中是否添加了 `Maven Dependencies` 映射。 |
 | **端口被占用**                                | 8080 端口被其他程序占用   | 双击 Servers 视图中的 Tomcat，在配置页把 HTTP 端口改为 8081 等其他端口。 |
