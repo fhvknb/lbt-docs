@@ -119,11 +119,6 @@ atop -r /var/log/atop/atop_YYYYMMDD
 sudo vim /etc/sysconfig/atop
 ```
 
-
-    
-
-
-    
 - Debian 及其衍生版（Ubuntu, Debian），openSUSE。
 
 ```bash
@@ -284,7 +279,7 @@ atopsar [options] [interval] [count]
 
 ## 常见问题
 
-1. #### 执行 atop -r 时提示 stat raw file： No such file or directory，是什么原因？
+1.  执行 atop -r 时提示 stat raw file： No such file or directory，是什么原因？
 
 这个错误表示atop找不到指定日期的日志文件。可能的原因有：
 

@@ -118,5 +118,8 @@ nc -zv 远程主机IP 3306
 chmod u+rwx file.txt 
 chown new_owner file.txt 
 chown :new_group file.txt
+
+# Linux 查看服务的用户组
+ps -eo pid,user,group,cmd | grep nginx
  
 ```
